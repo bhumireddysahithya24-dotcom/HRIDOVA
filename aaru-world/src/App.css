@@ -1,0 +1,5258 @@
+/* =========================================================
+   AARU SERENE WORLD
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family:
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  overflow: hidden;
+}
+
+/* =========================================================
+   MAIN WORLD
+   ========================================================= */
+
+.aaru-world {
+  position: relative;
+
+  width: 100vw;
+  height: 100vh;
+
+  min-height: 650px;
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  overflow: hidden;
+}
+
+/* Very light overlay.
+   DO NOT make this dark because your new background
+   is intentionally bright. */
+
+.world-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(255, 248, 238, 0.04);
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+/* =========================================================
+   PROFILE CARD
+   ========================================================= */
+
+.profile-card {
+  position: absolute;
+
+  top: 26px;
+  left: 24px;
+
+  width: 410px;
+  min-height: 100px;
+
+  padding: 16px 22px 16px 16px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  background: rgba(255, 252, 247, 0.94);
+
+  border: 1px solid rgba(255, 255, 255, 0.8);
+
+  border-radius: 26px;
+
+  box-shadow:
+    0 10px 35px rgba(70, 55, 40, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+
+  backdrop-filter: blur(10px);
+
+  z-index: 20;
+}
+
+/* Profile image */
+
+.profile-image-wrapper {
+  width: 100px;
+  height: 100px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  overflow: hidden;
+
+  background: #eee4d8;
+
+  border: 4px solid white;
+
+  box-shadow:
+    0 4px 12px rgba(60, 45, 30, 0.18);
+}
+
+
+
+/* Profile text */
+
+.profile-info {
+  flex: 1;
+
+  min-width: 0;
+}
+
+.profile-info h2 {
+  margin: 0 0 3px;
+
+  color: #342b26;
+
+  font-family: Georgia, serif;
+
+  font-size: 30px;
+
+  letter-spacing: 1px;
+}
+
+.profile-info p {
+  margin: 0 0 14px;
+
+  color: #514841;
+
+  font-size: 16px;
+}
+
+/* XP */
+
+.xp-row {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.level {
+  padding: 7px 14px;
+
+  border-radius: 18px;
+
+  background: #7f4bb3;
+
+  color: white;
+
+  font-weight: 700;
+
+  font-size: 14px;
+}
+
+.xp-bar {
+  width: 115px;
+  height: 10px;
+
+  background: #d9d1cb;
+
+  border-radius: 10px;
+
+  overflow: hidden;
+}
+
+.xp-fill {
+  width: 50%;
+  height: 100%;
+
+  background: #8248b3;
+
+  border-radius: inherit;
+}
+
+.xp-text {
+  color: #504842;
+
+  font-size: 13px;
+
+  white-space: nowrap;
+}
+
+/* =========================================================
+   SETTINGS
+   ========================================================= */
+
+.settings-button {
+  position: absolute;
+
+  top: 28px;
+  right: 28px;
+
+  z-index: 25;
+
+  width: 82px;
+
+  border: 0;
+
+  background: transparent;
+
+  color: white;
+
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 7px;
+
+  text-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.3);
+
+  font-size: 16px;
+}
+
+.settings-button svg {
+  width: 62px;
+  height: 62px;
+
+  padding: 15px;
+
+  border-radius: 50%;
+
+  background: rgba(80, 70, 60, 0.45);
+
+  border: 2px solid rgba(255, 255, 255, 0.85);
+
+  backdrop-filter: blur(8px);
+
+  font-size: 30px;
+
+  transition: 0.2s ease;
+}
+
+.settings-button:hover svg {
+  transform: scale(1.06);
+}
+
+/* =========================================================
+   CENTER TITLE
+   ========================================================= */
+
+.world-title {
+  position: absolute;
+
+  top: 68px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 600px;
+
+  text-align: center;
+
+  color: rgb(21, 20, 20);
+
+  z-index: 15;
+
+  pointer-events: none;
+
+  text-shadow:
+    0 2px 8px rgba(50, 35, 25, 0.28);
+}
+
+.title-main {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 15px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(55px, 5vw, 82px);
+
+  letter-spacing: 8px;
+
+  line-height: 0.5;
+}
+
+.title-leaf {
+  color: #517316;
+
+  font-size: 40px;
+
+  transform: rotate(-15deg);
+}
+
+.title-sub {
+  margin-top: 10px;
+
+  font-size: 25px;
+
+  letter-spacing: 9px;
+
+  font-weight: 500;
+}
+
+.title-tagline {
+  margin-top: 20px;
+
+  font-size: 21px;
+
+  letter-spacing: 1.5px;
+}
+
+
+/* =========================================================
+   AARU CHARACTER
+   ========================================================= */
+
+/*
+   IMPORTANT:
+   The background already contains the chair.
+
+   Aaru is an independent transparent PNG placed
+   ON TOP of that chair.
+
+   These values are deliberately controlled here.
+*/
+
+.aaru-character-container {
+  position: absolute;
+
+  left: 50%;
+
+  /*
+     Bottom distance from viewport.
+
+     Increasing this number moves Aaru UP.
+     Decreasing this number moves Aaru DOWN.
+  */
+  bottom: 72px;
+
+  transform: translateX(-50%);
+
+  width: 405px;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: flex-end;
+
+  z-index: 10;
+
+  pointer-events: none;
+}
+
+/* ================================
+   AARU CHARACTER POSITION
+   ================================ */
+
+.aaru-character {
+  position: absolute !important;
+
+  /* Keep Aaru exactly in the center */
+  left: 50% !important;
+
+  /* Move Aaru DOWN */
+  bottom: -125px !important;
+
+  /* Only horizontal centering */
+  transform: translateX(-50%) !important;
+
+  /* Aaru size */
+  width: 430px !important;
+  height: auto !important;
+
+  display: block !important;
+
+  /* Behind the UI, but visible above background */
+  z-index: 5 !important;
+
+  pointer-events: none !important;
+}
+/* =========================================================
+   QUOTE CARD
+   ========================================================= */
+
+.quote-card {
+  position: absolute;
+
+  left: 36px;
+  bottom: 250px;
+
+  width: 275px;
+  min-height: 150px;
+
+  padding: 25px 25px 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 252, 247, 0.92);
+
+  border: 1px solid rgba(255, 255, 255, 0.8);
+
+  border-radius: 26px;
+
+  box-shadow:
+    0 10px 30px rgba(70, 55, 40, 0.14);
+
+  backdrop-filter: blur(10px);
+
+  z-index: 20;
+
+  text-align: center;
+}
+
+.quote-leaf {
+  color: #716c61;
+
+  font-size: 27px;
+
+  margin-bottom: 12px;
+}
+
+.quote-card p {
+  margin: 0;
+
+  color: #3e3732;
+
+  font-family: Georgia, serif;
+
+  font-size: 20px;
+
+  line-height: 1.65;
+}
+
+.quote-heart {
+  margin-top: 14px;
+
+  color: #70675e;
+
+  font-size: 16px;
+}
+
+/* =========================================================
+   BOTTOM NAV
+   ========================================================= */
+
+.bottom-nav {
+  position: absolute;
+
+  left: 28px;
+  right: 28px;
+  bottom: 20px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(7, minmax(0, 1fr));
+
+  gap: 14px;
+
+  z-index: 30;
+}
+
+.nav-btn {
+  padding: 10px 16px !important;
+  border-radius: 18px !important;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  cursor: pointer;
+  color: var(--text-dark);
+
+  font-size: 0.78rem !important;
+  font-weight: 500;
+
+  box-shadow: var(--shadow);
+  transition: all 0.2s ease;
+
+  min-height: 80px !important;
+}
+
+.nav-btn svg {
+  font-size: 32px;
+}
+
+.nav-btn:hover {
+  transform: translateY(-5px);
+
+  background: rgba(255, 255, 255, 0.98);
+
+  box-shadow:
+    0 14px 30px rgba(65, 50, 40, 0.2);
+}
+
+.nav-btn:active {
+  transform: translateY(-1px);
+}
+
+/* Individual icon colors */
+
+.back-btn svg {
+  color: #7550b3;
+}
+
+.talk-btn svg {
+  color: #c15b98;
+}
+
+.chat-btn svg {
+  color: #5e91a9;
+}
+
+.play-btn svg {
+  color: #73956d;
+}
+
+.explore-btn svg {
+  color: #b48b35;
+}
+
+.sleep-btn svg {
+  color: #7950b0;
+}
+
+.music-btn svg {
+  color: #b14d9e;
+}
+
+/* =========================================================
+   POPUP
+   ========================================================= */
+
+.panel-backdrop {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 100;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(30, 24, 20, 0.38);
+
+  backdrop-filter: blur(7px);
+}
+
+.action-panel {
+  position: relative;
+
+  width: min(560px, calc(100vw - 40px));
+
+  min-height: 330px;
+
+  padding: 50px 45px 40px;
+
+  border-radius: 30px;
+
+  background: rgba(255, 250, 244, 0.97);
+
+  box-shadow:
+    0 25px 70px rgba(35, 25, 18, 0.3);
+
+  text-align: center;
+
+  animation: panelIn 0.22s ease;
+}
+
+@keyframes panelIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.close-panel {
+  position: absolute;
+
+  top: 18px;
+  right: 20px;
+
+  width: 40px;
+  height: 40px;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  background: #eee5dc;
+
+  color: #51483f;
+
+  cursor: pointer;
+
+  font-size: 17px;
+}
+
+.close-panel:hover {
+  background: #e2d7cc;
+}
+
+.panel-icon {
+  font-size: 46px;
+
+  margin-bottom: 12px;
+}
+
+.action-panel h2 {
+  margin: 5px 0 12px;
+
+  color: #352d28;
+
+  font-family: Georgia, serif;
+
+  font-size: 32px;
+}
+
+.action-panel p {
+  margin: 0 auto 25px;
+
+  max-width: 420px;
+
+  color: #625950;
+
+  line-height: 1.6;
+
+  font-size: 17px;
+}
+
+/* Panel icon colors */
+
+.settings-icon {
+  color: #756d64;
+}
+
+.talk-icon {
+  color: #c15b98;
+}
+
+.chat-icon {
+  color: #5e91a9;
+}
+
+.play-icon {
+  color: #73956d;
+}
+
+.explore-icon {
+  color: #b48b35;
+}
+
+.sleep-icon {
+  color: #7950b0;
+}
+
+.music-icon {
+  color: #b14d9e;
+}
+
+/* =========================================================
+   PANEL BUTTONS
+   ========================================================= */
+
+.panel-main-button {
+  border: 0;
+
+  padding: 14px 25px;
+
+  border-radius: 18px;
+
+  background: #8050b1;
+
+  color: rgb(59, 56, 56);
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.panel-main-button:hover {
+  opacity: 0.9;
+}
+
+/* =========================================================
+   CHAT INPUT
+   ========================================================= */
+
+.chat-input {
+  display: flex;
+
+  max-width: 420px;
+
+  margin: 0 auto;
+
+  gap: 8px;
+}
+
+.chat-input input {
+  flex: 1;
+
+  padding: 14px 16px;
+
+  border-radius: 14px;
+
+  border: 1px solid #d8cec3;
+
+  outline: none;
+
+  font-size: 15px;
+
+  background: white;
+}
+
+.chat-input input:focus {
+  border-color: #9c79b9;
+}
+
+.chat-input button {
+  padding: 0 18px;
+
+  border: 0;
+
+  border-radius: 14px;
+
+  background: #8050b1;
+
+  color: white;
+
+  cursor: pointer;
+}
+
+/* =========================================================
+   GAME / MUSIC OPTIONS
+   ========================================================= */
+
+.game-options,
+.music-options {
+  display: grid;
+
+  gap: 10px;
+
+  max-width: 360px;
+
+  margin: 0 auto;
+}
+
+.game-options button,
+.music-options button {
+  padding: 14px;
+
+  border: 1px solid #ded3c8;
+
+  border-radius: 15px;
+
+  background: white;
+
+  color: #413932;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.game-options button:hover,
+.music-options button:hover {
+  transform: translateY(-2px);
+
+  background: #faf5ef;
+}
+
+/* =========================================================
+   UNLOCK CARD
+   ========================================================= */
+
+.unlock-card {
+  max-width: 350px;
+
+  margin: 20px auto 0;
+
+  padding: 20px;
+
+  border-radius: 18px;
+
+  background: #f2eade;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+
+  color: #4b423b;
+}
+
+.unlock-card strong {
+  font-size: 20px;
+
+  color: #7950a5;
+}
+
+/* =========================================================
+   TOGGLE
+   ========================================================= */
+
+.panel-option {
+  max-width: 400px;
+
+  margin: 12px auto;
+
+  padding: 15px 18px;
+
+  border-radius: 15px;
+
+  background: #f4eee7;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  color: #443b35;
+}
+
+.toggle {
+  width: 44px;
+  height: 24px;
+
+  border-radius: 20px;
+
+  background: #c8c0b8;
+
+  position: relative;
+}
+
+.toggle::after {
+  content: "";
+
+  position: absolute;
+
+  top: 3px;
+  left: 3px;
+
+  width: 18px;
+  height: 18px;
+
+  border-radius: 50%;
+
+  background: white;
+
+  transition: 0.2s ease;
+}
+
+.toggle.active {
+  background: #8251ae;
+}
+
+.toggle.active::after {
+  left: 23px;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1200px) {
+
+  .profile-card {
+    width: 370px;
+  }
+
+  .profile-image-wrapper {
+    width: 85px;
+    height: 85px;
+  }
+
+  .profile-info h2 {
+    font-size: 27px;
+  }
+
+  .aaru-character-container {
+    width: 370px;
+    bottom: 75px;
+  }
+
+  .aaru-character {
+    width: 370px;
+  }
+
+  .quote-card {
+    width: 235px;
+    bottom: 240px;
+  }
+
+  .nav-btn {
+    min-height: 92px;
+
+    font-size: 17px;
+  }
+
+  .nav-btn svg {
+    font-size: 27px;
+  }
+}
+
+@media (max-width: 900px) {
+
+  .world-title {
+    width: 450px;
+  }
+
+  .title-main {
+    font-size: 55px;
+  }
+
+  .title-sub {
+    font-size: 18px;
+    letter-spacing: 6px;
+  }
+
+  .title-tagline {
+    font-size: 17px;
+  }
+
+  .profile-card {
+    width: 315px;
+    min-height: 115px;
+
+    padding: 12px;
+  }
+
+  .profile-image-wrapper {
+    width: 70px;
+    height: 70px;
+  }
+
+  .profile-info h2 {
+    font-size: 23px;
+  }
+
+  .profile-info p {
+    font-size: 13px;
+  }
+
+  .xp-row {
+    gap: 5px;
+  }
+
+  .xp-bar {
+    width: 75px;
+  }
+
+  .xp-text {
+    font-size: 10px;
+  }
+
+  .level {
+    padding: 5px 9px;
+    font-size: 11px;
+  }
+
+  .aaru-character-container {
+    width: 330px;
+    bottom: 80px;
+  }
+
+  .aaru-character {
+    width: 330px;
+  }
+
+  .quote-card {
+    left: 20px;
+    bottom: 220px;
+
+    width: 205px;
+    min-height: 175px;
+  }
+
+  .quote-card p {
+    font-size: 16px;
+  }
+
+  .bottom-nav {
+    left: 12px;
+    right: 12px;
+
+    gap: 7px;
+  }
+
+  .nav-btn {
+    min-height: 80px;
+
+    border-radius: 18px;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+    font-size: 12px;
+  }
+
+  .nav-btn svg {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 650px) {
+
+  .aaru-world {
+  position: relative;
+  background-image: url("./assets/aaru-background.png");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Darken only the background */
+.aaru-world::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+background: rgba(0, 0, 0, 0.18);
+  pointer-events: none;
+  z-index: 0;
+}
+  .profile-card {
+    top: 12px;
+    left: 12px;
+
+    width: 260px;
+  }
+
+  .settings-button {
+    top: 12px;
+    right: 10px;
+  }
+
+  .settings-button svg {
+    width: 48px;
+    height: 48px;
+
+    padding: 11px;
+  }
+
+  .settings-button span {
+    font-size: 11px;
+  }
+
+  .world-title {
+    top: 115px;
+    width: 100%;
+  }
+
+  .title-main {
+    font-size: 42px;
+    letter-spacing: 5px;
+  }
+
+  .title-sub {
+    font-size: 14px;
+    letter-spacing: 4px;
+  }
+
+  .title-tagline {
+    font-size: 13px;
+  }
+
+  .title-heart {
+    margin-top: 8px;
+  }
+
+  .quote-card {
+    display: none;
+  }
+
+  .aaru-character-container {
+    width: 270px;
+    bottom: 80px;
+  }
+
+  .aaru-character {
+    width: 270px;
+  }
+
+  .bottom-nav {
+    grid-template-columns:
+      repeat(4, 1fr);
+
+    bottom: 8px;
+  }
+
+  .nav-btn {
+    min-height: 65px;
+  }
+
+  .nav-btn:nth-child(5),
+  .nav-btn:nth-child(6),
+  .nav-btn:nth-child(7) {
+    min-height: 60px;
+  }
+
+  .action-panel {
+    padding: 40px 25px 30px;
+  }
+}
+/* =====================================================
+   AARU - FINAL COMPACT UI
+   Profile + Quote + Bottom Buttons
+   ===================================================== */
+
+/* ---------- PROFILE CARD ---------- */
+
+.profile-card {
+  top: 22px !important;
+  left: 22px !important;
+
+  width: 340px !important;
+  min-height: 150px !important;
+
+  padding: 10px 16px 10px 10px !important;
+
+  gap: 12px !important;
+
+  border-radius: 20px !important;
+}
+
+.profile-image-wrapper {
+  width: 78px !important;
+  height: 78px !important;
+
+  border-width: 3px !important;
+}
+
+.profile-info {
+  margin: 0 !important;
+}
+
+.profile-info h2 {
+  font-size: 24px !important;
+  margin-bottom: 2px !important;
+}
+
+.profile-info p {
+  font-size: 13px !important;
+  margin-bottom: 8px !important;
+}
+
+.xp-row {
+  gap: 7px !important;
+}
+
+.level {
+  padding: 5px 10px !important;
+  font-size: 11px !important;
+}
+
+.xp-bar {
+  width: 75px !important;
+  height: 7px !important;
+}
+
+.xp-text {
+  font-size: 10px !important;
+}
+
+
+/* ---------- QUOTE CARD ---------- */
+
+.quote-card {
+  left: 30px !important;
+  bottom: 205px !important;
+
+  width: 210px !important;
+  min-height: 180px !important;
+
+  padding: 18px !important;
+
+  border-radius: 20px !important;
+}
+
+.quote-leaf {
+  font-size: 20px !important;
+  margin-bottom: 8px !important;
+}
+
+.quote-card p {
+  font-size: 15px !important;
+  line-height: 1.5 !important;
+}
+
+.quote-heart {
+  margin-top: 8px !important;
+  font-size: 13px !important;
+}
+
+
+/* ---------- BOTTOM BUTTONS ---------- */
+
+.bottom-nav,
+.bottom-navigation {
+  left: 25px !important;
+  right: 25px !important;
+  bottom: 15px !important;
+
+  gap: 9px !important;
+}
+
+.nav-btn,
+.nav-button {
+  min-height: 72px !important;
+  height: 80px !important;
+
+  padding: 7px 10px !important;
+
+  border-radius: 18px !important;
+
+  gap: 7px !important;
+
+  font-size: 13px !important;
+}
+
+.nav-btn svg,
+.nav-button svg {
+  width: 25px !important;
+  height: 25px !important;
+  font-size: 25px !important;
+}
+/* =====================================================
+   AARU PROFILE - FACE ONLY
+   ===================================================== */
+
+.profile-image-wrapper {
+  width: 78px !important;
+  height: 78px !important;
+  min-width: 78px !important;
+  min-height: 78px !important;
+
+  border-radius: 50% !important;
+  overflow: hidden !important;
+
+  border: 3px solid #ffffff !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  background: #eee5dc !important;
+}
+
+
+  .profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: -50% -50%;
+  transform: scale(2.15);
+}
+/* =====================================================
+   REAL AARU GEMINI CHAT
+   ===================================================== */
+
+.chat-action-panel {
+  width: min(680px, 94vw) !important;
+  max-width: 680px !important;
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+.real-chat {
+  width: 100%;
+  height: min(680px, 82vh);
+
+  display: flex;
+  flex-direction: column;
+
+  background: rgba(255, 250, 245, 0.98);
+
+  border-radius: 26px;
+
+  overflow: hidden;
+}
+
+/* =====================================================
+   CHAT HEADER
+   ===================================================== */
+
+.real-chat-header {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 17px 22px;
+
+  background: rgba(247, 239, 230, 0.98);
+
+  border-bottom: 1px solid #e4d9ce;
+}
+
+.real-chat-avatar {
+  width: 55px;
+  height: 55px;
+
+  border-radius: 50%;
+
+  overflow: hidden;
+
+  background: #eee4d9;
+
+  border: 3px solid white;
+
+  flex-shrink: 0;
+}
+
+.real-chat-avatar img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: 50% 12%;
+
+  transform: scale(1.35);
+}
+
+.real-chat-title {
+  flex: 1;
+}
+
+.real-chat-title h2 {
+  margin: 0;
+
+  color: #3d342d;
+
+  font-family: Georgia, serif;
+
+  font-size: 25px;
+}
+
+.real-chat-title span {
+  color: #776c63;
+
+  font-size: 13px;
+}
+
+.clear-chat-button {
+  width: 38px;
+  height: 38px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: transparent;
+
+  color: #887b70;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 14px;
+}
+
+.clear-chat-button:hover {
+  background: rgba(120, 100, 80, 0.1);
+}
+
+/* =====================================================
+   MESSAGE AREA
+   ===================================================== */
+
+.real-chat-messages {
+  flex: 1;
+
+  overflow-y: auto;
+
+  padding: 25px 22px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 17px;
+}
+
+/* =====================================================
+   MESSAGE
+   ===================================================== */
+
+.chat-message {
+  display: flex;
+
+  align-items: flex-end;
+
+  gap: 9px;
+
+  max-width: 86%;
+}
+
+.aaru-message {
+  align-self: flex-start;
+}
+
+.user-message {
+  align-self: flex-end;
+
+  flex-direction: row-reverse;
+}
+
+.message-avatar {
+  width: 36px;
+  height: 36px;
+
+  flex-shrink: 0;
+
+  overflow: hidden;
+
+  border-radius: 50%;
+
+  border: 2px solid white;
+
+  background: #eee5dc;
+}
+
+.message-avatar img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: -50% -50%;
+
+  transform: scale(1.3);
+}
+
+/* =====================================================
+   MESSAGE BUBBLES
+   ===================================================== */
+
+.message-bubble {
+  padding: 12px 16px;
+
+  border-radius: 18px;
+
+  font-size: 15px;
+
+  line-height: 1.5;
+
+  word-break: break-word;
+}
+
+.aaru-message .message-bubble {
+  background: #eee5dc;
+
+  color: #403831;
+
+  border-bottom-left-radius: 5px;
+}
+
+.user-message .message-bubble {
+  background: #8053a9;
+
+  color: white;
+
+  border-bottom-right-radius: 5px;
+}
+
+/* =====================================================
+   TYPING INDICATOR
+   ===================================================== */
+
+.typing-bubble {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  padding: 14px 17px;
+
+  background: #eee5dc;
+
+  border-radius: 18px;
+
+  border-bottom-left-radius: 5px;
+}
+
+.typing-bubble span {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #8b7d72;
+
+  animation: aaruTyping 1.3s infinite ease-in-out;
+}
+
+.typing-bubble span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.typing-bubble span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes aaruTyping {
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+
+  30% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+}
+
+/* =====================================================
+   INPUT
+   ===================================================== */
+
+.real-chat-input {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 14px 18px 8px;
+
+  background: #fffaf5;
+
+  border-top: 1px solid #e4d9ce;
+}
+
+.real-chat-input input {
+  flex: 1;
+
+  min-width: 0;
+
+  height: 47px;
+
+  padding: 0 16px;
+
+  border-radius: 24px;
+
+  border: 1px solid #d8cdc2;
+
+  outline: none;
+
+  background: white;
+
+  color: #3d342d;
+
+  font-size: 15px;
+}
+
+.real-chat-input input:focus {
+  border-color: #8b63aa;
+
+  box-shadow: 0 0 0 3px rgba(139, 99, 170, 0.1);
+}
+
+.real-chat-input input:disabled {
+  opacity: 0.7;
+}
+
+.chat-send-button {
+  width: 47px;
+  height: 47px;
+
+  flex-shrink: 0;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: #8053a9;
+
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  font-size: 17px;
+
+  transition: 0.2s ease;
+}
+
+.chat-send-button:hover:not(:disabled) {
+  transform: scale(1.06);
+}
+
+.chat-send-button:disabled {
+  opacity: 0.45;
+
+  cursor: not-allowed;
+}
+
+.chat-hint {
+  text-align: center;
+
+  padding: 0 0 10px;
+
+  background: #fffaf5;
+
+  color: #9a8e84;
+
+  font-size: 11px;
+}
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 600px) {
+  .chat-action-panel {
+    width: 94vw !important;
+  }
+
+  .real-chat {
+    height: 78vh;
+  }
+
+  .real-chat-messages {
+    padding: 20px 15px;
+  }
+
+  .chat-message {
+    max-width: 92%;
+  }
+}
+/* =========================================
+   AARU PLAY - MOOD BUTTONS
+========================================= */
+
+.play-section {
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.play-section h2 {
+  color: #304337;
+  font-size: 28px;
+  margin: 8px 0 10px;
+}
+
+.play-section > p {
+  color: #53665a;
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0 0 20px;
+}
+
+
+/* =========================================
+   MOOD GRID
+========================================= */
+
+.mood-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 18px;
+
+  width: 100%;
+
+  max-width: 650px;
+
+  margin: 25px auto 5px;
+}
+
+
+/* =========================================
+   MOOD BUTTON
+========================================= */
+
+.mood-card {
+  min-height: 125px;
+
+  border: 2px solid rgba(255, 255, 255, 0.8);
+
+  border-radius: 24px;
+
+  background: rgba(255, 255, 255, 0.9);
+
+  color: #35483c;
+
+  cursor: pointer;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  font-family: inherit;
+
+  font-size: 17px;
+
+  font-weight: 700;
+
+  box-shadow:
+    0 8px 22px rgba(0, 0, 0, 0.12);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+
+/* =========================================
+   HOVER
+========================================= */
+
+.mood-card:hover {
+  transform: translateY(-6px);
+
+  background: rgba(255, 255, 255, 1);
+
+  box-shadow:
+    0 15px 30px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================================
+   CLICK
+========================================= */
+
+.mood-card:active {
+  transform: scale(0.95);
+}
+
+
+/* =========================================
+   EMOJI
+========================================= */
+
+.mood-emoji {
+  display: block;
+
+  font-size: 48px;
+
+  line-height: 1;
+}
+
+
+/* =========================================
+   MOOD NAME
+========================================= */
+
+.mood-card span:last-child {
+  font-size: 17px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================
+   BACK TO MOODS
+========================================= */
+
+.mood-back-button {
+  border: none;
+
+  background: transparent;
+
+  color: #405b49;
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  margin-bottom: 12px;
+
+  padding: 6px 10px;
+}
+
+.mood-back-button:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================================
+   GAME OPTIONS
+========================================= */
+
+.game-options {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+
+  width: 100%;
+
+  max-width: 500px;
+
+  margin: 22px auto 0;
+}
+
+.game-options button {
+  border: none;
+
+  border-radius: 18px;
+
+  padding: 16px 20px;
+
+  background: rgba(255, 255, 255, 0.9);
+
+  color: #35483c;
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  font-size: 16px;
+
+  font-weight: 700;
+
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.1);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.game-options button:hover {
+  transform: translateY(-3px);
+
+  background: white;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+  .mood-grid {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 12px;
+  }
+
+  .mood-card {
+    min-height: 110px;
+  }
+
+  .mood-emoji {
+    font-size: 40px;
+  }
+
+}
+/* =====================================================
+   POP THE ANGER GAME
+===================================================== */
+
+.pop-anger-game {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  width: 100vw;
+  height: 100vh;
+
+  box-sizing: border-box;
+
+  background: linear-gradient(
+    135deg,
+    #fff8f1,
+    #f8eee5
+  );
+
+  padding: 25px 35px;
+
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* =====================================================
+   GAME HEADER
+===================================================== */
+
+.game-header {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 12px;
+}
+
+.game-title {
+  font-size: 30px;
+  font-weight: 700;
+
+  color: #49382f;
+}
+
+.game-stats {
+  display: flex;
+  gap: 25px;
+
+  font-size: 19px;
+  font-weight: 700;
+
+  color: #6d5145;
+}
+
+
+/* =====================================================
+   AARU MESSAGE
+===================================================== */
+
+.game-message {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  width: fit-content;
+  max-width: 520px;
+
+  margin: 0 auto 15px auto;
+
+  padding: 10px 18px;
+
+  background: rgba(255, 255, 255, 0.9);
+
+  border-radius: 18px;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+/* THIS FIXES THE HUGE AARU IMAGE */
+
+.game-message img {
+  width: 65px !important;
+  height: 65px !important;
+
+  min-width: 65px !important;
+  max-width: 65px !important;
+
+  object-fit: cover !important;
+
+  object-position: 50% 15% !important;
+
+  border-radius: 50% !important;
+
+  display: block;
+}
+
+/* Aaru text */
+
+.game-message strong {
+  color: #49382f;
+  font-size: 17px;
+}
+
+.game-message p {
+  margin: 4px 0 0;
+
+  color: #66584f;
+
+  font-size: 15px;
+}
+
+
+/* =====================================================
+   BUBBLE GAME AREA
+===================================================== */
+
+.bubble-game-area {
+  position: relative;
+
+  flex: 1;
+
+  width: min(100%, 1000px);
+
+  min-height: 350px;
+
+  margin: 0 auto 15px auto;
+
+  border-radius: 28px;
+
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(255, 220, 235, 0.8),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(220, 235, 255, 0.7),
+      transparent 25%
+    ),
+    rgba(255, 255, 255, 0.85);
+
+  border: 2px solid rgba(190, 150, 170, 0.25);
+
+  box-shadow:
+    0 12px 35px rgba(80, 50, 40, 0.12);
+
+  overflow: hidden;
+}
+
+
+/* =====================================================
+   ANGER BUBBLES
+===================================================== */
+
+.anger-bubble {
+  position: absolute;
+
+  transform: translate(-50%, -50%);
+
+  border: none;
+
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 28px;
+
+  background: rgba(210, 110, 150, 0.75);
+
+  box-shadow:
+    0 6px 15px rgba(130, 60, 90, 0.25);
+
+  transition:
+    transform 0.15s ease,
+    opacity 0.15s ease;
+}
+
+.anger-bubble:hover {
+  transform: translate(-50%, -50%) scale(1.15);
+}
+
+.anger-bubble:active {
+  transform: translate(-50%, -50%) scale(0.8);
+}
+
+
+/* =====================================================
+   EXIT BUTTON
+===================================================== */
+
+.exit-game-button {
+  align-self: center;
+
+  border: none;
+
+  padding: 12px 25px;
+
+  border-radius: 25px;
+
+  background: #8d5bbb;
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.exit-game-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 6px 15px rgba(100, 60, 140, 0.25);
+}
+
+
+/* =====================================================
+   GAME FINISHED
+===================================================== */
+
+.game-finished-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 10000;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: rgba(40, 30, 25, 0.45);
+
+  backdrop-filter: blur(8px);
+}
+
+.game-finished-card {
+  width: min(90%, 450px);
+
+  padding: 35px;
+
+  text-align: center;
+
+  background: #fffaf5;
+
+  border-radius: 28px;
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.game-finished-card img {
+  width: 90px !important;
+  height: 90px !important;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+}
+
+.game-finished-card h2 {
+  color: #49382f;
+}
+
+.game-finished-card p {
+  color: #66584f;
+}
+
+.final-score {
+  margin: 20px 0;
+
+  font-size: 20px;
+
+  font-weight: 700;
+
+  color: #6d5145;
+}
+/* Aaru icon inside game */
+
+.aaru-game-icon {
+  width: 65px;
+  height: 65px;
+
+  min-width: 65px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(
+    135deg,
+    #e7f3df,
+    #d3e8cf
+  );
+
+  border: 3px solid #f5e9dc;
+
+  box-shadow:
+    0 5px 15px rgba(70, 100, 70, 0.15);
+
+  font-size: 32px;
+
+  flex-shrink: 0;
+}
+/* =========================================================
+   AARU MINI GAME DESIGN SYSTEM
+========================================================= */
+
+.pop-anger-game {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  width: 100%;
+  height: 100%;
+
+  box-sizing: border-box;
+  padding: 28px 34px;
+
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  background:
+    radial-gradient(
+      circle at 10% 15%,
+      rgba(255, 235, 220, 0.9),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 90% 85%,
+      rgba(225, 242, 229, 0.95),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #fffaf5 0%,
+      #f8f4ec 50%,
+      #f2f7f1 100%
+    );
+}
+
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.game-header {
+  width: 100%;
+  max-width: 1150px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.game-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: clamp(23px, 3vw, 32px);
+  font-weight: 800;
+
+  color: #304638;
+}
+
+.game-stats {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.game-stats span {
+  min-width: 78px;
+
+  padding: 10px 15px;
+
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.88);
+
+  border: 1px solid rgba(79, 108, 88, 0.1);
+
+  box-shadow:
+    0 7px 18px rgba(49, 69, 55, 0.08);
+
+  text-align: center;
+
+  color: #3f5647;
+
+  font-size: 15px;
+  font-weight: 750;
+}
+
+
+/* =========================================================
+   AARU GUIDE MESSAGE
+========================================================= */
+
+.game-message {
+  width: min(100%, 650px);
+
+  margin: 18px auto;
+
+  padding: 13px 18px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  border-radius: 22px;
+
+  background: rgba(255, 255, 255, 0.85);
+
+  border: 1px solid rgba(255, 255, 255, 0.95);
+
+  box-shadow:
+    0 10px 26px rgba(65, 84, 69, 0.09);
+
+  backdrop-filter: blur(10px);
+}
+
+.aaru-game-icon {
+  width: 58px;
+  height: 58px;
+
+  min-width: 58px;
+
+  border-radius: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 29px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #e8f4e2,
+      #d5e8d3
+    );
+
+  border: 2px solid rgba(255, 255, 255, 0.9);
+
+  box-shadow:
+    0 6px 14px rgba(69, 101, 73, 0.12);
+}
+
+.game-message strong {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #304638;
+
+  font-size: 16px;
+}
+
+.game-message p {
+  margin: 0;
+
+  color: #667369;
+
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   MAIN GAME BOARD
+========================================================= */
+
+.bubble-game-area {
+  position: relative;
+
+  flex: 1;
+
+  width: min(100%, 1150px);
+
+  min-height: 350px;
+
+  margin: 2px auto 16px;
+
+  overflow: hidden;
+
+  border-radius: 32px;
+
+  background:
+    radial-gradient(
+      circle at 15% 18%,
+      rgba(255, 228, 224, 0.65),
+      transparent 23%
+    ),
+    radial-gradient(
+      circle at 80% 30%,
+      rgba(222, 238, 255, 0.55),
+      transparent 24%
+    ),
+    rgba(255, 255, 255, 0.58);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.95);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.9),
+    0 18px 40px rgba(55, 73, 59, 0.10);
+}
+
+
+/* =========================================================
+   REACTION ITEMS / BUBBLES
+========================================================= */
+
+.anger-bubble {
+  position: absolute;
+
+  transform: translate(-50%, -50%);
+
+  border: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  font-size: 29px;
+
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      rgba(255,255,255,0.95),
+      rgba(255, 200, 219, 0.78) 45%,
+      rgba(215, 139, 177, 0.75)
+    );
+
+  box-shadow:
+    0 8px 20px rgba(151, 92, 122, 0.20);
+
+  transition:
+    transform 0.16s ease,
+    filter 0.16s ease,
+    box-shadow 0.16s ease;
+}
+
+.anger-bubble:hover {
+  transform:
+    translate(-50%, -50%)
+    scale(1.13);
+
+  filter: brightness(1.04);
+
+  box-shadow:
+    0 12px 25px rgba(151, 92, 122, 0.27);
+}
+
+.anger-bubble:active {
+  transform:
+    translate(-50%, -50%)
+    scale(0.78);
+}
+
+
+/* =========================================================
+   MEMORY GAME
+========================================================= */
+
+.memory-board {
+  width: min(100%, 760px);
+
+  margin: 12px auto 22px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(85px, 1fr));
+
+  gap: 16px;
+
+  overflow-y: auto;
+
+  padding: 10px;
+
+  box-sizing: border-box;
+}
+
+.memory-card {
+  min-height: 125px;
+
+  border: 1px solid rgba(255,255,255,0.95);
+
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #f1eadf,
+      #e1eadc
+    );
+
+  color: #49604f;
+
+  cursor: pointer;
+
+  font-size: 34px;
+
+  box-shadow:
+    0 8px 18px rgba(58, 76, 62, 0.10);
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease;
+}
+
+.memory-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 12px 22px rgba(58, 76, 62, 0.15);
+}
+
+
+/* =========================================================
+   REACTION GAME
+========================================================= */
+
+.reaction-area {
+  position: relative;
+
+  flex: 1;
+
+  width: min(100%, 1100px);
+
+  margin: 4px auto 16px;
+
+  overflow: hidden;
+
+  border-radius: 30px;
+
+  background:
+    rgba(255,255,255,0.55);
+
+  border: 1px solid rgba(255,255,255,0.95);
+
+  box-shadow:
+    0 16px 38px rgba(58, 79, 64, 0.10);
+}
+
+.reaction-item {
+  position: absolute;
+
+  transform: translate(-50%, -50%);
+
+  width: 70px;
+  height: 70px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  font-size: 32px;
+
+  background: rgba(255,255,255,0.9);
+
+  box-shadow:
+    0 8px 18px rgba(67, 84, 70, 0.12);
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.reaction-item:hover {
+  transform:
+    translate(-50%, -50%)
+    scale(1.12);
+
+  box-shadow:
+    0 12px 25px rgba(67, 84, 70, 0.18);
+}
+
+
+/* =========================================================
+   HIDDEN OBJECT
+========================================================= */
+
+.hidden-area {
+  position: relative;
+
+  flex: 1;
+
+  width: min(100%, 1100px);
+
+  margin: 4px auto 16px;
+
+  overflow: hidden;
+
+  border-radius: 30px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(235,245,230,0.9),
+      rgba(246,241,225,0.92)
+    );
+
+  border: 1px solid rgba(255,255,255,0.95);
+
+  box-shadow:
+    0 15px 36px rgba(61, 82, 65, 0.10);
+}
+
+.hidden-area h2 {
+  position: absolute;
+
+  top: 18px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  z-index: 2;
+
+  white-space: nowrap;
+
+  margin: 0;
+
+  padding: 10px 18px;
+
+  border-radius: 18px;
+
+  background: rgba(255,255,255,0.82);
+
+  color: #405545;
+
+  font-size: 18px;
+}
+
+.hidden-item {
+  position: absolute;
+
+  transform: translate(-50%, -50%);
+
+  width: 52px;
+  height: 52px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: rgba(255,255,255,0.72);
+
+  cursor: pointer;
+
+  font-size: 25px;
+
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease;
+}
+
+.hidden-item:hover {
+  transform:
+    translate(-50%, -50%)
+    scale(1.2);
+
+  background: rgba(255,255,255,0.95);
+}
+
+
+/* =========================================================
+   COUNTING GAME
+========================================================= */
+
+.counting-game,
+.puzzle-game,
+.special-game,
+.breathing-game {
+  width: min(100%, 850px);
+
+  margin: auto;
+
+  padding: 28px;
+
+  border-radius: 28px;
+
+  background:
+    rgba(255,255,255,0.78);
+
+  border:
+    1px solid rgba(255,255,255,0.95);
+
+  box-shadow:
+    0 14px 35px rgba(58, 78, 62, 0.09);
+
+  text-align: center;
+}
+
+.counting-items {
+  min-height: 130px;
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 14px;
+
+  padding: 20px;
+
+  margin: 20px 0;
+
+  border-radius: 24px;
+
+  background: rgba(244,247,239,0.8);
+
+  font-size: 42px;
+}
+
+.answer-buttons,
+.quiz-options {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  gap: 12px;
+}
+
+.answer-buttons button,
+.quiz-options button {
+  min-width: 130px;
+
+  padding: 13px 18px;
+
+  border: none;
+
+  border-radius: 16px;
+
+  background: #ffffff;
+
+  color: #405345;
+
+  font: inherit;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 6px 16px rgba(59, 77, 63, 0.10);
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.answer-buttons button:hover,
+.quiz-options button:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 10px 20px rgba(59, 77, 63, 0.14);
+}
+
+
+/* =========================================================
+   PUZZLE
+========================================================= */
+
+.puzzle-board {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(90px, 1fr));
+
+  gap: 14px;
+
+  max-width: 500px;
+
+  margin: 22px auto;
+}
+
+.puzzle-piece {
+  aspect-ratio: 1;
+
+  border: 2px solid rgba(214, 226, 214, 0.8);
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #fffdf9,
+      #edf4eb
+    );
+
+  font-size: 34px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.puzzle-piece:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 10px 22px rgba(65, 86, 70, 0.12);
+}
+
+
+/* =========================================================
+   BREATHING
+========================================================= */
+
+.breathing-circle {
+  width: 180px;
+  height: 180px;
+
+  margin: 25px auto;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 55px;
+
+  background:
+    radial-gradient(
+      circle,
+      #f5fff2,
+      #d9ecd5
+    );
+
+  box-shadow:
+    0 14px 35px rgba(75, 108, 77, 0.14);
+
+  animation:
+    aaruBreathing 5s ease-in-out infinite;
+}
+
+@keyframes aaruBreathing {
+  0%,
+  100% {
+    transform: scale(0.82);
+  }
+
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+
+/* =========================================================
+   GAME FINISHED
+========================================================= */
+
+.game-finished-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 10000;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 20px;
+
+  background:
+    rgba(46, 61, 49, 0.38);
+
+  backdrop-filter: blur(9px);
+}
+
+.game-finished-card {
+  width: min(100%, 450px);
+
+  padding: 35px 28px;
+
+  text-align: center;
+
+  border-radius: 30px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #fffdf8,
+      #f4f8f1
+    );
+
+  border:
+    1px solid rgba(255,255,255,0.95);
+
+  box-shadow:
+    0 24px 60px rgba(39, 54, 43, 0.22);
+}
+
+.game-finished-icon {
+  width: 88px;
+  height: 88px;
+
+  margin: 0 auto 15px;
+
+  font-size: 42px;
+
+  border-radius: 26px;
+}
+
+.game-finished-card h2 {
+  margin: 8px 0;
+
+  color: #304638;
+
+  font-size: 28px;
+}
+
+.game-finished-card p {
+  color: #68766c;
+
+  line-height: 1.5;
+}
+
+.final-score {
+  margin: 18px 0 22px;
+
+  font-size: 19px;
+
+  font-weight: 800;
+
+  color: #4a6250;
+}
+
+
+/* =========================================================
+   EXIT BUTTON
+========================================================= */
+
+.exit-game-button {
+  align-self: center;
+
+  border: none;
+
+  padding: 11px 22px;
+
+  border-radius: 18px;
+
+  background: #ffffff;
+
+  color: #56665a;
+
+  font-family: inherit;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 6px 16px rgba(59, 77, 63, 0.10);
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.exit-game-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 20px rgba(59, 77, 63, 0.14);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .pop-anger-game {
+    padding: 18px 14px;
+  }
+
+  .game-header {
+    align-items: flex-start;
+  }
+
+  .game-title {
+    font-size: 22px;
+  }
+
+  .game-stats {
+    gap: 6px;
+  }
+
+  .game-stats span {
+    min-width: auto;
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+
+  .game-message {
+    margin: 12px auto;
+  }
+
+  .game-message p {
+    font-size: 13px;
+  }
+
+  .memory-board {
+    grid-template-columns:
+      repeat(3, 1fr);
+
+    gap: 10px;
+  }
+
+  .memory-card {
+    min-height: 95px;
+  }
+
+  .puzzle-board {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+}
+/* =====================================================
+   AARU SLEEP STORY LIBRARY
+===================================================== */
+
+.sleep-library {
+  width: 100%;
+  text-align: center;
+}
+
+
+/* STORY LIST */
+
+.sleep-story-list {
+  width: 100%;
+  max-width: 560px;
+
+  max-height: 430px;
+
+  overflow-y: auto;
+
+  margin: 22px auto 0;
+
+  padding-right: 5px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 11px;
+}
+
+
+/* STORY CARD */
+
+.sleep-story-card {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 13px 15px;
+
+  border: 1px solid rgba(255,255,255,0.9);
+
+  border-radius: 19px;
+
+  background:
+    rgba(255,255,255,0.83);
+
+  color: #3e5144;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  box-shadow:
+    0 6px 16px rgba(50,70,55,0.07);
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease;
+}
+
+.sleep-story-card:hover {
+  transform: translateY(-2px);
+
+  background:
+    rgba(255,255,255,0.97);
+
+  box-shadow:
+    0 10px 22px rgba(50,70,55,0.11);
+}
+
+
+/* STORY ICON */
+
+.story-icon {
+  width: 50px;
+  height: 50px;
+
+  min-width: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #edf4e9,
+      #dfeee0
+    );
+
+  font-size: 25px;
+}
+
+
+/* STORY INFO */
+
+.story-info {
+  min-width: 0;
+
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.story-info strong {
+  font-size: 15px;
+
+  color: #35483a;
+}
+
+.story-info span {
+  font-size: 12px;
+
+  color: #748078;
+
+  line-height: 1.35;
+}
+
+.story-info small {
+  font-size: 11px;
+
+  color: #8b948c;
+}
+
+
+/* ARROW */
+
+.story-arrow {
+  font-size: 25px;
+
+  color: #89978c;
+}
+
+
+/* =====================================================
+   SLEEP PLAYER
+===================================================== */
+
+.sleep-player {
+  width: 100%;
+
+  min-height: 540px;
+
+  padding: 8px 5px 15px;
+
+  box-sizing: border-box;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  text-align: center;
+}
+
+
+/* TOP */
+
+.sleep-player-top {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 8px;
+
+  color: #738075;
+
+  font-size: 13px;
+}
+
+.sleep-player-back {
+  border: none;
+
+  background: transparent;
+
+  color: #526557;
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  font-weight: 700;
+}
+
+
+/* VISUAL */
+
+.sleep-story-visual {
+  position: relative;
+
+  width: 100%;
+
+  height: 175px;
+
+  margin: 4px 0 16px;
+
+  overflow: hidden;
+
+  border-radius: 28px;
+
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      rgba(219,226,255,0.5),
+      transparent 30%
+    ),
+    linear-gradient(
+      180deg,
+      #252f4b,
+      #394461
+    );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.12),
+    0 12px 30px rgba(35,45,66,0.16);
+}
+
+
+/* MAIN STORY ICON */
+
+.sleep-story-moon {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: 92px;
+  height: 92px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    rgba(248,248,232,0.94);
+
+  font-size: 43px;
+
+  box-shadow:
+    0 0 35px rgba(242,239,190,0.24);
+}
+
+
+/* STARS */
+
+.sleep-story-stars {
+  position: absolute;
+
+  top: 20px;
+  left: 25px;
+
+  color: rgba(255,255,255,0.7);
+
+  font-size: 14px;
+
+  line-height: 2.4;
+}
+
+
+/* TITLE */
+
+.sleep-player h2 {
+  margin: 5px 0 4px;
+
+  color: #35483a;
+
+  font-size: 24px;
+}
+
+.sleep-player-description {
+  max-width: 430px;
+
+  margin: 0 auto 14px;
+
+  color: #758078;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+
+/* AARU MESSAGE */
+
+.sleep-player-aaru {
+  width: min(100%, 430px);
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 10px 14px;
+
+  box-sizing: border-box;
+
+  border-radius: 18px;
+
+  background:
+    rgba(246,249,243,0.9);
+
+  text-align: left;
+}
+
+.sleep-player-aaru strong {
+  color: #3d5142;
+
+  font-size: 14px;
+}
+
+.sleep-player-aaru p {
+  margin: 2px 0 0;
+
+  color: #7a837c;
+
+  font-size: 12px;
+}
+
+
+/* =====================================================
+   CONTROLS
+===================================================== */
+
+.sleep-controls {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 20px;
+
+  margin: 20px 0 12px;
+}
+
+.sleep-controls button {
+  width: 45px;
+  height: 45px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background:
+    rgba(238,243,236,1);
+
+  color: #536557;
+
+  cursor: pointer;
+
+  font-size: 18px;
+
+  box-shadow:
+    0 5px 14px rgba(55,75,60,0.08);
+}
+
+.sleep-controls .sleep-play-button {
+  width: 64px;
+  height: 64px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #dbead7,
+      #c8dfc9
+    );
+
+  color: #38503d;
+
+  font-size: 25px;
+}
+
+
+/* =====================================================
+   TIMER
+===================================================== */
+
+.sleep-timer-selector {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color: #67736a;
+
+  font-size: 13px;
+
+  margin-top: 5px;
+}
+
+.sleep-timer-selector select {
+  border: 1px solid #dce5dc;
+
+  border-radius: 12px;
+
+  padding: 8px 11px;
+
+  background: white;
+
+  color: #526257;
+
+  font-family: inherit;
+
+  font-size: 13px;
+
+  outline: none;
+}
+
+
+/* =====================================================
+   NOTE
+===================================================== */
+
+.sleep-volume-note {
+  margin-top: 12px;
+
+  color: #929b94;
+
+  font-size: 11px;
+}
+
+
+/* =====================================================
+   END SESSION
+===================================================== */
+
+.sleep-stop-button {
+  margin-top: 18px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #7e8981;
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  font-size: 12px;
+}
+
+.sleep-stop-button:hover {
+  text-decoration: underline;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .sleep-story-list {
+    max-height: 390px;
+  }
+
+  .sleep-story-card {
+    padding: 11px;
+  }
+
+  .story-icon {
+    width: 45px;
+    height: 45px;
+
+    min-width: 45px;
+  }
+
+  .sleep-story-visual {
+    height: 150px;
+  }
+
+}
+/* =========================================================
+   AARU MUSIC — PREMIUM RELAXATION DESIGN
+========================================================= */
+
+.aaru-music-library {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+
+  padding: 4px 2px 10px;
+
+  box-sizing: border-box;
+
+  color: #33463a;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.music-library-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  margin-bottom: 18px;
+}
+
+.music-main-icon {
+  width: 64px;
+  height: 64px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 21px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #eaf5e6,
+      #d9ead8
+    );
+
+  border: 1px solid rgba(255, 255, 255, 0.95);
+
+  box-shadow:
+    0 10px 24px rgba(62, 88, 68, 0.10);
+
+  font-size: 30px;
+}
+
+.music-library-header h2 {
+  margin: 0 0 4px;
+
+  font-size: 24px;
+  font-weight: 800;
+
+  color: #304438;
+  letter-spacing: -0.3px;
+}
+
+.music-library-header p {
+  margin: 0;
+
+  color: #77847a;
+
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+
+/* =========================================================
+   CURRENTLY PLAYING
+========================================================= */
+
+.current-music-card {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 14px 16px;
+
+  margin-bottom: 15px;
+
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(239, 248, 236, 0.97),
+      rgba(247, 250, 244, 0.97)
+    );
+
+  border: 1px solid rgba(217, 231, 216, 0.9);
+
+  box-shadow:
+    0 10px 24px rgba(61, 83, 65, 0.08);
+}
+
+.current-music-card::after {
+  content: "NOW PLAYING";
+
+  position: absolute;
+
+  top: 10px;
+  right: 13px;
+
+  padding: 4px 7px;
+
+  border-radius: 8px;
+
+  background: #e3efe0;
+
+  color: #708071;
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: 0.8px;
+}
+
+.current-music-icon {
+  width: 56px;
+  height: 56px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.92);
+
+  font-size: 28px;
+
+  box-shadow:
+    0 5px 14px rgba(66, 87, 69, 0.08);
+}
+
+.current-music-info {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+
+  padding-right: 82px;
+}
+
+.current-music-info strong {
+  color: #35493b;
+
+  font-size: 16px;
+}
+
+.current-music-info span {
+  color: #839087;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.no-music-selected {
+  padding: 18px;
+
+  margin-bottom: 15px;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f4f8f1,
+      #fafbf9
+    );
+
+  color: #87928a;
+
+  text-align: center;
+
+  font-size: 13px;
+
+  border: 1px dashed #dce6db;
+}
+
+
+/* =========================================================
+   PLAYER CONTROLS
+========================================================= */
+
+.music-player-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 18px;
+
+  margin: 12px 0 16px;
+}
+
+.music-player-controls button {
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #e3eae0;
+
+  border-radius: 50%;
+
+  background: #f5f8f3;
+
+  color: #536457;
+
+  cursor: pointer;
+
+  font-size: 17px;
+
+  box-shadow:
+    0 5px 13px rgba(58, 79, 62, 0.07);
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease;
+}
+
+.music-player-controls button:hover {
+  transform: translateY(-2px);
+
+  background: #edf4ea;
+
+  box-shadow:
+    0 9px 18px rgba(58, 79, 62, 0.11);
+}
+
+.music-player-controls
+.main-music-button {
+  width: 68px;
+  height: 68px;
+
+  border: none;
+
+  background:
+    linear-gradient(
+      145deg,
+      #d9ead5,
+      #c5dfc8
+    );
+
+  color: #35503d;
+
+  font-size: 26px;
+
+  box-shadow:
+    0 10px 25px rgba(74, 106, 78, 0.16);
+}
+
+.music-player-controls
+.main-music-button:hover {
+  transform: translateY(-3px) scale(1.03);
+}
+
+
+/* =========================================================
+   VOLUME
+========================================================= */
+
+.music-volume {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 10px 14px;
+
+  margin-bottom: 17px;
+
+  border-radius: 17px;
+
+  background: #f7f9f5;
+
+  border: 1px solid #ebf0e8;
+}
+
+.music-volume span {
+  font-size: 13px;
+}
+
+.music-volume input {
+  flex: 1;
+
+  height: 5px;
+
+  accent-color: #91ad91;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   SONG LIST
+========================================================= */
+
+.music-track-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+
+  max-height: 375px;
+
+  overflow-y: auto;
+
+  padding: 3px 5px 5px 1px;
+}
+
+
+/* custom scrollbar */
+
+.music-track-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.music-track-list::-webkit-scrollbar-thumb {
+  background: #d5dfd3;
+  border-radius: 10px;
+}
+
+.music-track-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+
+/* =========================================================
+   SONG CARD
+========================================================= */
+
+.music-track {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 10px 12px;
+
+  box-sizing: border-box;
+
+  border: 1px solid transparent;
+
+  border-radius: 18px;
+
+  background:
+    rgba(255, 255, 255, 0.70);
+
+  color: #405145;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease,
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.music-track:hover {
+  transform: translateX(3px);
+
+  background:
+    rgba(255, 255, 255, 0.96);
+
+  border-color: #edf1eb;
+
+  box-shadow:
+    0 6px 15px rgba(58, 78, 61, 0.06);
+}
+
+.music-track.active {
+  background:
+    linear-gradient(
+      135deg,
+      #eff6ec,
+      #f8faf7
+    );
+
+  border-color: #dce9da;
+
+  box-shadow:
+    0 6px 15px rgba(61, 86, 65, 0.07);
+}
+
+
+/* =========================================================
+   SONG NUMBER / ICON
+========================================================= */
+
+.music-track-icon {
+  width: 46px;
+  height: 46px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #f4f7f1,
+      #e9efe7
+    );
+
+  font-size: 22px;
+}
+
+.music-track.active
+.music-track-icon {
+  background:
+    linear-gradient(
+      145deg,
+      #e0efdd,
+      #d5e8d3
+    );
+}
+
+
+/* =========================================================
+   SONG TEXT
+========================================================= */
+
+.music-track-info {
+  min-width: 0;
+
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.music-track-info strong {
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+
+  color: #3c4e41;
+
+  font-size: 14px;
+  font-weight: 750;
+}
+
+.music-track-info span {
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+
+  color: #8a948d;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   PLAY INDICATOR
+========================================================= */
+
+.music-track-play {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #f3f6f2;
+
+  color: #708074;
+
+  font-size: 13px;
+
+  transition:
+    background 0.18s ease,
+    transform 0.18s ease;
+}
+
+.music-track:hover
+.music-track-play {
+  transform: scale(1.05);
+}
+
+.music-track.active
+.music-track-play {
+  background: #dcebd9;
+
+  color: #49634e;
+}
+
+
+/* =========================================================
+   SMALL FOOTER
+========================================================= */
+
+.music-license-note {
+  margin-top: 12px;
+
+  text-align: center;
+
+  color: #a0a9a2;
+
+  font-size: 10px;
+
+  letter-spacing: 0.1px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .aaru-music-library {
+    padding: 0;
+  }
+
+  .music-library-header h2 {
+    font-size: 21px;
+  }
+
+  .music-library-header p {
+    font-size: 12px;
+  }
+
+  .music-track-list {
+    max-height: 340px;
+  }
+
+  .current-music-card::after {
+    display: none;
+  }
+
+  .current-music-info {
+    padding-right: 0;
+  }
+
+}
+/* =====================================================
+   AARU PROFILE AVATAR + EMOJI
+===================================================== */
+
+
+/* Small Aaru nature emoji badge */
+
+.emoji-aaru-avatar {
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: linear-gradient(
+    145deg,
+    #edf7e9,
+    #d8ebd5
+  );
+
+  border: 2px solid white;
+
+  box-shadow:
+    0 6px 16px rgba(63, 91, 68, 0.12);
+
+  font-size: 30px;
+}
+/* =====================================================
+   AARU SETTINGS
+===================================================== */
+
+.settings-panel {
+  width: 100%;
+
+  max-width: 560px;
+
+  margin: 0 auto;
+
+  max-height: 72vh;
+
+  overflow-y: auto;
+
+  padding-right: 5px;
+
+  box-sizing: border-box;
+}
+
+
+/* HEADER */
+
+.settings-heading {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  margin-bottom: 20px;
+}
+
+.settings-main-icon {
+  width: 58px;
+  height: 58px;
+
+  min-width: 58px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #edf5e9,
+      #dcebd9
+    );
+
+  font-size: 27px;
+
+  box-shadow:
+    0 7px 17px rgba(
+      61,
+      83,
+      64,
+      0.09
+    );
+}
+
+.settings-heading h2 {
+  margin: 0 0 4px;
+
+  color: #35483a;
+
+  font-size: 22px;
+}
+
+.settings-heading p {
+  margin: 0;
+
+  color: #7d897f;
+
+  font-size: 12px;
+
+  line-height: 1.4;
+}
+
+
+/* SECTION TITLES */
+
+.settings-section-title {
+  margin: 18px 2px 8px;
+
+  color: #7b887e;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.8px;
+}
+
+
+/* OPTION */
+
+.settings-option {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  padding: 12px 13px;
+
+  margin-bottom: 8px;
+
+  border-radius: 17px;
+
+  background:
+    rgba(255,255,255,0.78);
+
+  border: 1px solid #edf1eb;
+
+  box-shadow:
+    0 5px 14px rgba(
+      55,
+      75,
+      59,
+      0.05
+    );
+}
+
+
+/* LEFT */
+
+.settings-option-left {
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  min-width: 0;
+}
+
+.settings-option-icon {
+  width: 41px;
+  height: 41px;
+
+  min-width: 41px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 13px;
+
+  background:
+    #f1f6ef;
+
+  font-size: 19px;
+}
+
+.settings-option-left > div:last-child {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.settings-option-left strong {
+  color: #425246;
+
+  font-size: 13px;
+}
+
+.settings-option-left small {
+  color: #8a948d;
+
+  font-size: 10px;
+
+  line-height: 1.3;
+}
+
+
+/* TOGGLE */
+
+.settings-toggle {
+  position: relative;
+
+  width: 46px;
+  height: 26px;
+
+  flex-shrink: 0;
+
+  border: none;
+
+  border-radius: 20px;
+
+  background:
+    #dfe5df;
+
+  cursor: pointer;
+
+  padding: 0;
+
+  transition:
+    background 0.2s ease;
+}
+
+.settings-toggle span {
+  position: absolute;
+
+  top: 3px;
+  left: 3px;
+
+  width: 20px;
+  height: 20px;
+
+  border-radius: 50%;
+
+  background: white;
+
+  box-shadow:
+    0 2px 5px rgba(
+      45,
+      60,
+      48,
+      0.18
+    );
+
+  transition:
+    transform 0.2s ease;
+}
+
+.settings-toggle.on {
+  background:
+    #a9c7a7;
+}
+
+.settings-toggle.on span {
+  transform:
+    translateX(20px);
+}
+
+
+/* VOLUME */
+
+.settings-volume {
+  padding: 13px 14px;
+
+  border-radius: 17px;
+
+  background:
+    rgba(247,249,245,0.95);
+
+  border: 1px solid #edf1eb;
+}
+
+.settings-volume-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 9px;
+
+  color: #667369;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+.settings-volume input {
+  width: 100%;
+
+  height: 5px;
+
+  accent-color: #91ad91;
+
+  cursor: pointer;
+}
+
+
+/* LANGUAGE */
+
+.settings-language {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 12px;
+
+  padding: 12px 14px;
+
+  border-radius: 17px;
+
+  background:
+    rgba(255,255,255,0.8);
+
+  border: 1px solid #edf1eb;
+}
+
+.settings-language label {
+  color: #59675d;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+.settings-language select {
+  min-width: 120px;
+
+  padding: 8px 10px;
+
+  border: 1px solid #dfe8dd;
+
+  border-radius: 11px;
+
+  background: white;
+
+  color: #536257;
+
+  font-family: inherit;
+
+  font-size: 12px;
+
+  outline: none;
+
+  cursor: pointer;
+}
+
+
+/* RESET */
+
+.settings-reset {
+  width: 100%;
+
+  margin-top: 18px;
+
+  padding: 11px;
+
+  border: none;
+
+  border-radius: 15px;
+
+  background:
+    #f8f3ed;
+
+  color: #86786d;
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+.settings-reset:hover {
+  background:
+    #f3ece4;
+}
+
+
+/* SCROLLBAR */
+
+.settings-panel::-webkit-scrollbar {
+  width: 5px;
+}
+
+.settings-panel::-webkit-scrollbar-thumb {
+  background: #d9e3d6;
+
+  border-radius: 10px;
+}
+
+.settings-panel::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  .settings-panel {
+    max-height: 68vh;
+  }
+
+  .settings-option {
+    padding: 11px;
+  }
+
+}
+.chat-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.refresh-chat-button {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #eef5eb;
+  color: #5d705f;
+
+  cursor: pointer;
+
+  font-size: 23px;
+  line-height: 1;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.refresh-chat-button:hover {
+  transform: rotate(-25deg);
+  background: #e1eedf;
+}
+/* =====================================================
+   AARU TALK — VOICE CONVERSATION
+===================================================== */
+
+.talk-screen {
+  width: 100%;
+
+  max-width: 620px;
+
+  margin: 0 auto;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  min-height: 500px;
+
+  box-sizing: border-box;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.talk-header {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 14px;
+
+  margin-bottom: 12px;
+}
+
+.talk-aaru-avatar {
+  width: 62px;
+  height: 62px;
+
+  flex-shrink: 0;
+
+  overflow: hidden;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      145deg,
+      #eaf5e6,
+      #d9ead7
+    );
+
+  border: 3px solid white;
+
+  box-shadow:
+    0 7px 18px rgba(
+      58,
+      82,
+      62,
+      0.13
+    );
+}
+
+.talk-aaru-avatar img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: 50% 15%;
+
+  transform: scale(1.25);
+
+  display: block;
+}
+
+.talk-header-text h2 {
+  margin: 0 0 3px;
+
+  color: #35483a;
+
+  font-family: Georgia, serif;
+
+  font-size: 25px;
+}
+
+.talk-header-text p {
+  margin: 0;
+
+  color: #7d897f;
+
+  font-size: 12px;
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.talk-status {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 7px 12px;
+
+  margin-bottom: 14px;
+
+  border-radius: 20px;
+
+  background: #eef5eb;
+
+  color: #607162;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+.talk-status.listening {
+  background: #fbeaf2;
+  color: #b05a85;
+}
+
+.talk-status.thinking {
+  background: #f2ecf8;
+  color: #7957a0;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #8fae8b;
+}
+
+.talk-status.listening
+.status-dot {
+  background: #d96d9b;
+
+  animation:
+    talkPulse 1s infinite;
+}
+
+.talk-status.thinking
+.status-dot {
+  background: #9872ba;
+
+  animation:
+    talkPulse 1s infinite;
+}
+
+@keyframes talkPulse {
+
+  0%,
+  100% {
+    transform: scale(0.8);
+    opacity: 0.55;
+  }
+
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+
+/* =====================================================
+   CONVERSATION
+===================================================== */
+
+.talk-conversation {
+  width: 100%;
+
+  min-height: 270px;
+
+  max-height: 310px;
+
+  overflow-y: auto;
+
+  padding: 8px 7px 12px;
+
+  box-sizing: border-box;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+
+  scroll-behavior: smooth;
+}
+
+
+/* scrollbar */
+
+.talk-conversation::-webkit-scrollbar {
+  width: 5px;
+}
+
+.talk-conversation::-webkit-scrollbar-thumb {
+  background: #dbe4d8;
+
+  border-radius: 10px;
+}
+
+.talk-conversation::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+
+/* =====================================================
+   WELCOME
+===================================================== */
+
+.talk-welcome {
+  flex: 1;
+
+  min-height: 230px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+}
+
+.talk-welcome-avatar {
+  width: 65px;
+  height: 65px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 11px;
+
+  border-radius: 22px;
+
+  background:
+    #eef6eb;
+
+  font-size: 32px;
+}
+
+.talk-welcome h3 {
+  margin: 0 0 5px;
+
+  color: #425246;
+
+  font-size: 18px;
+}
+
+.talk-welcome p {
+  max-width: 330px;
+
+  margin: 0;
+
+  color: #859088;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+
+/* =====================================================
+   MESSAGES
+===================================================== */
+
+.talk-message {
+  display: flex;
+
+  align-items: flex-end;
+
+  gap: 8px;
+
+  max-width: 88%;
+}
+
+.aaru-talk-message {
+  align-self: flex-start;
+}
+
+.user-talk-message {
+  align-self: flex-end;
+
+  flex-direction: row-reverse;
+}
+
+
+/* =====================================================
+   MESSAGE AVATAR
+===================================================== */
+
+.talk-message-avatar {
+  width: 35px;
+  height: 35px;
+
+  min-width: 35px;
+
+  overflow: hidden;
+
+  border-radius: 50%;
+
+  border: 2px solid white;
+
+  background: #eee5dc;
+
+  box-shadow:
+    0 3px 8px rgba(
+      58,
+      45,
+      35,
+      0.10
+    );
+}
+
+.talk-message-avatar img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: 50% 15%;
+
+  transform: scale(1.25);
+
+  display: block;
+}
+
+
+/* =====================================================
+   BUBBLE
+===================================================== */
+
+.talk-message-bubble {
+  padding: 10px 14px;
+
+  border-radius: 17px;
+
+  background: #eee5dc;
+
+  color: #403831;
+
+  box-shadow:
+    0 4px 12px rgba(
+      55,
+      70,
+      58,
+      0.05
+    );
+}
+
+.user-talk-message
+.talk-message-bubble {
+  background: #8053a9;
+
+  color: white;
+
+  border-bottom-right-radius: 5px;
+}
+
+.aaru-talk-message
+.talk-message-bubble {
+  border-bottom-left-radius: 5px;
+}
+
+.talk-message-bubble small {
+  display: block;
+
+  margin-bottom: 3px;
+
+  opacity: 0.68;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.6px;
+}
+
+.talk-message-bubble p {
+  margin: 0;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+
+  white-space: pre-wrap;
+}
+
+.error-bubble {
+  background: #f7eee8 !important;
+
+  color: #806d5f !important;
+}
+
+
+/* =====================================================
+   TYPING
+===================================================== */
+
+.talk-typing {
+  display: flex;
+
+  align-items: center;
+
+  gap: 4px;
+
+  height: 16px;
+}
+
+.talk-typing span {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #897b70;
+
+  animation:
+    talkTyping 1.2s infinite ease-in-out;
+}
+
+.talk-typing span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.talk-typing span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes talkTyping {
+
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.45;
+  }
+
+  30% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+}
+
+
+/* =====================================================
+   SPEAKING STATUS
+===================================================== */
+
+.talk-speaking-status {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  margin: 5px 0 12px;
+
+  color: #7e8b82;
+
+  font-size: 10px;
+}
+
+
+/* =====================================================
+   MIC BUTTON
+===================================================== */
+
+.talk-mic-button {
+  min-width: 205px;
+
+  padding: 13px 22px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  border: none;
+
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #c15b98,
+      #a64b86
+    );
+
+  color: white;
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  box-shadow:
+    0 9px 22px rgba(
+      166,
+      75,
+      134,
+      0.18
+    );
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.talk-mic-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 25px rgba(
+      166,
+      75,
+      134,
+      0.24
+    );
+}
+
+.talk-mic-button.listening {
+  background:
+    linear-gradient(
+      135deg,
+      #dd6fa4,
+      #c3538d
+    );
+
+  animation:
+    micGlow 1.4s infinite;
+}
+
+.talk-mic-button:disabled {
+  opacity: 0.58;
+
+  cursor: not-allowed;
+}
+
+@keyframes micGlow {
+
+  0%,
+  100% {
+    box-shadow:
+      0 7px 18px rgba(
+        197,
+        91,
+        152,
+        0.18
+      );
+  }
+
+  50% {
+    box-shadow:
+      0 0 0 10px rgba(
+        197,
+        91,
+        152,
+        0.10
+      ),
+      0 10px 25px rgba(
+        197,
+        91,
+        152,
+        0.22
+      );
+  }
+}
+
+
+/* =====================================================
+   HELPER
+===================================================== */
+
+.talk-helper-text {
+  margin: 8px 0 5px;
+
+  color: #929b94 !important;
+
+  font-size: 10px !important;
+}
+
+
+/* =====================================================
+   START FRESH
+===================================================== */
+
+.talk-new-button {
+  border: none;
+
+  background: transparent;
+
+  color: #7c887f;
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+.talk-new-button:hover {
+  text-decoration: underline;
+}
