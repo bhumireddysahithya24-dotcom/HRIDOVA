@@ -1,0 +1,689 @@
+/* =========================================
+   MIKO SETTINGS
+========================================= */
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  height: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.settings-page {
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+
+  padding-bottom: 70px;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  background:
+    radial-gradient(
+      circle at 20% 10%,
+      rgba(255, 188, 160, 0.48),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 90% 75%,
+      rgba(190, 225, 225, 0.45),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #ffe1d3 0%,
+      #f6e7ef 48%,
+      #e5eeee 100%
+    );
+
+  color: #62566a;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.settings-header {
+  width: 100%;
+  height: 82px;
+
+  padding: 12px 28px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  box-sizing: border-box;
+
+  background: rgba(255, 255, 255, 0.62);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  position: relative;
+  z-index: 10;
+}
+
+
+.settings-header img {
+  width: 52px;
+  height: 52px;
+
+  object-fit: contain;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.5);
+}
+
+
+.settings-header h1 {
+  margin: 0;
+
+  font-size: 24px;
+
+  font-weight: 700;
+
+  color: #62566a;
+}
+
+
+.settings-header p {
+  margin: 4px 0 0;
+
+  color: #8d818e;
+
+  font-size: 12px;
+}
+
+
+/* =========================================
+   BACK
+========================================= */
+
+.settings-back {
+  width: 48px;
+  height: 48px;
+
+  flex-shrink: 0;
+
+  border: none;
+
+  border-radius: 15px;
+
+  background: rgba(255, 255, 255, 0.78);
+
+  color: #746777;
+
+  font-size: 26px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+
+.settings-back:hover {
+  background: white;
+
+  transform: translateX(-2px);
+}
+
+
+/* =========================================
+   MAIN
+========================================= */
+
+.settings-content {
+  width: min(820px, 92%);
+
+  margin: 0 auto;
+
+  padding-top: 38px;
+  padding-bottom: 80px;
+
+  box-sizing: border-box;
+
+  text-align: center;
+}
+
+
+/* =========================================
+   MIKO
+========================================= */
+
+.settings-miko {
+  width: 120px;
+  height: 120px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.70);
+
+  box-shadow:
+    0 12px 32px rgba(100, 80, 100, 0.12);
+
+  overflow: hidden;
+}
+
+
+.settings-miko img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.settings-content h2 {
+  margin: 17px 0 5px;
+
+  font-size: 29px;
+
+  font-weight: 700;
+
+  color: #5f5368;
+}
+
+
+.settings-subtitle {
+  margin: 0 0 30px;
+
+  color: #877b88;
+
+  font-size: 14px;
+}
+
+
+/* =========================================
+   SECTIONS
+========================================= */
+
+.settings-section {
+  width: 100%;
+
+  margin-bottom: 22px;
+
+  padding: 24px;
+
+  border-radius: 24px;
+
+  background: rgba(255, 255, 255, 0.72);
+
+  border: 1px solid rgba(255, 255, 255, 0.9);
+
+  box-shadow:
+    0 12px 32px rgba(100, 80, 100, 0.08);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-sizing: border-box;
+
+  text-align: left;
+}
+
+
+/* =========================================
+   SECTION TITLE
+========================================= */
+
+.section-title {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  margin-bottom: 18px;
+}
+
+
+.section-title > span {
+  width: 48px;
+  height: 48px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 15px;
+
+  background: #f4e7f0;
+
+  font-size: 23px;
+}
+
+
+.section-title h3 {
+  margin: 0;
+
+  font-size: 18px;
+
+  color: #62566a;
+}
+
+
+.section-title p {
+  margin: 4px 0 0;
+
+  color: #91858f;
+
+  font-size: 12px;
+}
+
+
+/* =========================================
+   SETTINGS ROW
+========================================= */
+
+.setting-row {
+  width: 100%;
+
+  min-height: 60px;
+
+  padding: 16px 3px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  border-top:
+    1px solid rgba(110, 90, 110, 0.10);
+
+  box-sizing: border-box;
+}
+
+
+.setting-info {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+
+.setting-info strong {
+  font-size: 14px;
+
+  color: #62566a;
+}
+
+
+.setting-info small {
+  color: #92868f;
+
+  font-size: 11px;
+}
+
+
+/* =========================================
+   TOGGLE
+========================================= */
+
+.toggle {
+  position: relative;
+
+  width: 51px;
+  height: 29px;
+
+  flex-shrink: 0;
+
+  padding: 0;
+
+  border: none;
+
+  border-radius: 30px;
+
+  background: #c9c1c7;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+
+.toggle span {
+  position: absolute;
+
+  top: 4px;
+  left: 4px;
+
+  width: 21px;
+  height: 21px;
+
+  border-radius: 50%;
+
+  background: white;
+
+  box-shadow:
+    0 2px 5px rgba(0, 0, 0, 0.12);
+
+  transition: 0.25s ease;
+}
+
+
+.toggle.active {
+  background: #bd7fa2;
+}
+
+
+.toggle.active span {
+  left: 26px;
+}
+
+
+/* =========================================
+   VOLUME
+========================================= */
+
+.volume-box {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  min-width: 235px;
+}
+
+
+.volume-box span {
+  font-size: 14px;
+}
+
+
+.volume-box input {
+  width: 165px;
+
+  cursor: pointer;
+
+  accent-color: #bd7fa2;
+}
+
+
+/* =========================================
+   CHAT HISTORY ACTIONS
+========================================= */
+
+.settings-action {
+  width: 100%;
+
+  min-height: 66px;
+
+  margin-top: 10px;
+
+  padding: 12px 14px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  border: 1px solid rgba(255, 255, 255, 0.65);
+
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.52);
+
+  color: #62566a;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.settings-action:hover {
+  background: rgba(255, 255, 255, 0.88);
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 7px 18px rgba(110, 85, 110, 0.10);
+}
+
+
+/* =========================================
+   ACTION ICON
+========================================= */
+
+.action-icon {
+  width: 40px;
+  height: 40px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: #f3e7f1;
+
+  font-size: 19px;
+}
+
+
+/* =========================================
+   ACTION TEXT
+========================================= */
+
+.action-text {
+  flex: 1;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+
+  min-width: 0;
+}
+
+
+.action-text strong {
+  font-size: 14px;
+
+  color: #62566a;
+}
+
+
+.action-text small {
+  font-size: 11px;
+
+  color: #91858f;
+}
+
+
+/* =========================================
+   ACTION ARROW
+========================================= */
+
+.action-arrow {
+  flex-shrink: 0;
+
+  font-size: 26px;
+
+  color: #a795a7;
+}
+
+
+/* =========================================
+   RESET
+========================================= */
+
+.reset-action {
+  border:
+    1px solid rgba(220, 140, 150, 0.22);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.settings-footer {
+  margin: 28px 0 0;
+
+  color: #8e828d;
+
+  font-size: 12px;
+
+  text-align: center;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .settings-header {
+    height: 72px;
+
+    padding: 10px 14px;
+
+    gap: 10px;
+  }
+
+
+  .settings-header img {
+    width: 43px;
+    height: 43px;
+  }
+
+
+  .settings-header h1 {
+    font-size: 19px;
+  }
+
+
+  .settings-header p {
+    font-size: 10px;
+  }
+
+
+  .settings-back {
+    width: 42px;
+    height: 42px;
+
+    font-size: 22px;
+  }
+
+
+  .settings-content {
+    width: 94%;
+
+    padding-top: 28px;
+    padding-bottom: 80px;
+  }
+
+
+  .settings-miko {
+    width: 100px;
+    height: 100px;
+  }
+
+
+  .settings-content h2 {
+    font-size: 24px;
+  }
+
+
+  .settings-subtitle {
+    font-size: 12px;
+
+    margin-bottom: 24px;
+  }
+
+
+  .settings-section {
+    padding: 18px;
+
+    border-radius: 20px;
+  }
+
+
+  .setting-row {
+    align-items: flex-start;
+  }
+
+
+  .volume-box {
+    min-width: 125px;
+  }
+
+
+  .volume-box input {
+    width: 85px;
+  }
+
+
+  .settings-action {
+    min-height: 62px;
+
+    padding: 11px;
+  }
+
+
+  .action-icon {
+    width: 36px;
+    height: 36px;
+
+    font-size: 17px;
+  }
+
+
+  .action-text strong {
+    font-size: 12px;
+  }
+
+
+  .action-text small {
+    font-size: 9px;
+  }
+
+}

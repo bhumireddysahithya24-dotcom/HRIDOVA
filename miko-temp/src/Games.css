@@ -1,0 +1,1084 @@
+/* =====================================================
+   GAMES PAGE
+===================================================== */
+
+.games-page {
+  min-height: 100vh;
+
+  color: #665868;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(255, 220, 210, 0.7),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 70%,
+      rgba(218, 238, 232, 0.7),
+      transparent 32%
+    ),
+    linear-gradient(
+      135deg,
+      #f6e4dc,
+      #eee5f3 50%,
+      #dfece7
+    );
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.games-header {
+  min-height: 88px;
+
+  padding: 14px 25px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  background:
+    rgba(255, 255, 255, 0.55);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.75);
+}
+
+.games-header img {
+  width: 52px;
+  height: 52px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+}
+
+.games-header h1 {
+  margin: 0;
+
+  font-size: 23px;
+
+  color: #665868;
+}
+
+.games-header p {
+  margin: 3px 0 0;
+
+  font-size: 12px;
+
+  color: #888;
+}
+
+.games-back {
+  width: 44px;
+  height: 44px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  background:
+    rgba(255, 255, 255, 0.8);
+
+  color: #665868;
+
+  font-size: 24px;
+
+  cursor: pointer;
+}
+
+
+/* =====================================================
+   MOOD SELECTION
+===================================================== */
+
+.mood-content {
+  width: min(950px, 92%);
+
+  margin: auto;
+
+  padding: 35px 0 50px;
+
+  text-align: center;
+}
+
+.mood-content h2 {
+  margin: 0;
+
+  font-size: 32px;
+
+  color: #665868;
+}
+
+.mood-subtitle {
+  margin: 8px 0 28px;
+
+  color: #888;
+
+  font-size: 14px;
+}
+
+.mood-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 18px;
+}
+
+.mood-card {
+  min-height: 180px;
+
+  padding: 22px;
+
+  border: 2px solid rgba(255, 255, 255, 0.8);
+
+  border-radius: 27px;
+
+  cursor: pointer;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  color: #665868;
+
+  background:
+    rgba(255, 255, 255, 0.68);
+
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+
+  box-shadow:
+    0 10px 28px rgba(70, 50, 70, 0.10);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.mood-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 15px 32px rgba(70, 50, 70, 0.15);
+}
+
+.mood-emoji {
+  font-size: 48px;
+}
+
+.mood-card strong {
+  font-size: 20px;
+}
+
+.mood-card small {
+  max-width: 190px;
+
+  line-height: 1.4;
+
+  font-size: 11px;
+
+  color: #888;
+}
+
+.mood-happy {
+  background: rgba(255, 240, 194, 0.78);
+}
+
+.mood-sad {
+  background: rgba(220, 235, 250, 0.78);
+}
+
+.mood-angry {
+  background: rgba(255, 220, 220, 0.78);
+}
+
+.mood-anxious {
+  background: rgba(229, 222, 249, 0.78);
+}
+
+.mood-bored {
+  background: rgba(220, 243, 232, 0.78);
+}
+
+.mood-tired {
+  background: rgba(229, 225, 246, 0.78);
+}
+
+
+/* =====================================================
+   GAME CHOICES
+===================================================== */
+
+.game-choice-content {
+  width: min(1000px, 92%);
+
+  margin: auto;
+
+  padding: 30px 0 45px;
+}
+
+.chosen-mood {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 17px 20px;
+
+  margin-bottom: 22px;
+
+  border-radius: 21px;
+
+  background:
+    rgba(255, 255, 255, 0.62);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.8);
+
+  backdrop-filter: blur(14px);
+}
+
+.chosen-mood > span {
+  font-size: 40px;
+}
+
+.chosen-mood strong {
+  font-size: 18px;
+}
+
+.chosen-mood p {
+  margin: 4px 0 0;
+
+  font-size: 12px;
+
+  color: #888;
+}
+
+.game-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 20px;
+}
+
+.game-card {
+  position: relative;
+
+  min-height: 290px;
+
+  padding: 25px 20px;
+
+  border: 2px solid rgba(255, 255, 255, 0.82);
+
+  border-radius: 27px;
+
+  cursor: pointer;
+
+  text-align: center;
+
+  background:
+    rgba(255, 255, 255, 0.72);
+
+  backdrop-filter: blur(15px);
+
+  color: #665868;
+
+  box-shadow:
+    0 12px 28px rgba(70, 50, 70, 0.10);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 17px 35px rgba(70, 50, 70, 0.16);
+}
+
+.game-number {
+  font-size: 10px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+
+  color: #a9899b;
+}
+
+.game-card-emoji {
+  margin: 15px 0 5px;
+
+  font-size: 55px;
+}
+
+.game-card h3 {
+  margin: 7px 0;
+
+  font-size: 20px;
+}
+
+.game-card p {
+  margin: 0 auto;
+
+  max-width: 220px;
+
+  min-height: 42px;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+
+  color: #888;
+}
+
+.play-now {
+  display: inline-block;
+
+  margin-top: 18px;
+
+  padding: 8px 15px;
+
+  border-radius: 20px;
+
+  background:
+    rgba(205, 145, 170, 0.18);
+
+  color: #b36f8c;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   GAME PLAYER
+===================================================== */
+
+.game-player {
+  width: min(800px, 92%);
+
+  margin: auto;
+
+  padding: 28px 0 50px;
+}
+
+.game-title {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 13px;
+
+  margin-bottom: 22px;
+
+  text-align: left;
+}
+
+.game-title > span {
+  font-size: 48px;
+}
+
+.game-title h2 {
+  margin: 0;
+
+  font-size: 26px;
+}
+
+.game-title p {
+  margin: 4px 0 0;
+
+  color: #888;
+
+  font-size: 13px;
+}
+
+
+/* =====================================================
+   GAME AREA
+===================================================== */
+
+.game-play {
+  min-height: 460px;
+
+  padding: 25px;
+
+  border-radius: 30px;
+
+  background:
+    rgba(255, 255, 255, 0.68);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.85);
+
+  backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 15px 40px rgba(70, 50, 70, 0.12);
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.centered-game {
+  justify-content: center;
+
+  text-align: center;
+}
+
+.game-score {
+  align-self: flex-end;
+
+  padding: 8px 13px;
+
+  border-radius: 15px;
+
+  background:
+    rgba(220, 205, 235, 0.55);
+
+  font-size: 12px;
+}
+
+
+/* =====================================================
+   TAP GAME
+===================================================== */
+
+.tap-arena {
+  position: relative;
+
+  width: 100%;
+  height: 370px;
+
+  margin-top: 10px;
+
+  border-radius: 25px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(255, 235, 230, 0.8),
+      rgba(227, 237, 239, 0.7)
+    );
+}
+
+.floating-target {
+  position: absolute;
+
+  transform: translate(-50%, -50%);
+
+  width: 75px;
+  height: 75px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 255, 255, 0.75);
+
+  box-shadow:
+    0 8px 20px rgba(70, 50, 70, 0.14);
+
+  font-size: 43px;
+
+  cursor: pointer;
+
+  animation: targetFloat 1.2s ease-in-out infinite;
+}
+
+@keyframes targetFloat {
+  0%,
+  100% {
+    transform:
+      translate(-50%, -50%)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translate(-50%, -50%)
+      scale(1.08);
+  }
+}
+
+
+/* =====================================================
+   GAME COMPLETE
+===================================================== */
+
+.game-complete {
+  width: 100%;
+
+  min-height: 330px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+}
+
+.complete-emoji {
+  font-size: 70px;
+
+  margin-bottom: 8px;
+}
+
+.game-complete h3 {
+  margin: 0;
+
+  font-size: 25px;
+}
+
+.game-complete p {
+  margin: 8px 0 20px;
+
+  color: #888;
+}
+
+
+/* =====================================================
+   COMMON BUTTON
+===================================================== */
+
+.primary-game-button {
+  min-height: 46px;
+
+  padding: 10px 20px;
+
+  border: none;
+
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #c9829b,
+      #a982bd
+    );
+
+  color: white;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 7px 18px rgba(150, 100, 140, 0.20);
+}
+
+.primary-game-button:hover {
+  transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   CHOICE CARDS
+===================================================== */
+
+.choice-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 13px;
+
+  margin: auto 0;
+}
+
+.choice-card {
+  min-height: 90px;
+
+  padding: 15px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.8);
+
+  border-radius: 18px;
+
+  background:
+    rgba(255, 255, 255, 0.75);
+
+  color: #665868;
+
+  cursor: pointer;
+
+  line-height: 1.4;
+}
+
+.choice-card.selected {
+  background:
+    rgba(234, 201, 216, 0.85);
+
+  box-shadow:
+    0 0 0 3px rgba(190, 120, 150, 0.16);
+}
+
+.selected-message {
+  margin-top: 20px;
+
+  text-align: center;
+}
+
+.selected-message span {
+  font-size: 28px;
+}
+
+.selected-message p {
+  margin: 7px 0 15px;
+
+  font-size: 15px;
+}
+
+
+/* =====================================================
+   VOLCANO
+===================================================== */
+
+.volcano {
+  margin-top: 35px;
+
+  font-size: 95px;
+}
+
+.heat-bar {
+  width: min(450px, 90%);
+
+  height: 20px;
+
+  margin: 20px 0;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  background:
+    rgba(100, 80, 80, 0.15);
+}
+
+.heat-progress {
+  height: 100%;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      90deg,
+      #9bcf9c,
+      #e7c875,
+      #dc8585
+    );
+
+  transition:
+    width 0.3s ease;
+}
+
+.game-hint {
+  color: #888;
+
+  font-size: 13px;
+
+  text-align: center;
+}
+
+
+/* =====================================================
+   SLOW GAME
+===================================================== */
+
+.slow-circle {
+  width: 150px;
+  height: 150px;
+
+  margin-bottom: 20px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background:
+    rgba(226, 217, 241, 0.75);
+
+  font-size: 40px;
+
+  color: #85759b;
+}
+
+
+/* =====================================================
+   BREATHING
+===================================================== */
+
+.breathing-circle {
+  width: 180px;
+  height: 180px;
+
+  margin-bottom: 25px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background:
+    rgba(191, 221, 216, 0.65);
+
+  color: #587b76;
+
+  font-weight: 700;
+
+  transition:
+    transform 3s ease;
+}
+
+.breathing-circle.in {
+  transform: scale(1.25);
+}
+
+.breathing-circle.out {
+  transform: scale(0.82);
+}
+
+
+/* =====================================================
+   COUNTDOWN
+===================================================== */
+
+.countdown-number {
+  width: 180px;
+  height: 180px;
+
+  margin-bottom: 25px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background:
+    rgba(216, 231, 225, 0.75);
+
+  color: #628078;
+
+  font-size: 65px;
+
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   FIND GAME
+===================================================== */
+
+.find-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 110px);
+
+  gap: 14px;
+
+  margin: auto;
+}
+
+.find-item {
+  width: 110px;
+  height: 110px;
+
+  border: none;
+
+  border-radius: 22px;
+
+  background:
+    rgba(255, 255, 255, 0.75);
+
+  font-size: 42px;
+
+  cursor: pointer;
+}
+
+
+/* =====================================================
+   MEMORY
+===================================================== */
+
+.memory-grid {
+  width: min(450px, 100%);
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 12px;
+
+  margin: auto;
+}
+
+.memory-card {
+  aspect-ratio: 1;
+
+  border: none;
+
+  border-radius: 17px;
+
+  background:
+    rgba(205, 191, 221, 0.7);
+
+  color: #fff;
+
+  font-size: 30px;
+
+  cursor: pointer;
+}
+
+.memory-card.visible {
+  background:
+    rgba(255, 255, 255, 0.9);
+
+  color: #665868;
+}
+
+
+/* =====================================================
+   SCRAMBLE
+===================================================== */
+
+.scramble-word {
+  margin-bottom: 20px;
+
+  font-size: 35px;
+
+  font-weight: 800;
+
+  letter-spacing: 6px;
+
+  color: #92769a;
+}
+
+.game-input {
+  width: min(320px, 90%);
+
+  height: 48px;
+
+  margin-bottom: 12px;
+
+  padding: 0 15px;
+
+  border: none;
+
+  outline: none;
+
+  border-radius: 15px;
+
+  background:
+    rgba(255, 255, 255, 0.9);
+
+  color: #665868;
+
+  text-align: center;
+}
+
+.correct-message {
+  margin-bottom: 15px;
+
+  color: #668c69;
+
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   QUIZ
+===================================================== */
+
+.quiz-progress {
+  align-self: flex-end;
+
+  margin-bottom: 25px;
+
+  color: #9a8194;
+
+  font-size: 11px;
+}
+
+.quiz-question {
+  max-width: 550px;
+
+  margin: 10px auto 25px;
+
+  text-align: center;
+
+  font-size: 21px;
+}
+
+.quiz-options {
+  width: min(600px, 100%);
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 11px;
+
+  margin: auto;
+}
+
+.quiz-option {
+  min-height: 55px;
+
+  padding: 12px 15px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.85);
+
+  border-radius: 16px;
+
+  background:
+    rgba(255, 255, 255, 0.72);
+
+  color: #665868;
+
+  cursor: pointer;
+}
+
+.quiz-option.selected {
+  background:
+    rgba(224, 199, 218, 0.85);
+}
+
+.quiz-bottom {
+  margin-top: 20px;
+
+  text-align: center;
+}
+
+.quiz-bottom p {
+  margin-bottom: 12px;
+
+  font-size: 13px;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 850px) {
+
+  .mood-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .game-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+  .game-card {
+    min-height: 230px;
+  }
+
+  .game-play {
+    min-height: 430px;
+  }
+}
+
+@media (max-width: 520px) {
+
+  .games-header {
+    padding: 10px 13px;
+  }
+
+  .games-header img {
+    width: 43px;
+    height: 43px;
+  }
+
+  .games-header h1 {
+    font-size: 18px;
+  }
+
+  .mood-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+  .mood-card {
+    min-height: 140px;
+  }
+
+  .mood-emoji {
+    font-size: 38px;
+  }
+
+  .choice-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+  .find-grid {
+    grid-template-columns:
+      repeat(3, 80px);
+  }
+
+  .find-item {
+    width: 80px;
+    height: 80px;
+  }
+
+  .game-title > span {
+    font-size: 38px;
+  }
+
+  .game-title h2 {
+    font-size: 21px;
+  }
+}

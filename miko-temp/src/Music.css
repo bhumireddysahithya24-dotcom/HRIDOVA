@@ -1,0 +1,631 @@
+.music-page {
+  min-height: 100vh;
+
+  color: #665868;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(255, 225, 210, 0.75),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 70%,
+      rgba(205, 232, 223, 0.75),
+      transparent 32%
+    ),
+    linear-gradient(
+      135deg,
+      #f5e2d9,
+      #eee4f3 50%,
+      #dcece5
+    );
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.music-header {
+  min-height: 82px;
+
+  padding: 12px 24px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  background:
+    rgba(255, 255, 255, 0.55);
+
+  backdrop-filter: blur(18px);
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.75);
+}
+
+.music-header img {
+  width: 52px;
+  height: 52px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+}
+
+.music-header h1 {
+  margin: 0;
+
+  font-size: 22px;
+}
+
+.music-header p {
+  margin: 3px 0 0;
+
+  font-size: 12px;
+
+  color: #888;
+}
+
+.music-back {
+  width: 43px;
+  height: 43px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  background:
+    rgba(255, 255, 255, 0.75);
+
+  color: #665868;
+
+  font-size: 23px;
+
+  cursor: pointer;
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+.music-content {
+  width: min(950px, 92%);
+
+  margin: auto;
+
+  padding: 35px 0 50px;
+
+  text-align: center;
+}
+
+.music-miko {
+  width: 125px;
+  height: 125px;
+
+  margin: 0 auto 8px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background:
+    rgba(255, 255, 255, 0.55);
+
+  box-shadow:
+    0 12px 30px rgba(80, 60, 80, 0.10);
+}
+
+.music-miko img {
+  width: 115px;
+  height: 115px;
+
+  object-fit: contain;
+}
+
+.music-content h2 {
+  margin: 5px 0;
+
+  font-size: 30px;
+}
+
+.music-subtitle {
+  margin: 7px 0 28px;
+
+  color: #888;
+
+  font-size: 14px;
+}
+
+
+/* =====================================================
+   MOODS
+===================================================== */
+
+.music-mood-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 18px;
+}
+
+.music-mood-card {
+  min-height: 170px;
+
+  padding: 20px;
+
+  border:
+    2px solid rgba(255, 255, 255, 0.75);
+
+  border-radius: 25px;
+
+  background:
+    rgba(255, 255, 255, 0.68);
+
+  color: #665868;
+
+  cursor: pointer;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  box-shadow:
+    0 10px 25px rgba(70, 50, 70, 0.09);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.music-mood-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 15px 32px rgba(70, 50, 70, 0.14);
+}
+
+.music-mood-card > span {
+  font-size: 45px;
+}
+
+.music-mood-card strong {
+  font-size: 19px;
+}
+
+.music-mood-card small {
+  max-width: 190px;
+
+  font-size: 11px;
+
+  line-height: 1.4;
+
+  color: #888;
+}
+
+.mood-happy {
+  background: rgba(255, 240, 195, 0.78);
+}
+
+.mood-sad {
+  background: rgba(220, 235, 250, 0.78);
+}
+
+.mood-angry {
+  background: rgba(255, 220, 220, 0.78);
+}
+
+.mood-anxious {
+  background: rgba(229, 222, 249, 0.78);
+}
+
+.mood-bored {
+  background: rgba(220, 243, 232, 0.78);
+}
+
+.mood-tired {
+  background: rgba(228, 224, 247, 0.78);
+}
+
+
+/* =====================================================
+   SOUND CHOICES
+===================================================== */
+
+.sound-content {
+  width: min(1000px, 92%);
+
+  margin: auto;
+
+  padding: 30px 0 50px;
+}
+
+.selected-mood {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 17px 20px;
+
+  margin-bottom: 22px;
+
+  border-radius: 21px;
+
+  background:
+    rgba(255, 255, 255, 0.62);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.8);
+
+  backdrop-filter: blur(14px);
+}
+
+.selected-mood > span {
+  font-size: 38px;
+}
+
+.selected-mood strong {
+  font-size: 17px;
+}
+
+.selected-mood p {
+  margin: 4px 0 0;
+
+  color: #888;
+
+  font-size: 12px;
+}
+
+.sound-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 20px;
+}
+
+.sound-card {
+  min-height: 280px;
+
+  padding: 25px 20px;
+
+  border:
+    2px solid rgba(255, 255, 255, 0.8);
+
+  border-radius: 27px;
+
+  background:
+    rgba(255, 255, 255, 0.72);
+
+  color: #665868;
+
+  cursor: pointer;
+
+  text-align: center;
+
+  box-shadow:
+    0 12px 28px rgba(70, 50, 70, 0.10);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.sound-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 17px 35px rgba(70, 50, 70, 0.16);
+}
+
+.sound-emoji {
+  font-size: 60px;
+}
+
+.sound-card h3 {
+  margin: 12px 0 7px;
+
+  font-size: 20px;
+}
+
+.sound-card p {
+  min-height: 42px;
+
+  margin: 0;
+
+  color: #888;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+.sound-play {
+  display: inline-block;
+
+  margin-top: 18px;
+
+  padding: 8px 16px;
+
+  border-radius: 20px;
+
+  background:
+    rgba(190, 151, 181, 0.18);
+
+  color: #a96886;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   PLAYER
+===================================================== */
+
+.player-content {
+  width: min(650px, 92%);
+
+  margin: auto;
+
+  padding: 45px 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  text-align: center;
+}
+
+.sound-animation {
+  width: 190px;
+  height: 190px;
+
+  margin-bottom: 22px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background:
+    rgba(255, 255, 255, 0.52);
+
+  box-shadow:
+    0 15px 35px rgba(70, 50, 70, 0.12);
+}
+
+.sound-animation > span {
+  font-size: 85px;
+}
+
+.sound-animation.playing {
+  animation:
+    soundPulse 2s ease-in-out infinite;
+}
+
+@keyframes soundPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.07);
+  }
+}
+
+.now-playing > span {
+  font-size: 10px;
+
+  letter-spacing: 2px;
+
+  color: #a9879c;
+}
+
+.now-playing h2 {
+  margin: 8px 0;
+
+  font-size: 29px;
+}
+
+.now-playing p {
+  margin: 0 auto;
+
+  max-width: 450px;
+
+  color: #888;
+
+  font-size: 13px;
+}
+
+.main-play-button {
+  width: 85px;
+  height: 85px;
+
+  margin: 28px 0 12px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #c9829b,
+      #a982bd
+    );
+
+  color: white;
+
+  font-size: 31px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 12px 30px rgba(150, 100, 140, 0.25);
+
+  transition:
+    transform 0.2s ease;
+}
+
+.main-play-button:hover {
+  transform: scale(1.06);
+}
+
+.main-play-button.playing {
+  animation:
+    playerPulse 1.4s ease-in-out infinite;
+}
+
+@keyframes playerPulse {
+  0%,
+  100% {
+    box-shadow:
+      0 12px 30px rgba(150, 100, 140, 0.25);
+  }
+
+  50% {
+    box-shadow:
+      0 12px 40px rgba(150, 100, 140, 0.42);
+  }
+}
+
+.player-status {
+  color: #888;
+
+  font-size: 12px;
+}
+
+.volume-control {
+  width: min(350px, 90%);
+
+  margin-top: 22px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.volume-control input {
+  flex: 1;
+
+  accent-color: #b57e9d;
+
+  cursor: pointer;
+}
+
+.choose-another {
+  margin-top: 22px;
+
+  min-height: 43px;
+
+  padding: 9px 17px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.7);
+
+  border-radius: 14px;
+
+  background:
+    rgba(255, 255, 255, 0.65);
+
+  color: #665868;
+
+  cursor: pointer;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 850px) {
+
+  .music-mood-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .sound-grid {
+    grid-template-columns:
+      1fr;
+  }
+}
+
+@media (max-width: 520px) {
+
+  .music-header {
+    padding: 10px 13px;
+  }
+
+  .music-header img {
+    width: 43px;
+    height: 43px;
+  }
+
+  .music-header h1 {
+    font-size: 17px;
+  }
+
+  .music-header p {
+    font-size: 10px;
+  }
+
+  .music-mood-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+  .music-mood-card {
+    min-height: 135px;
+  }
+
+  .selected-mood {
+    padding: 13px;
+  }
+
+  .sound-card {
+    min-height: 240px;
+  }
+
+  .player-content {
+    padding-top: 30px;
+  }
+
+  .sound-animation {
+    width: 155px;
+    height: 155px;
+  }
+
+  .sound-animation > span {
+    font-size: 68px;
+  }
+}

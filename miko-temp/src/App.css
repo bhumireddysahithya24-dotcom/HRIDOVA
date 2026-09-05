@@ -1,0 +1,1178 @@
+/* =========================================
+   MIKO HOME
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+}
+
+
+/* =========================================
+   MAIN SCREEN
+========================================= */
+
+.miko-home {
+  position: relative;
+
+  width: 100vw;
+  height: 100vh;
+
+  min-height: 600px;
+
+  overflow: hidden;
+
+  color: #704b32;
+}
+
+
+/* =========================================
+   MIKO BACKGROUND
+========================================= */
+
+.miko-background {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 0;
+
+  background-image: url("/miko-background.png");
+
+  background-size: cover;
+
+  background-position: center;
+
+  background-repeat: no-repeat;
+}
+
+
+/* =========================================
+   MIKO TITLE
+========================================= */
+
+.miko-header {
+  position: absolute;
+
+  top: 38px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  z-index: 5;
+
+  text-align: center;
+
+  white-space: nowrap;
+
+  pointer-events: none;
+}
+
+.miko-header h1 {
+  margin: 0;
+
+  font-size: clamp(42px, 4.5vw, 64px);
+
+  font-weight: 800;
+
+  letter-spacing: 12px;
+
+  color: #733f2a;
+}
+
+.miko-header h1 span {
+  color: #f36f8a;
+
+  font-size: 34px;
+
+  margin-left: 5px;
+}
+
+
+/* =========================================
+   YOUR CALM COMPANION
+   ONLY COLOUR CHANGED
+========================================= */
+
+.miko-subtitle {
+  margin-top: 3px;
+
+  font-size: clamp(16px, 1.6vw, 23px);
+
+  color: #c06b86;
+
+  font-weight: 600;
+}
+
+.miko-subtitle span {
+  color: #e77898;
+
+  margin: 0 10px;
+}
+
+
+/* =========================================
+   LEVEL CARD
+   UNCHANGED
+========================================= */
+
+.level-card {
+  position: absolute;
+
+  top: 32px;
+  left: 32px;
+
+  z-index: 10;
+
+  width: 365px;
+  height: 118px;
+
+  padding: 14px 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+
+  border-radius: 25px;
+
+  background: rgba(255, 249, 243, 0.74);
+
+  border: 1.5px solid rgba(255, 255, 255, 0.9);
+
+  box-shadow:
+    0 8px 25px rgba(80, 50, 30, 0.13);
+
+  backdrop-filter: blur(12px);
+}
+
+
+/* =========================================
+   LEVEL AVATAR
+========================================= */
+
+.level-avatar {
+  width: 88px;
+  height: 88px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.82);
+
+  border: 3px solid rgba(255, 255, 255, 0.95);
+
+  overflow: hidden;
+}
+
+.level-avatar img {
+  width: 74px;
+  height: 74px;
+
+  object-fit: contain;
+}
+
+
+/* =========================================
+   LEVEL INFO
+========================================= */
+
+.level-info {
+  flex: 1;
+
+  min-width: 0;
+}
+
+.level-name {
+  font-size: 27px;
+
+  font-weight: 800;
+
+  color: #743f25;
+
+  margin-bottom: 1px;
+}
+
+.level-number {
+  font-size: 17px;
+
+  color: #815334;
+
+  margin-bottom: 6px;
+}
+
+
+/* =========================================
+   XP BAR
+========================================= */
+
+.xp-bar {
+  width: 225px;
+  max-width: 100%;
+
+  height: 17px;
+
+  border-radius: 20px;
+
+  background: rgba(150, 100, 80, 0.20);
+
+  overflow: hidden;
+}
+
+.xp-progress {
+  width: 67%;
+
+  height: 100%;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #e83988,
+      #8748e5
+    );
+}
+
+.xp-number {
+  margin-top: 4px;
+
+  font-size: 14px;
+
+  color: #815334;
+}
+
+
+/* =========================================
+   SETTINGS BOX
+   ONLY MADE SMALLER
+========================================= */
+
+.settings-box {
+  position: absolute;
+
+  top: 32px;
+  right: 32px;
+
+  z-index: 10;
+
+  width: 105px;
+  height: 88px;
+
+  border-radius: 19px;
+
+  border: 1.5px solid rgba(255, 255, 255, 0.9);
+
+  background: rgba(255, 249, 243, 0.74);
+
+  box-shadow:
+    0 8px 25px rgba(80, 50, 30, 0.13);
+
+  backdrop-filter: blur(12px);
+
+  color: #7a492e;
+
+  cursor: pointer;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 3px;
+
+  transition: 0.2s ease;
+}
+
+.settings-box:hover {
+  transform: translateY(-2px);
+
+  background: rgba(255, 252, 248, 0.84);
+}
+
+.settings-icon {
+  width: 44px;
+  height: 44px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(232, 218, 245, 0.88);
+
+  font-size: 24px;
+
+  color: #766d7d;
+}
+
+.settings-text {
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================
+   YOU MATTER BOX
+   UNCHANGED
+========================================= */
+
+.you-matter {
+  position: absolute;
+
+  left: 48px;
+  top: 250px;
+
+  z-index: 10;
+
+  width: 245px;
+  height: 270px;
+
+  padding: 22px 18px;
+
+  border-radius: 25px;
+
+  text-align: center;
+
+  background: rgba(255, 249, 246, 0.70);
+
+  border: 1.5px solid rgba(255, 255, 255, 0.88);
+
+  box-shadow:
+    0 8px 25px rgba(80, 50, 30, 0.13);
+
+  backdrop-filter: blur(12px);
+}
+
+.matter-icon {
+  width: 60px;
+  height: 60px;
+
+  margin: 0 auto 12px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(231, 216, 244, 0.90);
+
+  font-size: 29px;
+}
+
+.you-matter h2 {
+  margin: 0;
+
+  font-size: 23px;
+
+  color: #60657b;
+}
+
+.matter-heart {
+  margin-top: 10px;
+
+  font-size: 18px;
+
+  color: #f06d89;
+}
+
+.you-matter p {
+  margin-top: 22px;
+
+  font-size: 15px;
+
+  color: #697087;
+}
+
+.matter-decoration {
+  margin-top: 19px;
+
+  font-size: 32px;
+
+  color: #e6a6cf;
+}
+
+
+/* =========================================
+   MIKO CHARACTER
+   ONLY MADE BIGGER
+========================================= */
+
+.miko-character-container {
+  position: absolute;
+
+  z-index: 4;
+
+  left: 50%;
+
+  bottom: 70px;
+
+  transform: translateX(-50%);
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: center;
+
+  pointer-events: none;
+}
+
+.miko-character {
+  width: 560px;
+
+  max-width: 45vw;
+
+  max-height: 72vh;
+
+  height: auto;
+
+  object-fit: contain;
+
+  filter:
+    drop-shadow(
+      0 12px 16px
+      rgba(70, 45, 30, 0.18)
+    );
+}
+
+
+/* =========================================
+   BOTTOM BUTTONS
+   UNCHANGED
+========================================= */
+
+.bottom-buttons {
+  position: absolute;
+
+  z-index: 30;
+
+  left: 50%;
+
+  bottom: 18px;
+
+  transform: translateX(-50%);
+
+  width: calc(100% - 70px);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+}
+
+
+/* =========================================
+   INDIVIDUAL BUTTON
+========================================= */
+
+.home-button {
+  width: 130px;
+
+  height: 92px;
+
+  flex: 1;
+
+  max-width: 130px;
+
+  min-width: 0;
+
+  border-radius: 22px;
+
+  border:
+    1.5px solid
+    rgba(255, 255, 255, 0.85);
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 6px;
+
+  padding: 7px;
+
+  font-family: inherit;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+/* =========================================
+   BUTTON COLOURS
+========================================= */
+
+.back-button {
+  background: rgba(226, 207, 237, 0.90);
+
+  color: #68548a;
+}
+
+.talk-button {
+  background: rgba(244, 193, 199, 0.90);
+
+  color: #a33f61;
+}
+
+.chat-button {
+  background: rgba(215, 231, 235, 0.92);
+
+  color: #397387;
+}
+
+.play-button {
+  background: rgba(226, 235, 196, 0.92);
+
+  color: #58764d;
+}
+
+.explore-button {
+  background: rgba(250, 220, 174, 0.94);
+
+  color: #96611c;
+}
+
+.sleep-button {
+  background: rgba(224, 209, 235, 0.92);
+
+  color: #68548a;
+}
+
+.music-button {
+  background: rgba(244, 203, 207, 0.92);
+
+  color: #aa3d64;
+}
+
+
+/* =========================================
+   BUTTON ICON
+========================================= */
+
+.button-icon {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 25px;
+
+  line-height: 1;
+}
+
+
+/* =========================================
+   BUTTON TEXT
+========================================= */
+
+.home-button > span:last-child {
+  font-size: 15px;
+
+  font-weight: 700;
+
+  line-height: 1.05;
+
+  text-align: center;
+}
+
+.explore-button > span:last-child {
+  font-size: 14px;
+
+  line-height: 1.05;
+}
+
+
+/* =========================================
+   HOVER
+========================================= */
+
+.home-button:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 7px 17px
+    rgba(70, 50, 70, 0.15);
+}
+
+.home-button:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================
+   LAPTOP / SHORT SCREEN
+========================================= */
+
+@media (max-height: 750px) {
+
+  .miko-header {
+    top: 25px;
+  }
+
+  .miko-header h1 {
+    font-size: 48px;
+
+    letter-spacing: 9px;
+  }
+
+  .miko-subtitle {
+    font-size: 18px;
+  }
+
+  .level-card {
+    top: 22px;
+
+    width: 340px;
+
+    height: 105px;
+
+    padding: 11px 16px;
+  }
+
+  .level-avatar {
+    width: 78px;
+
+    height: 78px;
+  }
+
+  .level-avatar img {
+    width: 66px;
+
+    height: 66px;
+  }
+
+  .level-name {
+    font-size: 24px;
+  }
+
+  .level-number {
+    font-size: 15px;
+  }
+
+  .xp-bar {
+    height: 15px;
+
+    width: 205px;
+  }
+
+  .xp-number {
+    font-size: 12px;
+  }
+
+
+  /* SMALL SETTINGS */
+
+  .settings-box {
+    top: 22px;
+
+    width: 100px;
+
+    height: 84px;
+  }
+
+  .settings-icon {
+    width: 42px;
+
+    height: 42px;
+
+    font-size: 23px;
+  }
+
+  .settings-text {
+    font-size: 12px;
+  }
+
+
+  .you-matter {
+    top: 215px;
+
+    width: 225px;
+
+    height: 245px;
+
+    padding: 18px 15px;
+  }
+
+  .matter-icon {
+    width: 52px;
+
+    height: 52px;
+
+    font-size: 25px;
+  }
+
+  .you-matter h2 {
+    font-size: 21px;
+  }
+
+  .you-matter p {
+    margin-top: 17px;
+
+    font-size: 13px;
+  }
+
+  .matter-decoration {
+    margin-top: 15px;
+
+    font-size: 28px;
+  }
+
+
+  /* BIG MIKO */
+
+  .miko-character-container {
+    bottom: 60px;
+  }
+
+  .miko-character {
+    width: 500px;
+
+    max-width: 40vw;
+
+    max-height: 65vh;
+  }
+
+
+  .bottom-buttons {
+    bottom: 12px;
+
+    gap: 8px;
+  }
+
+  .home-button {
+    height: 82px;
+
+    max-width: 120px;
+
+    border-radius: 19px;
+  }
+
+  .button-icon {
+    font-size: 22px;
+  }
+
+  .home-button > span:last-child {
+    font-size: 13px;
+  }
+
+  .explore-button > span:last-child {
+    font-size: 12px;
+  }
+}
+
+
+/* =========================================
+   VERY SHORT SCREEN
+========================================= */
+
+@media (max-height: 650px) {
+
+  .miko-header {
+    top: 18px;
+  }
+
+  .miko-header h1 {
+    font-size: 40px;
+
+    letter-spacing: 7px;
+  }
+
+  .miko-subtitle {
+    font-size: 15px;
+  }
+
+  .level-card {
+    top: 15px;
+
+    width: 315px;
+
+    height: 88px;
+
+    border-radius: 20px;
+  }
+
+  .level-avatar {
+    width: 65px;
+
+    height: 65px;
+  }
+
+  .level-avatar img {
+    width: 55px;
+
+    height: 55px;
+  }
+
+  .level-name {
+    font-size: 21px;
+  }
+
+  .level-number {
+    font-size: 13px;
+
+    margin-bottom: 3px;
+  }
+
+  .xp-bar {
+    width: 180px;
+
+    height: 12px;
+  }
+
+  .xp-number {
+    font-size: 10px;
+  }
+
+
+  /* SMALL SETTINGS */
+
+  .settings-box {
+    top: 15px;
+
+    width: 92px;
+
+    height: 78px;
+
+    border-radius: 18px;
+  }
+
+  .settings-icon {
+    width: 38px;
+
+    height: 38px;
+
+    font-size: 21px;
+  }
+
+  .settings-text {
+    font-size: 11px;
+  }
+
+
+  .you-matter {
+    left: 35px;
+
+    top: 180px;
+
+    width: 205px;
+
+    height: 210px;
+
+    padding: 14px;
+  }
+
+  .matter-icon {
+    width: 45px;
+
+    height: 45px;
+
+    font-size: 22px;
+
+    margin-bottom: 8px;
+  }
+
+  .you-matter h2 {
+    font-size: 18px;
+  }
+
+  .matter-heart {
+    margin-top: 6px;
+
+    font-size: 15px;
+  }
+
+  .you-matter p {
+    margin-top: 12px;
+
+    font-size: 11px;
+  }
+
+  .matter-decoration {
+    margin-top: 10px;
+
+    font-size: 24px;
+  }
+
+
+  /* BIG MIKO */
+
+  .miko-character-container {
+    bottom: 52px;
+  }
+
+  .miko-character {
+    width: 450px;
+
+    max-width: 38vw;
+
+    max-height: 60vh;
+  }
+
+
+  .bottom-buttons {
+    bottom: 7px;
+
+    width: calc(100% - 45px);
+
+    gap: 6px;
+  }
+
+  .home-button {
+    height: 68px;
+
+    max-width: 112px;
+
+    border-radius: 16px;
+
+    gap: 3px;
+  }
+
+  .button-icon {
+    font-size: 19px;
+  }
+
+  .home-button > span:last-child {
+    font-size: 11px;
+  }
+
+  .explore-button > span:last-child {
+    font-size: 10px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+  body {
+    overflow: hidden;
+  }
+
+  .miko-home {
+    min-height: 100vh;
+
+    height: 100vh;
+  }
+
+  .miko-header {
+    top: 18px;
+  }
+
+  .miko-header h1 {
+    font-size: 32px;
+
+    letter-spacing: 5px;
+  }
+
+  .miko-subtitle {
+    font-size: 13px;
+  }
+
+  .miko-subtitle span {
+    margin: 0 4px;
+  }
+
+  .level-card {
+    left: 10px;
+
+    top: 10px;
+
+    width: 220px;
+
+    height: 78px;
+
+    padding: 8px 10px;
+
+    gap: 8px;
+
+    border-radius: 18px;
+  }
+
+  .level-avatar {
+    width: 58px;
+
+    height: 58px;
+  }
+
+  .level-avatar img {
+    width: 48px;
+
+    height: 48px;
+  }
+
+  .level-name {
+    font-size: 17px;
+  }
+
+  .level-number {
+    font-size: 11px;
+
+    margin-bottom: 3px;
+  }
+
+  .xp-bar {
+    width: 125px;
+
+    height: 9px;
+  }
+
+  .xp-number {
+    font-size: 8px;
+  }
+
+
+  /* SMALL SETTINGS */
+
+  .settings-box {
+    top: 10px;
+
+    right: 10px;
+
+    width: 78px;
+
+    height: 70px;
+
+    border-radius: 16px;
+  }
+
+  .settings-icon {
+    width: 32px;
+
+    height: 32px;
+
+    font-size: 18px;
+  }
+
+  .settings-text {
+    font-size: 9px;
+  }
+
+
+  .you-matter {
+    left: 12px;
+
+    top: 150px;
+
+    width: 175px;
+
+    height: 205px;
+
+    padding: 14px 10px;
+
+    border-radius: 18px;
+  }
+
+  .matter-icon {
+    width: 43px;
+
+    height: 43px;
+
+    font-size: 21px;
+  }
+
+  .you-matter h2 {
+    font-size: 18px;
+  }
+
+  .you-matter p {
+    margin-top: 14px;
+
+    font-size: 11px;
+  }
+
+  .matter-decoration {
+    margin-top: 12px;
+
+    font-size: 25px;
+  }
+
+
+  /* BIGGER MOBILE MIKO */
+
+  .miko-character-container {
+    bottom: 68px;
+  }
+
+  .miko-character {
+    width: 390px;
+
+    max-width: 64vw;
+
+    max-height: 60vh;
+  }
+
+
+  .bottom-buttons {
+    width: calc(100% - 20px);
+
+    bottom: 8px;
+
+    gap: 4px;
+  }
+
+  .home-button {
+    height: 62px;
+
+    max-width: none;
+
+    border-radius: 14px;
+
+    padding: 4px;
+
+    gap: 3px;
+  }
+
+  .button-icon {
+    font-size: 17px;
+  }
+
+  .home-button > span:last-child {
+    font-size: 8px;
+  }
+
+  .explore-button > span:last-child {
+    font-size: 7px;
+  }
+}

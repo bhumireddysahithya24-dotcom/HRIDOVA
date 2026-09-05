@@ -1,0 +1,689 @@
+/* =========================================
+   MIKO SLEEP
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+.sleep-page {
+  min-height: 100vh;
+  width: 100%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #17152a 0%,
+      #29234b 45%,
+      #45365c 100%
+    );
+
+  color: #ffffff;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  position: relative;
+}
+
+
+/* =========================================
+   BACKGROUND STARS
+========================================= */
+
+.sleep-stars {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 0;
+
+  pointer-events: none;
+
+  color: rgba(255, 255, 255, 0.28);
+
+  font-size: 22px;
+
+  letter-spacing: 8px;
+
+  padding-top: 120px;
+
+  text-align: center;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.sleep-header {
+  position: relative;
+
+  z-index: 10;
+
+  width: 100%;
+  height: 92px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 0 28px;
+
+  background:
+    rgba(18, 16, 35, 0.72);
+
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.10);
+
+  backdrop-filter: blur(15px);
+}
+
+
+/* =========================================
+   BACK
+========================================= */
+
+.sleep-back {
+  width: 48px;
+  height: 48px;
+
+  border: none;
+
+  border-radius: 15px;
+
+  background:
+    rgba(255, 255, 255, 0.12);
+
+  color: white;
+
+  font-size: 28px;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  transition: 0.2s ease;
+}
+
+.sleep-back:hover {
+  background:
+    rgba(255, 255, 255, 0.20);
+
+  transform: translateX(-3px);
+}
+
+
+/* =========================================
+   HEADER MIKO
+========================================= */
+
+.sleep-header img {
+  width: 55px;
+  height: 55px;
+
+  object-fit: contain;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 255, 255, 0.10);
+
+  padding: 3px;
+}
+
+
+/* =========================================
+   HEADER TEXT
+========================================= */
+
+.sleep-header h1 {
+  margin: 0;
+
+  font-size: 25px;
+
+  font-weight: 700;
+
+  color: #fff8ff;
+}
+
+.sleep-header p {
+  margin: 5px 0 0;
+
+  font-size: 13px;
+
+  color: #c7bdd8;
+}
+
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.sleep-content {
+  position: relative;
+
+  z-index: 5;
+
+  width: 850px;
+
+  max-width: 92%;
+
+  margin: 0 auto;
+
+  padding: 38px 0 65px;
+
+  text-align: center;
+}
+
+
+/* =========================================
+   MIKO
+========================================= */
+
+.sleep-miko {
+  width: 150px;
+  height: 150px;
+
+  margin: 0 auto 18px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.18),
+      rgba(255, 255, 255, 0.05)
+    );
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.15);
+
+  box-shadow:
+    0 12px 35px
+    rgba(0, 0, 0, 0.22);
+}
+
+.sleep-miko img {
+  width: 125px;
+  height: 125px;
+
+  object-fit: contain;
+
+  filter:
+    drop-shadow(
+      0 8px 12px
+      rgba(0, 0, 0, 0.20)
+    );
+}
+
+
+/* =========================================
+   STORY CARD
+========================================= */
+
+.story-card {
+  width: 100%;
+
+  padding: 30px 35px;
+
+  border-radius: 30px;
+
+  background:
+    rgba(255, 255, 255, 0.10);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.16);
+
+  box-shadow:
+    0 20px 55px
+    rgba(0, 0, 0, 0.22);
+
+  backdrop-filter: blur(18px);
+
+  text-align: center;
+}
+
+
+/* =========================================
+   STORY TOP
+========================================= */
+
+.story-top {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 15px;
+}
+
+.story-emoji {
+  font-size: 34px;
+}
+
+.story-number {
+  padding: 7px 13px;
+
+  border-radius: 20px;
+
+  background:
+    rgba(255, 255, 255, 0.10);
+
+  color: #d9d0e5;
+
+  font-size: 12px;
+}
+
+
+/* =========================================
+   STORY TITLE
+========================================= */
+
+.story-card h2 {
+  margin: 5px 0 18px;
+
+  font-size: 28px;
+
+  color: #fff8ff;
+}
+
+
+/* =========================================
+   STORY TEXT
+========================================= */
+
+.story-text {
+  max-height: 230px;
+
+  overflow-y: auto;
+
+  padding: 5px 10px;
+
+  font-size: 16px;
+
+  line-height: 1.75;
+
+  color: #e7e0ed;
+
+  text-align: left;
+}
+
+
+/* Scrollbar */
+
+.story-text::-webkit-scrollbar {
+  width: 6px;
+}
+
+.story-text::-webkit-scrollbar-track {
+  background:
+    rgba(255, 255, 255, 0.05);
+
+  border-radius: 10px;
+}
+
+.story-text::-webkit-scrollbar-thumb {
+  background:
+    rgba(255, 255, 255, 0.20);
+
+  border-radius: 10px;
+}
+
+
+/* =========================================
+   LISTEN BUTTON
+========================================= */
+
+.listen-story {
+  margin-top: 24px;
+
+  padding: 13px 25px;
+
+  border: none;
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #d98ac3,
+      #a66bc4
+    );
+
+  color: white;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 20px
+    rgba(166, 107, 196, 0.25);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.listen-story:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 11px 25px
+    rgba(166, 107, 196, 0.35);
+}
+
+.listen-story.speaking {
+  background:
+    linear-gradient(
+      135deg,
+      #c26d91,
+      #9b5a9d
+    );
+}
+
+
+/* =========================================
+   STORY CONTROLS
+========================================= */
+
+.story-controls {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 14px;
+
+  margin-top: 20px;
+}
+
+.story-controls button {
+  padding: 11px 18px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  background:
+    rgba(255, 255, 255, 0.10);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.12);
+
+  color: #eee8f3;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.story-controls button:hover {
+  background:
+    rgba(255, 255, 255, 0.17);
+
+  transform: translateY(-1px);
+}
+
+.story-controls .next-story {
+  background:
+    rgba(213, 155, 202, 0.22);
+
+  color: #ffdff6;
+
+  border:
+    1px solid
+    rgba(224, 160, 211, 0.28);
+}
+
+
+/* =========================================
+   STORY DOTS
+========================================= */
+
+.sleep-dots {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  margin-top: 22px;
+}
+
+.sleep-dots button {
+  width: 8px;
+  height: 8px;
+
+  padding: 0;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 255, 255, 0.25);
+
+  cursor: pointer;
+
+  transition:
+    0.2s ease;
+}
+
+.sleep-dots button:hover {
+  background:
+    rgba(255, 255, 255, 0.55);
+
+  transform: scale(1.2);
+}
+
+.sleep-dots button.active {
+  width: 24px;
+
+  border-radius: 10px;
+
+  background:
+    #e7a4d6;
+}
+
+
+/* =========================================
+   GOOD NIGHT
+========================================= */
+
+.goodnight {
+  margin: 25px 0 0;
+
+  font-size: 14px;
+
+  color: #cfc4dc;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .sleep-content {
+    width: 90%;
+
+    padding-top: 30px;
+  }
+
+  .sleep-miko {
+    width: 130px;
+    height: 130px;
+  }
+
+  .sleep-miko img {
+    width: 108px;
+    height: 108px;
+  }
+
+  .story-card {
+    padding: 25px;
+  }
+
+  .story-card h2 {
+    font-size: 24px;
+  }
+
+  .story-text {
+    font-size: 15px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .sleep-header {
+    height: 78px;
+
+    padding: 0 13px;
+
+    gap: 9px;
+  }
+
+  .sleep-back {
+    width: 42px;
+    height: 42px;
+
+    font-size: 23px;
+  }
+
+  .sleep-header img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .sleep-header h1 {
+    font-size: 18px;
+  }
+
+  .sleep-header p {
+    font-size: 10px;
+  }
+
+  .sleep-content {
+    width: 94%;
+
+    padding:
+      25px 0 45px;
+  }
+
+  .sleep-miko {
+    width: 105px;
+    height: 105px;
+
+    margin-bottom: 15px;
+  }
+
+  .sleep-miko img {
+    width: 88px;
+    height: 88px;
+  }
+
+  .story-card {
+    padding: 20px 16px;
+
+    border-radius: 23px;
+  }
+
+  .story-top {
+    margin-bottom: 10px;
+  }
+
+  .story-emoji {
+    font-size: 27px;
+  }
+
+  .story-number {
+    font-size: 10px;
+  }
+
+  .story-card h2 {
+    font-size: 21px;
+
+    line-height: 1.3;
+  }
+
+  .story-text {
+    max-height: 260px;
+
+    font-size: 14px;
+
+    line-height: 1.65;
+
+    padding: 3px 5px;
+  }
+
+  .listen-story {
+    width: 100%;
+
+    margin-top: 20px;
+
+    padding: 12px 15px;
+  }
+
+  .story-controls {
+    gap: 8px;
+  }
+
+  .story-controls button {
+    flex: 1;
+
+    padding: 10px 8px;
+
+    font-size: 12px;
+  }
+
+  .goodnight {
+    font-size: 12px;
+  }
+}
