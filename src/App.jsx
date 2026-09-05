@@ -7,6 +7,25 @@ import Music from "./Music";
 import Settings from "./Settings";
 import Games from "./Games";
 import Explore from "./Explore";
+// JAY
+import JayWorld from "./Pages/JayWorld";
+import JayTalk from "./Pages/JayTalk";
+import JayChat from "./Pages/JayChat";
+import JayPlay from "./Pages/JayPlay";
+import JayExplore from "./Pages/JayExplore";
+import JaySleep from "./Pages/JaySleep";
+import JayMusic from "./Pages/JayMusic";
+import JaySettings from "./Pages/JaySettings";
+
+// MAYA
+import MayaWorld from "./Pages/MayaWorld";
+import MayaTalk from "./Pages/MayaTalk";
+import MayaChat from "./Pages/MayaChat";
+import MayaPlay from "./Pages/MayaPlay";
+import MayaExplore from "./Pages/MayaExplore";
+import MayaSleep from "./Pages/MayaSleep";
+import MayaMusic from "./Pages/MayaMusic";
+import MayaSettings from "./Pages/MayaSettings";
 
 /* =========================================================
    CHARACTERS
@@ -724,6 +743,19 @@ function App() {
           }
         >
           🌊 Alakananda
+        </button>
+        <button
+          className={character === "aaru" ? "active" : ""}
+          onClick={() => window.location.href = "/worlds/aaru/index.html"}
+        >
+          🐻 Aaru
+        </button>
+
+        <button
+          className={character === "eka" ? "active" : ""}
+          onClick={() => window.location.href = "/worlds/eka/index.html"}
+        >
+          🌟 Eka
         </button>
 
       </div>
