@@ -1,0 +1,992 @@
+/* =========================================================
+   HRIDOVA SLEEP PAGE
+   COMPLETE OVERRIDE
+========================================================= */
+
+.sleep-page {
+    position: relative !important;
+
+    width: 100% !important;
+    min-width: 100% !important;
+    min-height: 100vh !important;
+
+    box-sizing: border-box !important;
+
+    padding: 85px 30px 60px !important;
+
+    display: block !important;
+
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+
+    font-family: Arial, Helvetica, sans-serif !important;
+
+    color: #ffffff !important;
+}
+
+
+/* =========================================================
+   EVERYTHING INSIDE SLEEP
+========================================================= */
+
+.sleep-page *,
+.sleep-page *::before,
+.sleep-page *::after {
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.sleep-page .sleep-overlay {
+    position: fixed !important;
+
+    inset: 0 !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    background:
+        rgba(5, 3, 18, 0.42) !important;
+
+    z-index: 1 !important;
+
+    pointer-events: none !important;
+}
+
+
+/* =========================================================
+   BACK
+========================================================= */
+
+.sleep-page .sleep-back-button {
+    position: fixed !important;
+
+    top: 20px !important;
+    left: 22px !important;
+
+    width: 58px !important;
+    height: 58px !important;
+
+    min-width: 58px !important;
+    max-width: 58px !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    background: rgba(35, 15, 45, 0.82) !important;
+
+    color: #ffffff !important;
+
+    border: 2px solid rgba(255, 255, 255, 0.55) !important;
+
+    border-radius: 50% !important;
+
+    font-family: Arial, sans-serif !important;
+    font-size: 30px !important;
+    font-weight: bold !important;
+
+    line-height: 1 !important;
+
+    cursor: pointer !important;
+
+    z-index: 9999 !important;
+
+    box-shadow:
+        0 5px 25px rgba(0, 0, 0, 0.5) !important;
+}
+
+.sleep-page .sleep-back-button:hover {
+    transform: scale(1.08) !important;
+
+    background:
+        rgba(120, 70, 190, 0.95) !important;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.sleep-page .sleep-content {
+    position: relative !important;
+
+    z-index: 10 !important;
+
+    width: min(1050px, 94%) !important;
+
+    max-width: 1050px !important;
+
+    min-height: auto !important;
+
+    margin: 0 auto !important;
+    padding: 0 !important;
+
+    display: flex !important;
+
+    flex-direction: column !important;
+
+    align-items: stretch !important;
+
+    justify-content: flex-start !important;
+
+    color: #ffffff !important;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.sleep-page .sleep-header {
+    position: relative !important;
+
+    width: 100% !important;
+
+    margin: 0 0 25px 0 !important;
+    padding: 0 !important;
+
+    display: flex !important;
+
+    flex-direction: column !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    text-align: center !important;
+
+    color: #ffffff !important;
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.sleep-page .sleep-character-icon {
+    position: relative !important;
+
+    width: 72px !important;
+    height: 72px !important;
+
+    min-width: 72px !important;
+
+    margin: 0 0 10px 0 !important;
+    padding: 0 !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    background:
+        rgba(20, 10, 35, 0.78) !important;
+
+    border:
+        2px solid rgba(255, 255, 255, 0.45) !important;
+
+    border-radius: 50% !important;
+
+    font-size: 38px !important;
+
+    line-height: 1 !important;
+
+    color: #ffffff !important;
+
+    z-index: 20 !important;
+}
+
+
+/* =========================================================
+   H1 — FORCE WHITE
+========================================================= */
+
+.sleep-page .sleep-header h1 {
+    position: relative !important;
+
+    display: block !important;
+
+    width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    color: #ffffff !important;
+
+    background: transparent !important;
+
+    border: none !important;
+
+    font-family:
+        Arial, Helvetica, sans-serif !important;
+
+    font-size:
+        clamp(32px, 5vw, 54px) !important;
+
+    font-weight: 800 !important;
+
+    line-height: 1.15 !important;
+
+    text-align: center !important;
+
+    text-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.9) !important;
+
+    z-index: 20 !important;
+}
+
+
+/* =========================================================
+   SUBTITLE
+========================================================= */
+
+.sleep-page .sleep-header p {
+    position: relative !important;
+
+    display: block !important;
+
+    width: 100% !important;
+
+    max-width: 750px !important;
+
+    margin: 10px auto 0 !important;
+    padding: 0 !important;
+
+    color:
+        rgba(255, 255, 255, 0.95) !important;
+
+    background: transparent !important;
+
+    border: none !important;
+
+    font-family:
+        Arial, Helvetica, sans-serif !important;
+
+    font-size: 17px !important;
+
+    font-weight: 500 !important;
+
+    line-height: 1.5 !important;
+
+    text-align: center !important;
+
+    z-index: 20 !important;
+}
+
+
+/* =========================================================
+   STORY LIST
+========================================================= */
+
+.sleep-page .sleep-story-list {
+    position: relative !important;
+
+    width: 100% !important;
+
+    display: grid !important;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr)) !important;
+
+    gap: 12px !important;
+
+    margin: 0 0 22px 0 !important;
+    padding: 0 !important;
+
+    z-index: 20 !important;
+}
+
+
+/* =========================================================
+   STORY BUTTON
+========================================================= */
+
+.sleep-page .sleep-story-button {
+    position: relative !important;
+
+    width: 100% !important;
+    height: auto !important;
+
+    min-height: 62px !important;
+
+    max-height: none !important;
+
+    margin: 0 !important;
+    padding: 12px 16px !important;
+
+    display: flex !important;
+
+    flex-direction: row !important;
+
+    align-items: center !important;
+
+    justify-content: flex-start !important;
+
+    gap: 12px !important;
+
+    background:
+        rgba(12, 7, 30, 0.82) !important;
+
+    color: #ffffff !important;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.3) !important;
+
+    border-radius: 16px !important;
+
+    outline: none !important;
+
+    box-shadow:
+        0 6px 22px rgba(0, 0, 0, 0.35) !important;
+
+    font-family:
+        Arial, Helvetica, sans-serif !important;
+
+    font-size: 14px !important;
+
+    font-weight: 700 !important;
+
+    line-height: 1.3 !important;
+
+    text-align: left !important;
+
+    white-space: normal !important;
+
+    cursor: pointer !important;
+
+    z-index: 30 !important;
+}
+
+.sleep-page .sleep-story-button:hover {
+    background:
+        rgba(90, 55, 150, 0.9) !important;
+
+    transform: translateY(-2px) !important;
+}
+
+.sleep-page .sleep-story-button.selected {
+    background:
+        linear-gradient(135deg,
+            rgba(135, 75, 220, 0.95),
+            rgba(45, 100, 200, 0.95)) !important;
+
+    border:
+        2px solid rgba(255, 255, 255, 0.7) !important;
+
+    box-shadow:
+        0 0 25px rgba(130, 90, 240, 0.5) !important;
+}
+
+
+/* =========================================================
+   STORY NUMBER
+========================================================= */
+
+.sleep-page .story-number {
+    position: relative !important;
+
+    width: 34px !important;
+    height: 34px !important;
+
+    min-width: 34px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    border-radius: 50% !important;
+
+    background:
+        rgba(255, 255, 255, 0.15) !important;
+
+    color: #ffffff !important;
+
+    font-size: 13px !important;
+
+    font-weight: 800 !important;
+
+    line-height: 1 !important;
+}
+
+
+/* =========================================================
+   STORY TEXT BUTTON
+========================================================= */
+
+.sleep-page .story-button-text {
+    position: relative !important;
+
+    display: block !important;
+
+    flex: 1 1 auto !important;
+
+    min-width: 0 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    color: #ffffff !important;
+
+    font-family:
+        Arial, Helvetica, sans-serif !important;
+
+    font-size: 14px !important;
+
+    font-weight: 700 !important;
+
+    line-height: 1.35 !important;
+
+    text-align: left !important;
+}
+
+
+/* =========================================================
+   STORY CARD
+========================================================= */
+
+.sleep-page .sleep-story-card {
+    position: relative !important;
+
+    width: 100% !important;
+
+    height: auto !important;
+
+    min-height: 300px !important;
+
+    margin: 0 !important;
+    padding: 28px !important;
+
+    display: block !important;
+
+    background:
+        rgba(9, 5, 25, 0.88) !important;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.3) !important;
+
+    border-radius: 26px !important;
+
+    color: #ffffff !important;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.55) !important;
+
+    z-index: 20 !important;
+}
+
+
+/* =========================================================
+   CARD TOP
+========================================================= */
+
+.sleep-page .story-card-top {
+    position: relative !important;
+
+    width: 100% !important;
+
+    margin: 0 0 20px 0 !important;
+    padding: 0 !important;
+
+    display: flex !important;
+
+    flex-direction: row !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    gap: 15px !important;
+
+    text-align: center !important;
+}
+
+
+/* =========================================================
+   CARD ICON
+========================================================= */
+
+.sleep-page .story-card-icon {
+    position: relative !important;
+
+    width: 58px !important;
+    height: 58px !important;
+
+    min-width: 58px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    background:
+        rgba(255, 255, 255, 0.12) !important;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.3) !important;
+
+    border-radius: 50% !important;
+
+    font-size: 30px !important;
+
+    line-height: 1 !important;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.sleep-page .story-label {
+    display: block !important;
+
+    margin: 0 0 5px 0 !important;
+    padding: 0 !important;
+
+    color:
+        rgba(255, 255, 255, 0.65) !important;
+
+    background: transparent !important;
+
+    font-family:
+        Arial, Helvetica, sans-serif !important;
+
+    font-size: 11px !important;
+
+    font-weight: 800 !important;
+
+    letter-spacing: 2px !important;
+
+    line-height: 1.2 !important;
+}
+
+
+/* =========================================================
+   STORY H2
+========================================================= */
+
+.sleep-page .story-card-top h2 {
+    display: block !important;
+
+    width: auto !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    color: #ffffff !important;
+
+    background: transparent !important;
+
+    border: none !important;
+
+    font-family:
+        Arial, Helvetica, sans-serif !important;
+
+    font-size: 27px !important;
+
+    font-weight: 800 !important;
+
+    line-height: 1.25 !important;
+
+    text-align: left !important;
+}
+
+
+/* =========================================================
+   STORY TEXT AREA
+========================================================= */
+
+.sleep-page .sleep-story-text {
+    position: relative !important;
+
+    display: block !important;
+
+    width: 100% !important;
+
+    min-height: 120px !important;
+
+    max-height: 390px !important;
+
+    margin: 0 !important;
+    padding: 22px 25px !important;
+
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+
+    background:
+        rgba(255, 255, 255, 0.075) !important;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.16) !important;
+
+    border-radius: 18px !important;
+
+    color:
+        rgba(255, 255, 255, 0.94) !important;
+
+    font-family:
+        Arial, Helvetica, sans-serif !important;
+
+    font-size: 16px !important;
+
+    font-weight: 400 !important;
+
+    line-height: 1.85 !important;
+
+    text-align: left !important;
+
+    white-space: pre-line !important;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+.sleep-page .sleep-story-text::-webkit-scrollbar {
+    width: 8px !important;
+}
+
+.sleep-page .sleep-story-text::-webkit-scrollbar-track {
+    background:
+        rgba(255, 255, 255, 0.06) !important;
+
+    border-radius: 10px !important;
+}
+
+.sleep-page .sleep-story-text::-webkit-scrollbar-thumb {
+    background:
+        rgba(255, 255, 255, 0.35) !important;
+
+    border-radius: 10px !important;
+}
+
+
+/* =========================================================
+   CONTROLS
+========================================================= */
+
+.sleep-page .sleep-controls {
+    position: relative !important;
+
+    width: 100% !important;
+
+    margin: 22px 0 0 0 !important;
+    padding: 0 !important;
+
+    display: flex !important;
+
+    flex-direction: row !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    flex-wrap: wrap !important;
+
+    gap: 14px !important;
+
+    z-index: 40 !important;
+}
+
+
+/* =========================================================
+   CONTROL BUTTON
+========================================================= */
+
+.sleep-page .sleep-control {
+    position: relative !important;
+
+    width: auto !important;
+
+    min-width: 130px !important;
+
+    height: 48px !important;
+
+    margin: 0 !important;
+    padding: 0 22px !important;
+
+    display: inline-flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    background:
+        rgba(255, 255, 255, 0.12) !important;
+
+    color: #ffffff !important;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.3) !important;
+
+    border-radius: 25px !important;
+
+    outline: none !important;
+
+    font-family:
+        Arial, Helvetica, sans-serif !important;
+
+    font-size: 15px !important;
+
+    font-weight: 800 !important;
+
+    line-height: 1 !important;
+
+    cursor: pointer !important;
+
+    z-index: 50 !important;
+}
+
+.sleep-page .sleep-control.start {
+    background:
+        linear-gradient(135deg,
+            #ff9d3d,
+            #e6532d) !important;
+
+    border-color:
+        rgba(255, 220, 170, 0.7) !important;
+}
+
+.sleep-page .sleep-control.pause {
+    background:
+        linear-gradient(135deg,
+            #7654d9,
+            #4775db) !important;
+}
+
+.sleep-page .sleep-control.stop {
+    background:
+        linear-gradient(135deg,
+            #c33b55,
+            #76243e) !important;
+}
+
+.sleep-page .sleep-control:hover:not(:disabled) {
+    transform: translateY(-3px) !important;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.4) !important;
+}
+
+.sleep-page .sleep-control:disabled {
+    opacity: 0.4 !important;
+
+    cursor: not-allowed !important;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.sleep-page .sleep-status {
+    width: 100% !important;
+
+    margin: 17px 0 0 0 !important;
+    padding: 13px 18px !important;
+
+    display: block !important;
+
+    background:
+        rgba(0, 0, 0, 0.28) !important;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.12) !important;
+
+    border-radius: 15px !important;
+
+    color:
+        rgba(255, 255, 255, 0.85) !important;
+
+    font-family:
+        Arial, Helvetica, sans-serif !important;
+
+    font-size: 14px !important;
+
+    line-height: 1.4 !important;
+
+    text-align: center !important;
+}
+
+
+/* =========================================================
+   BOTTOM MESSAGE
+========================================================= */
+
+.sleep-page .sleep-bottom-message {
+    width: 100% !important;
+
+    margin: 18px 0 0 0 !important;
+    padding: 14px 20px !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    gap: 10px !important;
+
+    background:
+        rgba(5, 3, 15, 0.58) !important;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.15) !important;
+
+    border-radius: 18px !important;
+
+    color:
+        rgba(255, 255, 255, 0.9) !important;
+
+    font-family:
+        Arial, Helvetica, sans-serif !important;
+
+    font-size: 14px !important;
+
+    line-height: 1.4 !important;
+
+    text-align: center !important;
+}
+
+
+/* =========================================================
+   KAIRO
+========================================================= */
+
+.sleep-page.kairo .sleep-control.start {
+    background:
+        linear-gradient(135deg,
+            #ff9f43,
+            #e85d2a) !important;
+}
+
+
+/* =========================================================
+   ALAKANANDA
+========================================================= */
+
+.sleep-page.alakananda .sleep-control.start {
+    background:
+        linear-gradient(135deg,
+            #895cff,
+            #168fd9) !important;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .sleep-page {
+        padding: 80px 15px 45px !important;
+
+        background-attachment: scroll !important;
+    }
+
+    .sleep-page .sleep-content {
+        width: 96% !important;
+    }
+
+    .sleep-page .sleep-story-list {
+        grid-template-columns: 1fr !important;
+    }
+
+    .sleep-page .story-card-top {
+        justify-content: flex-start !important;
+        text-align: left !important;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 520px) {
+
+    .sleep-page {
+        padding: 75px 10px 35px !important;
+    }
+
+    .sleep-page .sleep-back-button {
+        width: 48px !important;
+        height: 48px !important;
+
+        min-width: 48px !important;
+
+        top: 14px !important;
+        left: 14px !important;
+
+        font-size: 25px !important;
+    }
+
+    .sleep-page .sleep-header h1 {
+        font-size: 29px !important;
+    }
+
+    .sleep-page .sleep-header p {
+        font-size: 14px !important;
+    }
+
+    .sleep-page .sleep-story-card {
+        padding: 18px !important;
+
+        border-radius: 20px !important;
+    }
+
+    .sleep-page .story-card-top {
+        flex-direction: column !important;
+
+        justify-content: center !important;
+
+        align-items: center !important;
+
+        text-align: center !important;
+    }
+
+    .sleep-page .story-card-top h2 {
+        font-size: 20px !important;
+
+        text-align: center !important;
+    }
+
+    .sleep-page .sleep-story-text {
+        max-height: 330px !important;
+
+        padding: 16px !important;
+
+        font-size: 14px !important;
+
+        line-height: 1.75 !important;
+    }
+
+    .sleep-page .sleep-control {
+        min-width: 105px !important;
+
+        height: 44px !important;
+
+        padding: 0 15px !important;
+
+        font-size: 13px !important;
+    }
+}

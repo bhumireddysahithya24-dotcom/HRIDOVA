@@ -1,0 +1,478 @@
+* {
+    box-sizing: border-box;
+}
+
+/* =========================================
+   FULL MUSIC PAGE
+========================================= */
+
+.music-page {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    padding-bottom: 60px;
+}
+
+/* =========================================
+   INVISIBLE IMAGE BUTTONS
+========================================= */
+
+.music-hotspot {
+    position: absolute;
+
+    z-index: 50;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    padding: 0;
+    margin: 0;
+
+    cursor: pointer;
+}
+
+/* BACK */
+
+.music-back-hotspot {
+    top: 3%;
+    left: 2.5%;
+
+    width: 8%;
+    aspect-ratio: 1;
+}
+
+/* PREVIOUS */
+
+.music-previous-hotspot {
+    left: 35%;
+    top: 84%;
+
+    width: 9%;
+    aspect-ratio: 1;
+}
+
+/* PLAY */
+
+.music-play-hotspot {
+    left: 45%;
+    top: 83%;
+
+    width: 11%;
+    aspect-ratio: 1;
+
+    border-radius: 50%;
+}
+
+/* NEXT */
+
+.music-next-hotspot {
+    left: 56%;
+    top: 84%;
+
+    width: 9%;
+    aspect-ratio: 1;
+}
+
+/* =========================================
+   NATURE SOUND PANEL
+========================================= */
+
+.nature-sounds-panel {
+    position: relative;
+
+    z-index: 20;
+
+    width: min(620px, 88vw);
+
+    margin-left: auto;
+    margin-right: 5%;
+
+    padding-top: 56vh;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.nature-sounds-heading {
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    padding: 18px 20px;
+
+    border-radius: 24px;
+
+    color: white;
+
+    background:
+        rgba(8, 5, 25, 0.78);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.25);
+
+    backdrop-filter: blur(16px);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.35);
+}
+
+.current-sound-icon {
+    width: 65px;
+    height: 65px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255, 255, 255, 0.12);
+
+    font-size: 38px;
+}
+
+.nature-sounds-heading h1 {
+    margin: 0;
+
+    font-size: 22px;
+
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.nature-sounds-heading p {
+    margin: 5px 0 0;
+
+    font-size: 13px;
+
+    opacity: 0.8;
+}
+
+/* =========================================
+   SOUND LIST
+========================================= */
+
+.nature-sound-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    margin-top: 14px;
+}
+
+.nature-sound-card {
+    width: 100%;
+
+    min-height: 70px;
+
+    display: grid;
+
+    grid-template-columns:
+        50px 1fr 45px;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 10px 14px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.2);
+
+    border-radius: 18px;
+
+    background:
+        rgba(8, 5, 25, 0.76);
+
+    backdrop-filter: blur(12px);
+
+    color: white;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.nature-sound-card:hover {
+    transform: translateX(5px);
+
+    background:
+        rgba(35, 22, 65, 0.9);
+}
+
+.nature-sound-card.selected {
+    border-color:
+        rgba(195, 135, 255, 0.8);
+
+    background:
+        rgba(65, 35, 100, 0.88);
+
+    box-shadow:
+        0 0 22px rgba(150, 80, 255, 0.3);
+}
+
+.sound-icon {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background:
+        rgba(255, 255, 255, 0.1);
+
+    font-size: 27px;
+}
+
+.sound-details strong {
+    display: block;
+
+    font-size: 16px;
+}
+
+.sound-details small {
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 12px;
+
+    opacity: 0.7;
+}
+
+.sound-play {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.12);
+
+    font-size: 15px;
+}
+
+/* =========================================
+   CONTROLS
+========================================= */
+
+.music-controls {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 22px;
+
+    margin-top: 15px;
+
+    padding: 15px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(8, 5, 25, 0.78);
+
+    backdrop-filter: blur(12px);
+}
+
+.music-controls button {
+    width: 50px;
+    height: 50px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    color: white;
+
+    background:
+        rgba(255, 255, 255, 0.12);
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.music-controls button:hover {
+    transform: scale(1.1);
+
+    background:
+        rgba(255, 255, 255, 0.2);
+}
+
+.music-controls .main-play-button {
+    width: 64px;
+    height: 64px;
+
+    background:
+        linear-gradient(135deg,
+            #9b35ff,
+            #5d16c6);
+
+    font-size: 25px;
+
+    box-shadow:
+        0 0 25px rgba(150, 70, 255, 0.55);
+}
+
+/* =========================================
+   VOLUME
+========================================= */
+
+.music-volume {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 10px;
+
+    padding: 12px 18px;
+
+    border-radius: 18px;
+
+    background:
+        rgba(8, 5, 25, 0.75);
+
+    color: white;
+}
+
+.music-volume input {
+    flex: 1;
+
+    cursor: pointer;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 800px) {
+
+    .nature-sounds-panel {
+        width: 92vw;
+
+        margin: 0 auto;
+
+        padding-top: 55vh;
+    }
+
+    .nature-sounds-heading h1 {
+        font-size: 18px;
+    }
+
+    .nature-sounds-heading p {
+        font-size: 11px;
+    }
+
+    .nature-sound-card {
+        grid-template-columns:
+            45px 1fr 40px;
+    }
+
+    .music-back-hotspot {
+        width: 12%;
+    }
+
+    .music-previous-hotspot,
+    .music-next-hotspot {
+        top: 82%;
+    }
+
+    .music-play-hotspot {
+        top: 81%;
+    }
+}
+
+/* =========================================
+   MUSIC BACK BUTTON
+========================================= */
+
+.music-back-button {
+    position: fixed;
+    top: 28px;
+    left: 28px;
+
+    width: 72px;
+    height: 72px;
+
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.75);
+
+    background: rgba(70, 20, 130, 0.72);
+    backdrop-filter: blur(10px);
+
+    color: white;
+    font-size: 42px;
+    font-weight: 700;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    z-index: 9999;
+
+    box-shadow:
+        0 0 15px rgba(150, 80, 255, 0.8),
+        0 0 35px rgba(100, 50, 255, 0.45);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.music-back-button:hover {
+    transform: scale(1.1);
+
+    background: rgba(100, 35, 180, 0.9);
+
+    box-shadow:
+        0 0 20px rgba(180, 100, 255, 1),
+        0 0 45px rgba(120, 70, 255, 0.7);
+}
+
+.music-back-button:active {
+    transform: scale(0.95);
+}

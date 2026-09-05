@@ -1,0 +1,464 @@
+/* =========================================
+   HRIDOVA SETTINGS
+   ========================================= */
+
+.settings-page {
+    min-height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #102b45, #245b78, #6ba8b8);
+    color: white;
+    font-family: "Segoe UI", sans-serif;
+    overflow-y: auto;
+}
+
+.settings-page.alakananda {
+    background: linear-gradient(135deg, #123b55, #28758a, #75c7d1);
+}
+
+.settings-page.kairo {
+    background: linear-gradient(135deg, #182d3d, #31566b, #6f9aae);
+}
+
+/* BACK BUTTON */
+
+.settings-back {
+    position: fixed;
+    top: 25px;
+    left: 25px;
+
+    width: 52px;
+    height: 52px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.18);
+    color: white;
+
+    font-size: 28px;
+    cursor: pointer;
+
+    z-index: 1000;
+
+    backdrop-filter: blur(10px);
+
+    transition: 0.25s ease;
+}
+
+.settings-back:hover {
+    transform: scale(1.08);
+    background: rgba(255, 255, 255, 0.28);
+}
+
+/* MAIN CONTAINER */
+
+.settings-container {
+    width: min(900px, 100%);
+    margin: 50px auto 0;
+}
+
+/* HEADER */
+
+.settings-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.settings-icon-container {
+    width: 80px;
+    height: 80px;
+
+    margin: 0 auto 15px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255, 255, 255, 0.18);
+
+    backdrop-filter: blur(10px);
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+.settings-icon {
+    font-size: 42px;
+}
+
+.settings-title {
+    margin: 0;
+
+    font-size: 42px;
+    font-weight: 800;
+
+    color: white;
+}
+
+.settings-subtitle {
+    margin: 12px auto 0;
+
+    max-width: 600px;
+
+    font-size: 17px;
+
+    color: rgba(255, 255, 255, 0.88);
+
+    line-height: 1.5;
+}
+
+/* SETTINGS CARD */
+
+.settings-card {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 10px 25px;
+
+    background: rgba(255, 255, 255, 0.14);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    border-radius: 28px;
+
+    backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.18);
+}
+
+/* EACH SETTING */
+
+.setting-item {
+    min-height: 90px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    padding: 22px 5px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+
+    box-sizing: border-box;
+}
+
+.setting-item:last-child {
+    border-bottom: none;
+}
+
+/* TEXT */
+
+.setting-info {
+    flex: 1;
+
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.setting-name {
+    display: block;
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    color: white;
+}
+
+.setting-description {
+    display: block;
+
+    font-size: 14px;
+
+    color: rgba(255, 255, 255, 0.72);
+
+    line-height: 1.4;
+}
+
+/* =========================================
+   TOGGLE BUTTON
+   ========================================= */
+
+.toggle-btn {
+    flex-shrink: 0;
+
+    width: 64px;
+    height: 34px;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 50px;
+
+    background: rgba(255, 255, 255, 0.30);
+
+    position: relative;
+
+    cursor: pointer;
+
+    display: block;
+
+    transition: background 0.25s ease;
+
+    outline: none;
+}
+
+.toggle-btn.active {
+    background: #5ed6a1;
+}
+
+/* SLIDER */
+
+.toggle-slider {
+    position: absolute;
+
+    top: 4px;
+    left: 4px;
+
+    width: 26px;
+    height: 26px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+
+    transition: transform 0.25s ease;
+
+    display: block;
+}
+
+.toggle-btn.active .toggle-slider {
+    transform: translateX(30px);
+}
+
+/* CHARACTER LABEL */
+
+.settings-character {
+    width: fit-content;
+
+    margin: 25px auto 0;
+
+    padding: 10px 20px;
+
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.15);
+
+    border: 1px solid rgba(255, 255, 255, 0.22);
+
+    color: rgba(255, 255, 255, 0.9);
+
+    font-size: 15px;
+
+    backdrop-filter: blur(10px);
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .settings-page {
+        padding: 25px 15px;
+    }
+
+    .settings-container {
+        margin-top: 55px;
+    }
+
+    .settings-title {
+        font-size: 30px;
+    }
+
+    .settings-subtitle {
+        font-size: 15px;
+    }
+
+    .settings-card {
+        padding: 5px 18px;
+    }
+
+    .setting-item {
+        min-height: 85px;
+
+        gap: 15px;
+
+        padding: 18px 0;
+    }
+
+    .setting-name {
+        font-size: 17px;
+    }
+
+    .setting-description {
+        font-size: 12px;
+    }
+
+    .toggle-btn {
+        width: 58px;
+        height: 32px;
+    }
+
+    .toggle-slider {
+        width: 24px;
+        height: 24px;
+    }
+
+    .toggle-btn.active .toggle-slider {
+        transform: translateX(26px);
+    }
+}
+
+/* =========================================
+   EXTRA SETTINGS ACTIONS
+   ========================================= */
+
+.settings-divider {
+    height: 1px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.18);
+    margin: 0;
+}
+
+/* ACTION BUTTON */
+
+.settings-action {
+    width: 100%;
+    min-height: 82px;
+
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    padding: 16px 10px;
+
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+
+    background: transparent;
+
+    color: white;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    font-family: inherit;
+
+    transition:
+        background 0.25s ease,
+        transform 0.2s ease;
+}
+
+.settings-action:last-child {
+    border-bottom: none;
+}
+
+/* HOVER */
+
+.settings-action:hover {
+    background: rgba(255, 255, 255, 0.10);
+}
+
+/* CLICK */
+
+.settings-action:active {
+    transform: scale(0.99);
+}
+
+/* ICON */
+
+.action-icon {
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.14);
+
+    font-size: 22px;
+}
+
+/* TEXT */
+
+.settings-action .setting-info {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.settings-action .setting-name {
+    color: white;
+
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.settings-action .setting-description {
+    color: rgba(255, 255, 255, 0.72);
+
+    font-size: 13px;
+}
+
+/* ARROW */
+
+.action-arrow {
+    flex-shrink: 0;
+
+    font-size: 22px;
+
+    color: rgba(255, 255, 255, 0.8);
+
+    transition: transform 0.2s ease;
+}
+
+.settings-action:hover .action-arrow {
+    transform: translateX(5px);
+}
+
+/* =========================================
+   CLEAR CHAT
+   ========================================= */
+
+.clear-action:hover {
+    background: rgba(255, 100, 100, 0.12);
+}
+
+/* =========================================
+   RESET
+   ========================================= */
+
+.reset-action:hover {
+    background: rgba(255, 210, 100, 0.12);
+}
+
+/* =========================================
+   STORE
+   ========================================= */
+
+.store-action:hover {
+    background: rgba(120, 200, 255, 0.12);
+}
