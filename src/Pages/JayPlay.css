@@ -1,0 +1,807 @@
+/* JayPlay.css – Gaming-world theme for Jay */
+
+/* -----------------------------
+   Page background & base
+   ----------------------------- */
+.jay-play-page {
+  box-sizing: border-box;
+  min-height: 100vh;
+  padding: 1.5rem 1rem 3rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #0b1021;
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 45%, #312e81 100%);
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Decorative neon glows */
+.jay-play-page::before,
+.jay-play-page::after {
+  content: "";
+  position: absolute;
+  width: 40vw;
+  height: 40vw;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.25;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.jay-play-page::before {
+  background: radial-gradient(circle, #22d3ee, transparent 70%);
+  top: -10%;
+  left: -10%;
+}
+
+.jay-play-page::after {
+  background: radial-gradient(circle, #f472b6, transparent 70%);
+  bottom: -10%;
+  right: -10%;
+}
+
+.jay-play-page > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* -----------------------------
+   Top bar
+   ----------------------------- */
+.jay-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.btn-back-jay {
+  background: linear-gradient(135deg, #1e293b, #312e81);
+  border: 1px solid #6366f1;
+  color: #e0e7ff;
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.12s ease, background 0.12s ease, box-shadow 0.12s ease;
+  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.25);
+}
+
+.btn-back-jay:hover {
+  background: linear-gradient(135deg, #312e81, #3730a3);
+  box-shadow: 0 6px 18px rgba(99, 102, 241, 0.35);
+  transform: translateY(-1px);
+}
+
+.btn-back-jay:active {
+  transform: translateY(0);
+}
+
+.jay-title-small {
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: #a5b4fc;
+  font-size: 1.05rem;
+  text-shadow: 0 0 12px rgba(99, 102, 241, 0.6);
+}
+
+/* -----------------------------
+   Header
+   ----------------------------- */
+.jay-play-header {
+  text-align: center;
+  max-width: 900px;
+  margin: 0.2rem auto 0;
+  width: 100%;
+}
+
+.jay-play-header h1 {
+  margin: 0.5rem 0 0.3rem;
+  font-size: clamp(1.4rem, 4vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  color: #e0e7ff;
+  background: linear-gradient(90deg, #22d3ee, #f472b6, #a78bfa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 2px 12px rgba(34, 211, 238, 0.35));
+  white-space: nowrap;
+  padding: 0 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .jay-play-header h1 {
+    white-space: normal;
+    font-size: clamp(1.25rem, 5vw, 1.8rem);
+  }
+}
+
+.jay-subtitle {
+  margin: 0;
+  color: #c7d2fe;
+  font-size: 1rem;
+  font-weight: 600;
+  opacity: 0.95;
+}
+
+/* -----------------------------
+   Mood navigation
+   ----------------------------- */
+.jay-mood-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  justify-content: center;
+  max-width: 900px;
+  margin: 0.4rem auto 0;
+  width: 100%;
+}
+
+.jay-mood-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid rgba(99, 102, 241, 0.4);
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #0f172a, #1e1b4b);
+  color: #c7d2fe;
+  font-size: 0.95rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.14s ease, box-shadow 0.14s ease, background 0.14s ease, border-color 0.14s ease;
+  box-shadow: 0 6px 18px rgba(99, 102, 241, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.jay-mood-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(99, 102, 241, 0.35);
+  border-color: #818cf8;
+}
+
+.jay-mood-btn:active {
+  transform: translateY(-1px);
+}
+
+/* Mood-specific neon gradients */
+.jay-mood-btn.theme-joy {
+  background: linear-gradient(135deg, #0b3a2a, #115e3b);
+  border-color: #22d3ee;
+  color: #ecfeff;
+}
+
+.jay-mood-btn.theme-sadness {
+  background: linear-gradient(135deg, #0b1a3a, #172554);
+  border-color: #60a5fa;
+  color: #eff6ff;
+}
+
+.jay-mood-btn.theme-anger {
+  background: linear-gradient(135deg, #3a0b0b, #541717);
+  border-color: #f87171;
+  color: #fef2f2;
+}
+
+.jay-mood-btn.theme-fear {
+  background: linear-gradient(135deg, #1a0b3a, #2e1065);
+  border-color: #a78bfa;
+  color: #f5f3ff;
+}
+
+.jay-mood-btn.theme-confused {
+  background: linear-gradient(135deg, #3a0b35, #54174f);
+  border-color: #e879f9;
+  color: #faf5ff;
+}
+
+.jay-mood-btn.active {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(99, 102, 241, 0.5),
+              0 0 0 3px rgba(255, 255, 255, 0.15) inset;
+  filter: saturate(1.1);
+}
+
+.mood-emoji {
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.mood-label {
+  line-height: 1;
+}
+
+/* -----------------------------
+   Mood info
+   ----------------------------- */
+.jay-mood-info {
+  text-align: center;
+  max-width: 800px;
+  margin: 0.2rem auto 0;
+  width: 100%;
+  background: rgba(15, 23, 42, 0.55);
+  border: 1px solid rgba(99, 102, 241, 0.35);
+  border-radius: 16px;
+  padding: 0.9rem 1rem;
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.2);
+  backdrop-filter: blur(6px);
+}
+
+.jay-mood-info h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: #e0e7ff;
+  text-shadow: 0 2px 10px rgba(99, 102, 241, 0.4);
+}
+
+.jay-mood-info p {
+  margin: 0;
+  color: #c7d2fe;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+/* -----------------------------
+   Games grid & cards
+   ----------------------------- */
+.jay-games-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 1000px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.1rem;
+}
+
+.jay-game-card {
+  width: 100%;
+  text-align: left;
+  border-radius: 16px;
+  padding: 1.05rem;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.14s ease, box-shadow 0.14s ease, border-color 0.14s ease;
+  border: 1.5px solid rgba(99, 102, 241, 0.45);
+  color: #e0e7ff;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  box-shadow: 0 8px 22px rgba(99, 102, 241, 0.25);
+  overflow: hidden;
+}
+
+.theme-joy .jay-game-card {
+  background: linear-gradient(135deg, #0b3a2a, #0f4c3a);
+  border-color: #22d3ee;
+  color: #ecfeff;
+}
+
+.jay-game-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(99, 102, 241, 0.35);
+  border-color: #a78bfa;
+}
+
+.jay-game-card:active {
+  transform: translateY(-1px);
+}
+
+.jay-game-card h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.08rem;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+}
+
+.jay-game-card p {
+  margin: 0 0 0.7rem;
+  font-size: 0.88rem;
+  color: #c7d2fe;
+  opacity: 0.9;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.play-badge {
+  position: absolute;
+  right: 0.75rem;
+  top: 0.75rem;
+  background: linear-gradient(135deg, #22d3ee, #f472b6);
+  color: #0b1021;
+  font-size: 0.72rem;
+  font-weight: 900;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+  box-shadow: 0 4px 12px rgba(34, 211, 238, 0.5);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.play-badge::before {
+  content: "▶";
+  font-size: 0.65rem;
+}
+
+/* -----------------------------
+   Footer / Tip
+   ----------------------------- */
+.jay-play-footer {
+  text-align: center;
+  color: #c7d2fe;
+  font-size: 0.88rem;
+  margin-top: 0.4rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  background: rgba(15, 23, 42, 0.55);
+  border: 1px solid rgba(99, 102, 241, 0.35);
+  border-radius: 14px;
+  padding: 0.7rem 0.9rem;
+  box-shadow: 0 6px 18px rgba(99, 102, 241, 0.2);
+  backdrop-filter: blur(6px);
+  font-weight: 600;
+}
+
+.jay-play-footer::before {
+  content: "💡 Tip: ";
+  font-weight: 900;
+  color: #a5b4fc;
+}
+
+/* -----------------------------
+   Game container & shared UI
+   ----------------------------- */
+.game-container {
+  max-width: 900px;
+  margin: 0.5rem auto 1rem;
+  width: 100%;
+  background: linear-gradient(135deg, #0f172a, #1e1b4b);
+  border: 1.5px solid rgba(99, 102, 241, 0.45);
+  border-radius: 18px;
+  padding: 1.2rem;
+  box-shadow: 0 12px 34px rgba(99, 102, 241, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.game-container::before {
+  content: "";
+  position: absolute;
+  inset: -40% -10% auto -10%;
+  height: 120%;
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.15), transparent 60%);
+  pointer-events: none;
+}
+
+.game-header {
+  text-align: center;
+  position: relative;
+}
+
+.game-header h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  color: #e0e7ff;
+  text-shadow: 0 2px 10px rgba(99, 102, 241, 0.4);
+}
+
+.game-header p {
+  margin: 0;
+  color: #c7d2fe;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.game-stats {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  font-weight: 800;
+  color: #a5b4fc;
+  font-size: 0.95rem;
+  flex-wrap: wrap;
+}
+
+.game-area {
+  position: relative;
+  width: 100%;
+  min-height: 260px;
+  border: 1.5px solid rgba(99, 102, 241, 0.45);
+  border-radius: 14px;
+  background: linear-gradient(135deg, #0b1021, #1e1b4b);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.game-start-screen,
+.game-over-screen {
+  text-align: center;
+  padding: 1rem;
+  position: relative;
+}
+
+.game-start-screen h3,
+.game-over-screen h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #e0e7ff;
+}
+
+.game-start-screen p,
+.game-over-screen p {
+  margin: 0 0 0.8rem;
+  color: #c7d2fe;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.game-actions {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #22d3ee, #f472b6);
+  color: #0b1021;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 0.92rem;
+  cursor: pointer;
+  transition: transform 0.12s ease, filter 0.12s ease, box-shadow 0.12s ease;
+  box-shadow: 0 6px 16px rgba(34, 211, 238, 0.45);
+}
+
+.btn-primary:hover {
+  filter: brightness(1.05);
+  box-shadow: 0 8px 20px rgba(34, 211, 238, 0.55);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, #1e293b, #312e81);
+  color: #e0e7ff;
+  border: 1px solid #6366f1;
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 0.92rem;
+  cursor: pointer;
+  transition: transform 0.12s ease, background 0.12s ease, box-shadow 0.12s ease;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(135deg, #312e81, #3730a3);
+  box-shadow: 0 6px 16px rgba(99, 102, 241, 0.35);
+  transform: translateY(-1px);
+}
+
+.btn-secondary:active {
+  transform: translateY(0);
+}
+
+/* -----------------------------
+   Individual game visuals (reuse Maya styles with Jay colors)
+   ----------------------------- */
+
+/* Coin Collector */
+.coin-area {
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+
+.fall-item {
+  position: absolute;
+  font-size: 24px;
+  user-select: none;
+}
+
+.coin-item {
+  filter: drop-shadow(0 2px 6px rgba(34, 211, 238, 0.4));
+}
+
+.bomb-item {
+  filter: drop-shadow(0 2px 6px rgba(244, 114, 182, 0.4));
+}
+
+.player-jay {
+  position: absolute;
+  bottom: 8px;
+  font-size: 32px;
+  transform: translateX(-50%);
+  user-select: none;
+}
+
+/* Neon Memory */
+.neon-memory .memory-card {
+  border: 2px solid #22d3ee;
+  background: linear-gradient(135deg, #0b1021, #1e1b4b);
+  box-shadow: 0 4px 12px rgba(34, 211, 238, 0.25);
+}
+
+.neon-memory .memory-card.flipped .memory-back {
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.25);
+}
+
+/* Power-Up Dash */
+.powerup-area {
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.powerup-item {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #22d3ee, #0ea5e9);
+  font-size: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.08s ease, filter 0.08s ease;
+  box-shadow: 0 4px 10px rgba(34, 211, 238, 0.35);
+}
+
+.powerup-item:active {
+  transform: scale(0.92);
+  filter: brightness(1.05);
+}
+
+/* Star Rescue */
+.star-rescue-area {
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+
+.falling-star {
+  position: absolute;
+  font-size: 24px;
+  user-select: none;
+  filter: drop-shadow(0 2px 6px rgba(250, 204, 21, 0.4));
+}
+
+.platform-jay {
+  position: absolute;
+  bottom: 8px;
+  font-size: 32px;
+  transform: translateX(-50%);
+  user-select: none;
+}
+
+/* Pixel Garden */
+.garden-area {
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  min-height: 320px;
+}
+
+.garden-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+  width: min(80vw, 320px);
+  aspect-ratio: 1 / 1;
+  background: linear-gradient(135deg, #0b1021, #1e1b4b);
+  border: 2px solid #6366f1;
+  border-radius: 12px;
+  padding: 6px;
+  margin: 0 auto;
+}
+
+.garden-cell {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  border: 1px solid rgba(99, 102, 241, 0.35);
+  border-radius: 6px;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.1s ease, background 0.12s ease;
+}
+
+.garden-cell.planted {
+  background: linear-gradient(135deg, #1e293b, #312e81);
+  border-color: #a78bfa;
+}
+
+.plant-selector {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+}
+
+.plant-btn {
+  width: 54px;
+  height: 54px;
+  border: 2px solid #6366f1;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform 0.1s ease, border-color 0.12s ease, box-shadow 0.12s ease;
+}
+
+.plant-btn.selected {
+  border-color: #22d3ee;
+  box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.25);
+}
+
+/* Night Walk */
+.night-area {
+  flex-direction: column;
+  justify-content: center;
+}
+
+.night-scene {
+  position: relative;
+  width: 100%;
+  height: 160px;
+  background: linear-gradient(180deg, #0b1021, #1e1b4b);
+  border-radius: 12px;
+  border: 2px solid #6366f1;
+  overflow: hidden;
+}
+
+.moon {
+  position: absolute;
+  top: 16px;
+  right: 24px;
+  font-size: 32px;
+  filter: drop-shadow(0 0 10px rgba(250, 204, 21, 0.4));
+}
+
+.jay-walker {
+  position: absolute;
+  bottom: 24px;
+  font-size: 28px;
+  transition: left 0.3s ease;
+}
+
+/* Glitch Smash */
+.glitch-area {
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.glitch-block {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #22d3ee, #f472b6);
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.08s ease, filter 0.08s ease;
+  box-shadow: 0 4px 10px rgba(34, 211, 238, 0.35);
+}
+
+.glitch-block:active {
+  transform: scale(0.92);
+  filter: brightness(1.05);
+}
+
+/* Boss Cooldown */
+.boss-area {
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.boss-bar {
+  height: 18px;
+  background: linear-gradient(90deg, #22d3ee, #f472b6);
+  border: 2px solid #6366f1;
+  border-radius: 999px;
+  box-shadow: 0 0 12px rgba(34, 211, 238, 0.4);
+  transition: width 0.1s linear;
+}
+
+.cool-node {
+  position: absolute;
+  font-size: 26px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  filter: drop-shadow(0 2px 6px rgba(34, 211, 238, 0.4));
+}
+
+/* Target Rush */
+.target-rush-area {
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.rush-target {
+  position: absolute;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  transition: transform 0.08s ease, filter 0.08s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.rush-target:active {
+  transform: scale(0.92);
+  filter: brightness(1.05);
+}
+
+.good-target {
+  background: radial-gradient(circle at 30% 30%, #86efac, #22c55e);
+}
+
+.bad-target {
+  background: radial-gradient(circle at 30% 30%, #fca5a5, #b91c1c);
+}
+
+/* Reuse paths, maze, shield, sort, pattern, puzzle from Maya with Jay colors */
+/* Most of those classes are shared; Jay’s dark background already changes the look. */
+
+/* -----------------------------
+   Responsive
+   ----------------------------- */
+@media (max-width: 640px) {
+  .jay-play-header h1 {
+    /* already handled in its own media query */
+  }
+
+  .game-header h2 {
+    font-size: 1.25rem;
+  }
+
+  .garden-grid {
+    width: 90vw;
+  }
+
+  .jay-mood-btn {
+    padding: 0.55rem 0.9rem;
+    font-size: 0.9rem;
+  }
+}

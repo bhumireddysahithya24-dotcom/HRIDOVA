@@ -1,0 +1,258 @@
+.jay-settings-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 80px 20px 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.jay-settings-back {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  z-index: 10;
+}
+
+.jay-settings-back:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.jay-settings-container {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header Section */
+.settings-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.settings-icon-container {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.settings-icon {
+  font-size: 40px;
+  line-height: 1;
+}
+
+.settings-title {
+  margin: 0;
+  padding: 0;
+  font-size: 32px;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  line-height: 1.1;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.settings-subtitle {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  line-height: 1.5;
+  max-width: 400px;
+}
+
+/* Settings Card */
+.settings-card {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 25px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.setting-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.setting-item:last-child {
+  border-bottom: none;
+}
+
+.setting-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1;
+  padding-right: 15px;
+}
+
+.setting-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+}
+
+.setting-description {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.4;
+}
+
+/* Toggle Button */
+.toggle-btn {
+  width: 60px;
+  height: 32px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.toggle-btn.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.toggle-slider {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: white;
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-btn.active .toggle-slider {
+  transform: translateX(28px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .jay-settings-page {
+    padding: 70px 15px 30px 15px;
+  }
+
+  .jay-settings-back {
+    top: 15px;
+    left: 15px;
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .settings-icon-container {
+    width: 70px;
+    height: 70px;
+  }
+
+  .settings-icon {
+    font-size: 35px;
+  }
+
+  .settings-title {
+    font-size: 28px;
+  }
+
+  .settings-subtitle {
+    font-size: 15px;
+  }
+
+  .settings-card {
+    padding: 20px;
+  }
+
+  .setting-name {
+    font-size: 17px;
+  }
+
+  .setting-description {
+    font-size: 13px;
+  }
+
+  .toggle-btn {
+    width: 55px;
+    height: 30px;
+  }
+
+  .toggle-btn.active .toggle-slider {
+    transform: translateX(25px);
+  }
+}
+
+@media (max-width: 480px) {
+  .jay-settings-back {
+    padding: 6px 14px;
+    font-size: 13px;
+  }
+
+  .settings-icon-container {
+    width: 60px;
+    height: 60px;
+  }
+
+  .settings-icon {
+    font-size: 30px;
+  }
+
+  .settings-title {
+    font-size: 24px;
+  }
+
+  .settings-subtitle {
+    font-size: 14px;
+  }
+
+  .settings-card {
+    padding: 15px;
+  }
+
+  .setting-item {
+    padding: 15px 0;
+  }
+
+  .setting-name {
+    font-size: 16px;
+  }
+
+  .setting-description {
+    font-size: 12px;
+  }
+}

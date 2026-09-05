@@ -1,0 +1,899 @@
+/* =========================================================
+   MAYA EXPLORE & UNLOCK
+   Fashion / Designer Progression
+   ========================================================= */
+
+.maya-explore-page {
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 28px 24px 50px;
+
+  background:
+    radial-gradient(
+      circle at 15% 10%,
+      rgba(236, 72, 153, 0.16),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(168, 85, 247, 0.18),
+      transparent 30%
+    ),
+    linear-gradient(
+      145deg,
+      #160b2e 0%,
+      #241044 45%,
+      #35145a 100%
+    );
+
+  color: #ffffff;
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  overflow-x: hidden;
+  position: relative;
+}
+
+
+/* =========================================================
+   BACKGROUND STARS
+   ========================================================= */
+
+.maya-explore-stars {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.maya-explore-stars span {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 14px;
+  animation: mayaStarTwinkle 3s ease-in-out infinite;
+}
+
+.maya-explore-stars span:nth-child(1) {
+  top: 8%;
+  left: 8%;
+}
+
+.maya-explore-stars span:nth-child(2) {
+  top: 16%;
+  left: 25%;
+  animation-delay: 0.5s;
+}
+
+.maya-explore-stars span:nth-child(3) {
+  top: 12%;
+  right: 18%;
+  animation-delay: 1s;
+}
+
+.maya-explore-stars span:nth-child(4) {
+  top: 30%;
+  right: 8%;
+  animation-delay: 1.5s;
+}
+
+.maya-explore-stars span:nth-child(5) {
+  top: 48%;
+  left: 5%;
+  animation-delay: 0.8s;
+}
+
+.maya-explore-stars span:nth-child(6) {
+  top: 65%;
+  right: 7%;
+  animation-delay: 1.8s;
+}
+
+.maya-explore-stars span:nth-child(7) {
+  top: 78%;
+  left: 12%;
+  animation-delay: 0.3s;
+}
+
+.maya-explore-stars span:nth-child(8) {
+  top: 88%;
+  right: 24%;
+  animation-delay: 1.2s;
+}
+
+.maya-explore-stars span:nth-child(9) {
+  top: 42%;
+  left: 48%;
+  animation-delay: 2s;
+}
+
+@keyframes mayaStarTwinkle {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: scale(0.8);
+  }
+
+  50% {
+    opacity: 0.9;
+    transform: scale(1.2);
+  }
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.maya-explore-header {
+  position: relative;
+  z-index: 2;
+
+  max-width: 1100px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.maya-explore-back {
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+
+  padding: 11px 20px;
+  border-radius: 999px;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(12px);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.maya-explore-back:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.17);
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+.maya-explore-heading {
+  width: 100%;
+  max-width: 760px;
+
+  text-align: center;
+
+  padding: 20px 20px 10px;
+}
+
+.maya-heading-icon {
+  font-size: 48px;
+  line-height: 1;
+
+  margin-bottom: 12px;
+
+  filter: drop-shadow(0 8px 18px rgba(236, 72, 153, 0.45));
+}
+
+.maya-explore-heading h1 {
+  margin: 0;
+
+  font-size: clamp(32px, 5vw, 52px);
+  line-height: 1.1;
+
+  font-weight: 800;
+
+  background: linear-gradient(
+    90deg,
+    #f9a8d4,
+    #e9a8ff,
+    #c4b5fd
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  letter-spacing: -0.025em;
+}
+
+.maya-explore-heading p {
+  margin: 14px auto 0;
+
+  max-width: 650px;
+
+  color: #e9d5ff;
+
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   PROGRESS SUMMARY
+   ========================================================= */
+
+.maya-progress-summary {
+  position: relative;
+  z-index: 2;
+
+  width: min(760px, 100%);
+  margin: 30px auto 35px;
+
+  padding: 18px 22px;
+
+  box-sizing: border-box;
+
+  background: rgba(30, 15, 58, 0.72);
+
+  border: 1px solid rgba(216, 180, 254, 0.22);
+  border-radius: 18px;
+
+  backdrop-filter: blur(14px);
+
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.25),
+    0 0 30px rgba(168, 85, 247, 0.08);
+}
+
+.maya-progress-text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+
+  margin-bottom: 12px;
+}
+
+.maya-progress-label {
+  color: #d8b4fe;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+}
+
+.maya-progress-text strong {
+  color: #ffffff;
+
+  font-size: 14px;
+}
+
+.maya-progress-bar {
+  width: 100%;
+  height: 9px;
+
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.09);
+
+  border-radius: 999px;
+}
+
+.maya-progress-fill {
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    #ec4899,
+    #c084fc,
+    #a78bfa
+  );
+
+  border-radius: inherit;
+
+  transition: width 0.4s ease;
+}
+
+
+/* =========================================================
+   ROADMAP
+   ========================================================= */
+
+.maya-roadmap {
+  position: relative;
+  z-index: 2;
+
+  width: min(900px, 100%);
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/* =========================================================
+   LEVEL CARD
+   ========================================================= */
+
+.maya-level-card {
+  width: 100%;
+  box-sizing: border-box;
+
+  display: grid;
+
+  grid-template-columns: 95px 1fr;
+  grid-template-areas:
+    "number status"
+    "icon content"
+    "action action";
+
+  gap: 16px;
+
+  padding: 26px;
+
+  border-radius: 24px;
+
+  position: relative;
+
+  border: 1px solid rgba(216, 180, 254, 0.18);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(40, 20, 76, 0.96),
+      rgba(28, 15, 55, 0.96)
+    );
+
+  box-shadow:
+    0 18px 50px rgba(0, 0, 0, 0.25);
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.maya-level-card.is-unlocked:hover {
+  transform: translateY(-3px);
+
+  border-color: rgba(236, 72, 153, 0.55);
+
+  box-shadow:
+    0 22px 55px rgba(0, 0, 0, 0.3),
+    0 0 35px rgba(236, 72, 153, 0.08);
+}
+
+.maya-level-card.is-locked {
+  opacity: 0.62;
+}
+
+.maya-level-card.is-passed {
+  border-color: rgba(192, 132, 252, 0.48);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(54, 27, 91, 0.96),
+      rgba(35, 18, 67, 0.96)
+    );
+}
+
+
+/* =========================================================
+   LEVEL NUMBER
+   ========================================================= */
+
+.maya-level-number {
+  grid-area: number;
+
+  align-self: center;
+
+  color: #c4b5fd;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+}
+
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.maya-level-status {
+  grid-area: status;
+
+  justify-self: end;
+  align-self: center;
+
+  padding: 7px 13px;
+
+  border-radius: 999px;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 0.06em;
+}
+
+.maya-status-ready {
+  color: #fce7f3;
+
+  background: rgba(236, 72, 153, 0.16);
+
+  border: 1px solid rgba(236, 72, 153, 0.38);
+}
+
+.maya-status-passed {
+  color: #f5d0fe;
+
+  background: rgba(192, 132, 252, 0.18);
+
+  border: 1px solid rgba(192, 132, 252, 0.42);
+}
+
+.maya-status-locked {
+  color: #d1d5db;
+
+  background: rgba(107, 114, 128, 0.16);
+
+  border: 1px solid rgba(156, 163, 175, 0.2);
+}
+
+
+/* =========================================================
+   MAIN ICON
+   ========================================================= */
+
+.maya-level-icon {
+  grid-area: icon;
+
+  width: 76px;
+  height: 76px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(236, 72, 153, 0.16),
+      rgba(168, 85, 247, 0.18)
+    );
+
+  border: 1px solid rgba(216, 180, 254, 0.22);
+
+  font-size: 38px;
+
+  box-shadow:
+    inset 0 0 20px rgba(255, 255, 255, 0.03);
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.maya-level-content {
+  grid-area: content;
+
+  min-width: 0;
+}
+
+.maya-level-content h2 {
+  margin: 0 0 9px;
+
+  color: #f5d0fe;
+
+  font-size: clamp(22px, 3vw, 28px);
+  line-height: 1.2;
+
+  font-weight: 800;
+}
+
+.maya-game-name {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  color: #ffffff;
+
+  font-size: 17px;
+  font-weight: 750;
+
+  line-height: 1.35;
+}
+
+.maya-game-name span:first-child {
+  font-size: 22px;
+}
+
+.maya-level-description {
+  margin: 10px 0 16px;
+
+  color: #d8c8e9;
+
+  font-size: 14px;
+  line-height: 1.6;
+
+  max-width: 650px;
+}
+
+
+/* =========================================================
+   PASS POINTS
+   ========================================================= */
+
+.maya-pass-box {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 5px;
+
+  padding: 11px 15px;
+
+  border-radius: 13px;
+
+  background: rgba(255, 255, 255, 0.055);
+
+  border: 1px solid rgba(216, 180, 254, 0.15);
+
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.maya-pass-label {
+  color: #c084fc;
+
+  font-size: 10px;
+  font-weight: 850;
+
+  letter-spacing: 0.12em;
+}
+
+.maya-pass-value {
+  color: #f3e8ff;
+
+  font-size: 13px;
+  line-height: 1.4;
+
+  font-weight: 650;
+}
+
+
+/* =========================================================
+   ACTION
+   ========================================================= */
+
+.maya-level-action {
+  grid-area: action;
+
+  display: flex;
+  justify-content: flex-end;
+
+  margin-top: 3px;
+}
+
+.maya-play-level {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  background:
+    linear-gradient(
+      135deg,
+      #ec4899,
+      #a855f7
+    );
+
+  color: #ffffff;
+
+  padding: 12px 20px;
+
+  border-radius: 999px;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  box-shadow:
+    0 8px 25px rgba(168, 85, 247, 0.28);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
+
+.maya-play-level:hover {
+  transform: translateY(-2px);
+
+  filter: brightness(1.08);
+
+  box-shadow:
+    0 12px 30px rgba(168, 85, 247, 0.4);
+}
+
+.maya-play-level:active {
+  transform: translateY(0);
+}
+
+.maya-play-level span {
+  font-size: 17px;
+}
+
+.maya-locked-message {
+  width: 100%;
+  box-sizing: border-box;
+
+  text-align: right;
+
+  color: #aaa0b8;
+
+  font-size: 12px;
+  font-weight: 650;
+}
+
+
+/* =========================================================
+   CONNECTOR
+   ========================================================= */
+
+.maya-level-connector {
+  height: 62px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: rgba(216, 180, 254, 0.35);
+
+  position: relative;
+}
+
+.maya-level-connector::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+
+  width: 2px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(216, 180, 254, 0.15),
+      rgba(216, 180, 254, 0.35),
+      rgba(216, 180, 254, 0.15)
+    );
+}
+
+.maya-level-connector span {
+  position: relative;
+  z-index: 1;
+
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #28134c;
+
+  border: 1px solid rgba(216, 180, 254, 0.2);
+
+  font-size: 15px;
+}
+
+.maya-level-connector.connector-active {
+  color: #e9a8ff;
+}
+
+.maya-level-connector.connector-active::before {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(236, 72, 153, 0.25),
+      rgba(192, 132, 252, 0.7),
+      rgba(236, 72, 153, 0.25)
+    );
+}
+
+.maya-level-connector.connector-active span {
+  border-color: rgba(236, 72, 153, 0.45);
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.maya-explore-footer {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+
+  margin-top: 45px;
+
+  color: #d8b4fe;
+
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.maya-explore-footer p {
+  margin: 0;
+}
+
+.maya-explore-footer span {
+  color: #f9a8d4;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 800px) {
+  .maya-explore-page {
+    padding: 22px 16px 40px;
+  }
+
+  .maya-explore-header {
+    display: block;
+  }
+
+  .maya-explore-back {
+    position: static;
+
+    margin-bottom: 18px;
+  }
+
+  .maya-explore-heading {
+    padding-top: 8px;
+  }
+
+  .maya-progress-summary {
+    margin-top: 22px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .maya-explore-page {
+    padding: 18px 12px 35px;
+  }
+
+  .maya-explore-heading h1 {
+    font-size: 32px;
+  }
+
+  .maya-explore-heading p {
+    font-size: 14px;
+  }
+
+  .maya-heading-icon {
+    font-size: 40px;
+  }
+
+  .maya-progress-text {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .maya-level-card {
+    grid-template-columns: 70px 1fr;
+
+    padding: 20px;
+
+    gap: 13px;
+  }
+
+  .maya-level-icon {
+    width: 60px;
+    height: 60px;
+
+    border-radius: 17px;
+
+    font-size: 30px;
+  }
+
+  .maya-level-number {
+    font-size: 10px;
+  }
+
+  .maya-level-status {
+    font-size: 9px;
+    padding: 6px 9px;
+  }
+
+  .maya-level-content h2 {
+    font-size: 21px;
+  }
+
+  .maya-game-name {
+    font-size: 15px;
+  }
+
+  .maya-level-description {
+    font-size: 13px;
+  }
+
+  .maya-level-action {
+    justify-content: stretch;
+  }
+
+  .maya-play-level {
+    width: 100%;
+  }
+
+  .maya-locked-message {
+    text-align: center;
+  }
+
+  .maya-level-connector {
+    height: 45px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+  .maya-level-card {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "number"
+      "status"
+      "icon"
+      "content"
+      "action";
+  }
+
+  .maya-level-number {
+    justify-self: start;
+  }
+
+  .maya-level-status {
+    justify-self: start;
+  }
+
+  .maya-level-icon {
+    width: 64px;
+    height: 64px;
+  }
+}

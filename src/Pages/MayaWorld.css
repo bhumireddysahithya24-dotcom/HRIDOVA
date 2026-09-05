@@ -1,0 +1,312 @@
+/* =========================================================
+   MAYA WORLD
+   Exact uploaded image + transparent clickable overlays
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* =========================================================
+   MAIN PAGE
+   ========================================================= */
+
+.maya-world-page {
+  position: fixed;
+  inset: 0;
+
+  width: 100%;
+  height: 100vh;
+
+  margin: 0;
+  padding: 0;
+
+  background: #000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+}
+
+/* =========================================================
+   IMAGE WRAPPER
+   Original image:
+   1536 × 1024
+   ========================================================= */
+
+.maya-world-image-wrapper {
+  position: relative;
+
+  /*
+    Keep the complete image inside the available browser
+    viewport instead of making it larger than the screen.
+  */
+  width: auto;
+  height: 95vh;
+
+  max-width: 100vw;
+  max-height: 95vh;
+
+  aspect-ratio: 1536 / 1024;
+
+  margin: 0 auto;
+
+  overflow: hidden;
+
+  line-height: 0;
+}
+
+/* =========================================================
+   MAYA WORLD IMAGE
+   ========================================================= */
+
+.maya-world-screen-image {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  /*
+    IMPORTANT:
+    Do NOT crop the image.
+    The complete Maya World image must remain visible.
+  */
+  object-fit: fill;
+
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* =========================================================
+   TRANSPARENT CLICKABLE OVERLAYS
+   ========================================================= */
+
+.maya-overlay {
+  position: absolute;
+
+  display: block;
+
+  margin: 0;
+  padding: 0;
+
+  background: transparent;
+
+  border: none;
+  outline: none;
+
+  cursor: pointer;
+
+  z-index: 20;
+
+  /*
+    Completely invisible.
+  */
+  color: transparent;
+
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+/*
+   Do not change the visual appearance of the original image
+   when hovering over a button.
+*/
+.maya-overlay:hover,
+.maya-overlay:focus,
+.maya-overlay:active {
+  background: transparent;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+/* =========================================================
+   SETTINGS
+   Top-right button in the image
+   ========================================================= */
+
+.maya-settings-overlay {
+  top: 1.5%;
+  right: 2.5%;
+
+  width: 8%;
+  height: 12%;
+}
+
+/* =========================================================
+   BOTTOM BUTTONS
+   ========================================================= */
+
+/* -------------------------
+   BACK
+   ------------------------- */
+
+.maya-back-overlay {
+  left: 1.8%;
+  bottom: 2%;
+
+  width: 12.3%;
+  height: 10%;
+}
+
+/* -------------------------
+   TALK
+   ------------------------- */
+
+.maya-talk-overlay {
+  left: 15.6%;
+  bottom: 2%;
+
+  width: 13.2%;
+  height: 10%;
+}
+
+/* -------------------------
+   CHAT
+   ------------------------- */
+
+.maya-chat-overlay {
+  left: 30.2%;
+  bottom: 2%;
+
+  width: 13.6%;
+  height: 10%;
+}
+
+/* -------------------------
+   PLAY
+   ------------------------- */
+
+.maya-play-overlay {
+  left: 45.2%;
+  bottom: 2%;
+
+  width: 13%;
+  height: 10%;
+}
+
+/* -------------------------
+   EXPLORE & UNLOCK
+   ------------------------- */
+
+.maya-explore-overlay {
+  left: 59.5%;
+  bottom: 2%;
+
+  width: 13.7%;
+  height: 10%;
+}
+
+/* -------------------------
+   SLEEP
+   ------------------------- */
+
+.maya-sleep-overlay {
+  left: 74%;
+  bottom: 2%;
+
+  width: 13%;
+  height: 10%;
+}
+
+/* -------------------------
+   MUSIC
+   ------------------------- */
+
+.maya-music-overlay {
+  right: 1.6%;
+  bottom: 2%;
+
+  width: 11.8%;
+  height: 10%;
+}
+
+/* =========================================================
+   LARGE SCREENS
+   ========================================================= */
+
+@media (min-width: 1600px) {
+  .maya-world-image-wrapper {
+    height: 95vh;
+    max-height: 95vh;
+  }
+}
+
+/* =========================================================
+   LAPTOP / SMALL DESKTOP
+   ========================================================= */
+
+@media (max-width: 1200px) {
+  .maya-world-image-wrapper {
+    width: 100vw;
+    height: auto;
+
+    max-width: 100vw;
+    max-height: 95vh;
+
+    aspect-ratio: 1536 / 1024;
+  }
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .maya-world-page {
+    height: 100vh;
+  }
+
+  .maya-world-image-wrapper {
+    width: 100vw;
+    height: auto;
+
+    aspect-ratio: 1536 / 1024;
+
+    max-width: 100vw;
+    max-height: 95vh;
+  }
+
+  .maya-overlay {
+    cursor: pointer;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+  .maya-world-image-wrapper {
+    width: 100vw;
+    height: auto;
+
+    aspect-ratio: 1536 / 1024;
+  }
+}
+
+/* =========================================================
+   PREVENT BROWSER SCROLLING
+   ========================================================= */
+
+body {
+  overflow: hidden;
+}

@@ -1,0 +1,840 @@
+/* =========================================
+   JAY EXPLORE & UNLOCK
+   ========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+.jay-explore-page {
+  min-height: 100vh;
+  width: 100%;
+
+  position: relative;
+
+  overflow-x: hidden;
+
+  padding: 28px 24px 60px;
+
+  color: #ffffff;
+
+  background:
+    radial-gradient(
+      circle at 15% 15%,
+      rgba(59, 130, 246, 0.18),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 25%,
+      rgba(124, 58, 237, 0.2),
+      transparent 32%
+    ),
+    linear-gradient(
+      135deg,
+      #080d20 0%,
+      #10183b 48%,
+      #21134c 100%
+    );
+
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+/* =========================================
+   STARS
+   ========================================= */
+
+.jay-explore-stars {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.5;
+
+  background-image:
+    radial-gradient(
+      circle at 8% 15%,
+      #ffffff 0 2px,
+      transparent 2.5px
+    ),
+    radial-gradient(
+      circle at 23% 35%,
+      #ffffff 0 1.5px,
+      transparent 2px
+    ),
+    radial-gradient(
+      circle at 40% 12%,
+      #ffffff 0 2px,
+      transparent 2.5px
+    ),
+    radial-gradient(
+      circle at 61% 25%,
+      #ffffff 0 1.5px,
+      transparent 2px
+    ),
+    radial-gradient(
+      circle at 80% 13%,
+      #ffffff 0 2px,
+      transparent 2.5px
+    ),
+    radial-gradient(
+      circle at 92% 38%,
+      #ffffff 0 1.5px,
+      transparent 2px
+    ),
+    radial-gradient(
+      circle at 14% 73%,
+      #ffffff 0 1.5px,
+      transparent 2px
+    ),
+    radial-gradient(
+      circle at 84% 77%,
+      #ffffff 0 2px,
+      transparent 2.5px
+    );
+
+  z-index: 0;
+}
+
+/* =========================================
+   BACK BUTTON
+   ========================================= */
+
+.jay-explore-back {
+  position: relative;
+
+  z-index: 10;
+
+  padding:
+    12px
+    24px;
+
+  border-radius: 999px;
+
+  border: 1px solid
+    rgba(96, 165, 250, 0.65);
+
+  background:
+    rgba(30, 41, 75, 0.8);
+
+  color: #dbeafe;
+
+  font-size: 15px;
+
+  font-weight: 750;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.jay-explore-back:hover {
+  transform: translateY(-2px);
+
+  background:
+    rgba(37, 55, 100, 0.95);
+
+  box-shadow:
+    0 8px 25px
+    rgba(59, 130, 246, 0.25);
+}
+
+/* =========================================
+   CONTENT
+   ========================================= */
+
+.jay-explore-content {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  max-width: 1000px;
+
+  margin: 0 auto;
+}
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+.jay-explore-header {
+  text-align: center;
+
+  margin:
+    30px auto 45px;
+}
+
+.jay-explore-icon {
+  font-size: 62px;
+
+  line-height: 1;
+
+  margin-bottom: 10px;
+
+  filter:
+    drop-shadow(
+      0 0 18px
+      rgba(59, 130, 246, 0.5)
+    );
+}
+
+.jay-explore-header h1 {
+  margin: 0;
+
+  font-size:
+    clamp(38px, 5vw, 60px);
+
+  line-height: 1.1;
+
+  font-weight: 900;
+
+  letter-spacing: -1.5px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #60a5fa,
+      #818cf8,
+      #c084fc
+    );
+
+  -webkit-background-clip: text;
+
+  background-clip: text;
+
+  color: transparent;
+}
+
+.jay-explore-header p {
+  max-width: 650px;
+
+  margin:
+    14px auto 25px;
+
+  color: #c7d2fe;
+
+  font-size: 18px;
+
+  line-height: 1.6;
+}
+
+/* =========================================
+   PROGRESS
+   ========================================= */
+
+.jay-progress-summary {
+  width: min(100%, 400px);
+
+  margin: 0 auto;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 16px;
+
+  padding:
+    14px
+    18px;
+
+  border-radius: 16px;
+
+  border: 1px solid
+    rgba(96, 165, 250, 0.28);
+
+  background:
+    rgba(255, 255, 255, 0.06);
+
+  color: #bfdbfe;
+}
+
+.jay-progress-summary span {
+  font-size: 14px;
+
+  font-weight: 650;
+}
+
+.jay-progress-summary strong {
+  color: #60a5fa;
+
+  font-size: 14px;
+}
+
+/* =========================================
+   ROADMAP
+   ========================================= */
+
+.jay-roadmap {
+  width: 100%;
+}
+
+/* =========================================
+   LEVEL CARD
+   ========================================= */
+
+.jay-level-card {
+  width: 100%;
+
+  position: relative;
+
+  padding:
+    28px;
+
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(20, 31, 65, 0.97),
+      rgba(19, 20, 52, 0.97)
+    );
+
+  border:
+    1px solid
+    rgba(96, 165, 250, 0.22);
+
+  box-shadow:
+    0 18px 50px
+    rgba(0, 0, 0, 0.28);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.jay-level-card.unlocked {
+  border-color:
+    rgba(96, 165, 250, 0.5);
+}
+
+.jay-level-card.current {
+  border-color:
+    #60a5fa;
+
+  box-shadow:
+    0 0 0 1px
+      rgba(96, 165, 250, 0.18),
+    0 20px 55px
+      rgba(59, 130, 246, 0.22);
+}
+
+.jay-level-card.current::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 4px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #22d3ee,
+      #6366f1,
+      #a855f7
+    );
+}
+
+.jay-level-card.locked {
+  opacity: 0.58;
+}
+
+.jay-level-card.unlocked:hover {
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 22px 58px
+    rgba(59, 130, 246, 0.2);
+}
+
+/* =========================================
+   TOP
+   ========================================= */
+
+.jay-level-top {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 16px;
+
+  margin-bottom: 12px;
+}
+
+.jay-level-number {
+  color: #93c5fd;
+
+  font-size: 13px;
+
+  font-weight: 900;
+
+  letter-spacing: 1.5px;
+}
+
+.jay-level-status {
+  padding:
+    7px
+    12px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(255, 255, 255, 0.06);
+
+  color: #c7d2fe;
+
+  font-size: 11px;
+
+  font-weight: 850;
+
+  white-space: nowrap;
+}
+
+.jay-level-card.current
+.jay-level-status {
+  color: #67e8f9;
+
+  border:
+    1px solid
+    rgba(103, 232, 249, 0.25);
+}
+
+/* =========================================
+   LEVEL ICON
+   ========================================= */
+
+.jay-level-icon {
+  width: 72px;
+
+  height: 72px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin:
+    8px 0 13px;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(59, 130, 246, 0.18),
+      rgba(139, 92, 246, 0.15)
+    );
+
+  border:
+    1px solid
+    rgba(96, 165, 250, 0.25);
+
+  font-size: 40px;
+}
+
+/* =========================================
+   TEXT
+   ========================================= */
+
+.jay-level-card h2 {
+  margin:
+    0 0 7px;
+
+  color: #ffffff;
+
+  font-size:
+    clamp(24px, 4vw, 32px);
+
+  line-height: 1.2;
+
+  font-weight: 900;
+}
+
+.jay-game-name {
+  margin-bottom: 12px;
+
+  color: #93c5fd;
+
+  font-size: 17px;
+
+  font-weight: 800;
+}
+
+.jay-level-description {
+  max-width: 760px;
+
+  margin:
+    0 0 20px;
+
+  color: #c7d2fe;
+
+  font-size: 15px;
+
+  line-height: 1.65;
+}
+
+/* =========================================
+   PASS POINTS
+   ========================================= */
+
+.jay-pass-box {
+  width: 100%;
+
+  padding:
+    14px
+    16px;
+
+  margin-bottom: 20px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 6px;
+
+  border-radius: 14px;
+
+  background:
+    rgba(255, 255, 255, 0.045);
+
+  border:
+    1px solid
+    rgba(96, 165, 250, 0.18);
+}
+
+.jay-pass-box span {
+  color: #60a5fa;
+
+  font-size: 11px;
+
+  font-weight: 900;
+
+  letter-spacing: 1.2px;
+}
+
+.jay-pass-box strong {
+  color: #ffffff;
+
+  font-size: 14px;
+
+  line-height: 1.45;
+}
+
+/* =========================================
+   PLAY LEVEL
+   ========================================= */
+
+.jay-play-level {
+  width: 100%;
+
+  min-height: 50px;
+
+  padding:
+    12px
+    20px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #4f46e5,
+      #7c3aed
+    );
+
+  color: #ffffff;
+
+  font-size: 16px;
+
+  font-weight: 850;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 25px
+    rgba(37, 99, 235, 0.3);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
+
+.jay-play-level:hover {
+  transform:
+    translateY(-2px);
+
+  filter:
+    brightness(1.08);
+
+  box-shadow:
+    0 12px 30px
+    rgba(37, 99, 235, 0.45);
+}
+
+.jay-play-level:active {
+  transform:
+    translateY(0);
+}
+
+/* =========================================
+   LOCKED
+   ========================================= */
+
+.jay-locked-message {
+  width: 100%;
+
+  min-height: 50px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding:
+    12px;
+
+  border-radius: 14px;
+
+  border:
+    1px dashed
+    rgba(148, 163, 184, 0.25);
+
+  background:
+    rgba(255, 255, 255, 0.035);
+
+  color: #94a3b8;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  text-align: center;
+}
+
+/* =========================================
+   CONNECTOR
+   ========================================= */
+
+.jay-roadmap-connector {
+  height: 55px;
+
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: #475569;
+
+  font-size: 30px;
+}
+
+.jay-roadmap-connector span {
+  width: 42px;
+
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 255, 255, 0.035);
+
+  border:
+    1px solid
+    rgba(148, 163, 184, 0.15);
+}
+
+.jay-roadmap-connector.active {
+  color: #60a5fa;
+}
+
+.jay-roadmap-connector.active span {
+  border-color:
+    rgba(96, 165, 250, 0.45);
+
+  background:
+    rgba(59, 130, 246, 0.1);
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+.jay-explore-footer {
+  text-align: center;
+
+  margin-top: 45px;
+
+  color: #94a3c8;
+}
+
+.jay-explore-footer p {
+  margin:
+    0 0 18px;
+
+  font-size: 14px;
+}
+
+.jay-reset-progress {
+  padding:
+    9px
+    16px;
+
+  border-radius: 999px;
+
+  border:
+    1px solid
+    rgba(96, 165, 250, 0.2);
+
+  background:
+    rgba(255, 255, 255, 0.04);
+
+  color: #7dd3fc;
+
+  font-size: 12px;
+
+  font-weight: 750;
+
+  cursor: pointer;
+}
+
+.jay-reset-progress:hover {
+  background:
+    rgba(255, 255, 255, 0.08);
+
+  color: #ffffff;
+}
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 650px) {
+  .jay-explore-page {
+    padding:
+      20px
+      14px
+      40px;
+  }
+
+  .jay-explore-back {
+    padding:
+      10px
+      18px;
+
+    font-size: 13px;
+  }
+
+  .jay-explore-header {
+    margin:
+      25px auto 32px;
+  }
+
+  .jay-explore-icon {
+    font-size: 48px;
+  }
+
+  .jay-explore-header h1 {
+    font-size: 38px;
+  }
+
+  .jay-explore-header p {
+    font-size: 15px;
+  }
+
+  .jay-progress-summary {
+    flex-direction: column;
+
+    gap: 6px;
+  }
+
+  .jay-level-card {
+    padding: 21px;
+
+    border-radius: 20px;
+  }
+
+  .jay-level-top {
+    align-items: flex-start;
+  }
+
+  .jay-level-status {
+    font-size: 10px;
+
+    padding:
+      6px
+      9px;
+  }
+
+  .jay-level-icon {
+    width: 62px;
+    height: 62px;
+
+    font-size: 34px;
+  }
+
+  .jay-level-card h2 {
+    font-size: 25px;
+  }
+
+  .jay-game-name {
+    font-size: 15px;
+  }
+
+  .jay-level-description {
+    font-size: 14px;
+  }
+
+  .jay-roadmap-connector {
+    height: 45px;
+  }
+}
+
+@media (max-width: 420px) {
+  .jay-level-top {
+    flex-direction: column;
+
+    gap: 8px;
+  }
+
+  .jay-level-status {
+    align-self: flex-start;
+  }
+}

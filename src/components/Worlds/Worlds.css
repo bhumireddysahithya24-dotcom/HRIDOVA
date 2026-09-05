@@ -1,0 +1,502 @@
+/* ============================================================
+   HRIDOVA WORLDS PAGE
+   ONLY MAYA + JAY
+   ============================================================ */
+
+.worlds-page {
+  position: relative !important;
+  width: 100% !important;
+  min-height: 100vh !important;
+  min-height: 100svh !important;
+
+  box-sizing: border-box !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  overflow-x: hidden !important;
+
+  background:
+    radial-gradient(
+      circle at 50% 10%,
+      rgba(112, 76, 170, 0.25),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #171a32 0%,
+      #1b2140 50%,
+      #12345b 100%
+    ) !important;
+
+  color: #ffffff !important;
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif !important;
+}
+
+/* ============================================================
+   CONTENT
+   ============================================================ */
+
+.worlds-content {
+  position: relative !important;
+  z-index: 2 !important;
+
+  width: min(1120px, calc(100% - 60px)) !important;
+
+  margin: 0 auto !important;
+
+  padding: 55px 0 60px !important;
+
+  box-sizing: border-box !important;
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.worlds-page .worlds-header {
+  display: block !important;
+
+  width: 100% !important;
+
+  margin: 0 auto 42px !important;
+  padding: 0 !important;
+
+  text-align: center !important;
+}
+
+.worlds-page .worlds-title {
+  display: block !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  font-size: clamp(2.4rem, 5vw, 4rem) !important;
+  line-height: 1.1 !important;
+
+  font-weight: 800 !important;
+
+  color: #dca6ff !important;
+
+  text-align: center !important;
+
+  letter-spacing: -0.03em !important;
+
+  text-shadow:
+    0 0 20px rgba(205, 133, 255, 0.35),
+    0 4px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+.worlds-page .worlds-subtitle {
+  display: block !important;
+
+  margin: 12px 0 0 !important;
+  padding: 0 !important;
+
+  font-size: clamp(1rem, 2vw, 1.3rem) !important;
+  line-height: 1.4 !important;
+
+  font-weight: 500 !important;
+
+  color: #c7b9ed !important;
+
+  text-align: center !important;
+}
+
+/* ============================================================
+   GRID
+   ============================================================ */
+
+.worlds-page .worlds-grid {
+  display: grid !important;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+
+  gap: 34px !important;
+
+  width: 100% !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  align-items: stretch !important;
+}
+
+/* ============================================================
+   CARD
+   ============================================================ */
+
+.worlds-page .world-card {
+  position: relative !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+
+  min-width: 0 !important;
+  width: 100% !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  box-sizing: border-box !important;
+
+  overflow: hidden !important;
+
+  background: #202253 !important;
+
+  border: 1px solid rgba(151, 92, 230, 0.65) !important;
+
+  border-radius: 26px !important;
+
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.28),
+    0 0 28px rgba(114, 67, 192, 0.15) !important;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease !important;
+}
+
+.worlds-page .world-card:hover {
+  transform: translateY(-5px) !important;
+
+  border-color: rgba(207, 153, 255, 0.9) !important;
+
+  box-shadow:
+    0 24px 48px rgba(0, 0, 0, 0.32),
+    0 0 34px rgba(148, 83, 230, 0.3) !important;
+}
+
+/* ============================================================
+   IMAGE
+   ============================================================ */
+
+.worlds-page .world-image-container {
+  width: 100% !important;
+  height: 350px !important;
+
+  flex-shrink: 0 !important;
+
+  overflow: hidden !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  background: #151832 !important;
+}
+
+.worlds-page .world-image {
+  display: block !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
+/* ============================================================
+   CARD INFORMATION
+   ============================================================ */
+
+.worlds-page .world-info {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+
+  flex: 1 !important;
+
+  box-sizing: border-box !important;
+
+  min-height: 245px !important;
+
+  padding: 25px 25px 30px !important;
+
+  text-align: center !important;
+}
+
+.worlds-page .world-name {
+  display: block !important;
+
+  margin: 0 0 12px !important;
+  padding: 0 !important;
+
+  font-size: clamp(2rem, 3.5vw, 2.5rem) !important;
+  line-height: 1.2 !important;
+
+  font-weight: 750 !important;
+
+  color: #dca6ff !important;
+
+  text-align: center !important;
+
+  text-shadow:
+    0 0 14px rgba(202, 128, 255, 0.25) !important;
+}
+
+.worlds-page .world-description {
+  display: block !important;
+
+  width: 100% !important;
+  max-width: 470px !important;
+
+  margin: 0 0 28px !important;
+  padding: 0 !important;
+
+  font-size: 1.05rem !important;
+  line-height: 1.5 !important;
+
+  font-weight: 500 !important;
+
+  color: #c9c2e7 !important;
+
+  text-align: center !important;
+}
+
+/* ============================================================
+   BUTTON
+   ============================================================ */
+
+.worlds-page .world-enter-button {
+  display: inline-flex !important;
+
+  align-items: center !important;
+  justify-content: center !important;
+
+  gap: 9px !important;
+
+  width: auto !important;
+  min-width: 220px !important;
+
+  margin: auto 0 0 !important;
+  padding: 14px 30px !important;
+
+  box-sizing: border-box !important;
+
+  border: 1px solid rgba(218, 185, 255, 0.65) !important;
+
+  border-radius: 999px !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      #7047c7 0%,
+      #8154d1 100%
+    ) !important;
+
+  color: #ffffff !important;
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif !important;
+
+  font-size: 1rem !important;
+  line-height: 1.2 !important;
+
+  font-weight: 750 !important;
+
+  text-align: center !important;
+
+  cursor: pointer !important;
+
+  box-shadow:
+    0 8px 22px rgba(92, 50, 184, 0.4) !important;
+
+  appearance: none !important;
+  -webkit-appearance: none !important;
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    filter 0.18s ease !important;
+}
+
+.worlds-page .world-enter-button:hover {
+  transform: translateY(-2px) !important;
+
+  filter: brightness(1.08) !important;
+
+  box-shadow:
+    0 12px 28px rgba(103, 57, 205, 0.55) !important;
+}
+
+.worlds-page .world-enter-button:active {
+  transform: translateY(0) !important;
+}
+
+.worlds-page .world-enter-button:focus-visible {
+  outline: 3px solid rgba(220, 190, 255, 0.9) !important;
+  outline-offset: 3px !important;
+}
+
+.worlds-page .world-enter-button span {
+  color: #ffffff !important;
+}
+
+.worlds-page .world-arrow {
+  font-size: 1.2rem !important;
+  line-height: 1 !important;
+}
+
+/* ============================================================
+   STARS
+   ============================================================ */
+
+.worlds-page .worlds-stars {
+  position: fixed !important;
+  inset: 0 !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  z-index: 0 !important;
+
+  pointer-events: none !important;
+
+  overflow: hidden !important;
+}
+
+.worlds-page .world-star {
+  position: absolute !important;
+
+  width: 3px !important;
+  height: 3px !important;
+
+  border-radius: 50% !important;
+
+  background: rgba(255, 255, 255, 0.72) !important;
+
+  box-shadow:
+    0 0 7px rgba(255, 255, 255, 0.35) !important;
+}
+
+.world-star-1 { top: 4%; left: 8%; }
+.world-star-2 { top: 9%; left: 31%; }
+.world-star-3 { top: 5%; left: 68%; }
+.world-star-4 { top: 13%; left: 91%; }
+.world-star-5 { top: 24%; left: 3%; }
+.world-star-6 { top: 29%; left: 18%; }
+.world-star-7 { top: 22%; left: 83%; }
+.world-star-8 { top: 38%; left: 96%; }
+.world-star-9 { top: 49%; left: 7%; }
+.world-star-10 { top: 58%; left: 90%; }
+.world-star-11 { top: 69%; left: 4%; }
+.world-star-12 { top: 75%; left: 95%; }
+.world-star-13 { top: 83%; left: 13%; }
+.world-star-14 { top: 91%; left: 76%; }
+.world-star-15 { top: 17%; left: 55%; }
+.world-star-16 { top: 46%; left: 52%; }
+.world-star-17 { top: 63%; left: 30%; }
+.world-star-18 { top: 88%; left: 42%; }
+
+/* ============================================================
+   TABLET
+   ============================================================ */
+
+@media (max-width: 850px) {
+  .worlds-content {
+    width: min(720px, calc(100% - 36px)) !important;
+    padding: 40px 0 50px !important;
+  }
+
+  .worlds-page .worlds-grid {
+    gap: 24px !important;
+  }
+
+  .worlds-page .world-image-container {
+    height: 290px !important;
+  }
+
+  .worlds-page .world-info {
+    min-height: 225px !important;
+    padding: 22px 20px 25px !important;
+  }
+
+  .worlds-page .world-name {
+    font-size: 2rem !important;
+  }
+}
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 700px) {
+  .worlds-content {
+    width: calc(100% - 28px) !important;
+    padding: 30px 0 40px !important;
+  }
+
+  .worlds-page .worlds-header {
+    margin-bottom: 28px !important;
+  }
+
+  .worlds-page .worlds-grid {
+    grid-template-columns: 1fr !important;
+    gap: 22px !important;
+  }
+
+  .worlds-page .world-image-container {
+    height: 250px !important;
+  }
+
+  .worlds-page .world-info {
+    min-height: 210px !important;
+    padding: 20px 18px 24px !important;
+  }
+
+  .worlds-page .world-name {
+    font-size: 1.85rem !important;
+  }
+
+  .worlds-page .world-description {
+    font-size: 0.95rem !important;
+    margin-bottom: 22px !important;
+  }
+
+  .worlds-page .world-enter-button {
+    width: 100% !important;
+    max-width: 260px !important;
+  }
+}
+
+/* ============================================================
+   SMALL MOBILE
+   ============================================================ */
+
+@media (max-width: 420px) {
+  .worlds-content {
+    width: calc(100% - 20px) !important;
+    padding-top: 24px !important;
+  }
+
+  .worlds-page .world-image-container {
+    height: 220px !important;
+  }
+
+  .worlds-page .world-info {
+    min-height: 195px !important;
+    padding: 18px 15px 21px !important;
+  }
+
+  .worlds-page .world-name {
+    font-size: 1.7rem !important;
+  }
+
+  .worlds-page .world-description {
+    font-size: 0.9rem !important;
+  }
+}

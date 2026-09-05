@@ -1,0 +1,359 @@
+/* =========================================================
+   WORLDS PAGE
+   NORMAL DOCUMENT SCROLLING
+   ========================================================= */
+
+.world-page {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  margin: 0;
+  padding: 40px 30px 100px;
+
+  background: linear-gradient(
+    135deg,
+    #18072b 0%,
+    #35105c 50%,
+    #7629b5 100%
+  );
+
+  color: white;
+
+  /*
+    IMPORTANT:
+    Do NOT lock the page height.
+    Let the content determine the page height.
+  */
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+   ========================================================= */
+
+.world-container {
+  width: 100%;
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  padding-bottom: 100px;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.world-title {
+  width: 100%;
+
+  text-align: center;
+
+  margin: 0 auto 45px;
+}
+
+.world-title h1 {
+  margin: 0 0 15px;
+
+  font-size: clamp(38px, 5vw, 64px);
+  font-weight: 800;
+}
+
+.world-title p {
+  margin: 0;
+
+  font-size: clamp(16px, 2vw, 21px);
+
+  line-height: 1.5;
+
+  opacity: 0.9;
+}
+
+
+/* =========================================================
+   WORLDS GRID
+   ========================================================= */
+
+.world-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 30px;
+
+  padding-bottom: 80px;
+}
+
+
+/* =========================================================
+   WORLD CARD
+   ========================================================= */
+
+.world-card {
+  width: 100%;
+
+  overflow: hidden;
+
+  border-radius: 28px;
+
+  background: rgba(255, 255, 255, 0.10);
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.30);
+
+  backdrop-filter: blur(12px);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.world-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.40);
+}
+
+
+/* =========================================================
+   WORLD IMAGE
+   ========================================================= */
+
+.world-card img {
+  display: block;
+
+  width: 100%;
+  height: 320px;
+
+  object-fit: cover;
+}
+
+
+/* =========================================================
+   CARD CONTENT
+   ========================================================= */
+
+.world-card-content {
+  padding: 25px;
+
+  text-align: center;
+}
+
+.world-card-content h2 {
+  margin: 5px 0 10px;
+
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.world-card-content p {
+  margin: 0 0 20px;
+
+  font-size: 18px;
+
+  line-height: 1.5;
+
+  opacity: 0.9;
+}
+
+
+/* =========================================================
+   ENTER WORLD BUTTON
+   ========================================================= */
+
+.world-enter-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 180px;
+
+  padding: 13px 25px;
+
+  border: none;
+
+  border-radius: 30px;
+
+  background: linear-gradient(
+    135deg,
+    #b94cff,
+    #df2caa
+  );
+
+  color: white;
+
+  font-size: 17px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.world-enter-button:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 8px 25px rgba(220, 60, 220, 0.5);
+}
+
+.world-enter-button:active {
+  transform: scale(0.97);
+}
+
+
+/* =========================================================
+   BACK BUTTON
+   ========================================================= */
+
+.back-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 30px;
+
+  padding: 12px 24px;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  border-radius: 25px;
+
+  background: rgba(255, 255, 255, 0.12);
+
+  color: white;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(10px);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.back-button:hover {
+  transform: translateY(-2px);
+
+  background: rgba(255, 255, 255, 0.20);
+}
+
+
+/* =========================================================
+   WORLD DETAIL IMAGE
+   ========================================================= */
+
+.world-screen {
+  display: block;
+
+  width: 100%;
+  max-width: 1400px;
+
+  height: auto;
+
+  margin: 30px auto 0;
+
+  object-fit: contain;
+}
+
+
+/* =========================================================
+   REMOVE INTERNAL SCROLLING
+   ========================================================= */
+
+.world-page::-webkit-scrollbar {
+  width: auto;
+}
+
+.world-page::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.world-page::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .world-page {
+    padding: 30px 20px 80px;
+  }
+
+  .world-grid {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+  }
+
+  .world-card img {
+    height: 300px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .world-page {
+    padding: 25px 15px 70px;
+  }
+
+  .world-title {
+    margin-bottom: 30px;
+  }
+
+  .world-title h1 {
+    font-size: 38px;
+  }
+
+  .world-title p {
+    font-size: 16px;
+  }
+
+  .world-grid {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+  .world-card img {
+    height: 240px;
+  }
+
+  .world-card-content {
+    padding: 20px;
+  }
+
+  .world-card-content h2 {
+    font-size: 26px;
+  }
+
+  .world-card-content p {
+    font-size: 16px;
+  }
+}

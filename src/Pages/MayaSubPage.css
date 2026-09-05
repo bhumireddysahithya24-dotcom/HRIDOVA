@@ -1,0 +1,736 @@
+/* Maya Talk Page - Premium Hridova UI */
+
+.maya-talk-page {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #1a0a2e 0%, #4a1a6e 40%, #8b3dff 70%, #c77dff 100%);
+  position: relative;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 20px;
+  box-sizing: border-box;
+}
+
+.maya-talk-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(180, 100, 255, 0.3) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Back Button */
+.talk-back-button {
+  align-self: flex-start;
+  margin-left: 10px;
+  margin-bottom: 20px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  padding: 11px 22px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+.talk-back-button:hover {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.55);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.15);
+}
+
+/* Main Content */
+.talk-main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1100px;
+  z-index: 1;
+  flex: 1;
+}
+
+/* Header */
+.talk-header {
+  text-align: center;
+  margin-bottom: 35px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.talk-microphone {
+  font-size: 60px;
+  line-height: 1;
+  filter: drop-shadow(0 4px 15px rgba(255, 255, 255, 0.3));
+}
+
+.talk-title {
+  font-size: clamp(42px, 6vw, 65px);
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  text-shadow: 0 4px 30px rgba(255, 255, 255, 0.4);
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+}
+
+.talk-subtitle {
+  font-size: clamp(16px, 2.5vw, 20px);
+  color: rgba(255, 230, 255, 0.92);
+  margin: 0;
+  font-weight: 400;
+  text-shadow: 0 2px 15px rgba(255, 255, 255, 0.2);
+  line-height: 1.5;
+}
+
+/* Main Card */
+.talk-card {
+  width: 100%;
+  max-width: 1050px;
+  background: rgba(80, 30, 120, 0.28);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 32px;
+  padding: 50px 40px;
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.3),
+    0 0 40px rgba(180, 100, 255, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.talk-dress-icon {
+  font-size: 65px;
+  line-height: 1;
+  filter: drop-shadow(0 4px 20px rgba(255, 150, 200, 0.4));
+}
+
+.talk-maya-name {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 800;
+  color: #ff69b4;
+  margin: 0;
+  text-shadow: 0 3px 20px rgba(255, 105, 180, 0.5);
+  letter-spacing: 3px;
+  font-family: 'Georgia', serif;
+}
+
+.talk-maya-greeting {
+  font-size: clamp(24px, 3.5vw, 34px);
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+  text-shadow: 0 2px 15px rgba(255, 255, 255, 0.3);
+}
+
+.talk-maya-question {
+  font-size: clamp(16px, 2.2vw, 19px);
+  color: rgba(255, 255, 255, 0.88);
+  margin: 0 0 10px 0;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* Topic Buttons */
+.talk-topic-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.talk-topic-btn {
+  flex: 1 1 200px;
+  max-width: 260px;
+  min-width: 180px;
+  background: linear-gradient(135deg, #9b4dff 0%, #d63384 100%);
+  color: #ffffff;
+  border: none;
+  padding: 18px 28px;
+  font-size: 17px;
+  font-weight: 600;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 8px 25px rgba(155, 77, 255, 0.35),
+    0 4px 15px rgba(214, 51, 132, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.talk-topic-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 20px;
+}
+
+.talk-topic-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 15px 40px rgba(155, 77, 255, 0.5),
+    0 8px 25px rgba(214, 51, 132, 0.35);
+}
+
+.talk-topic-btn:hover::before {
+  opacity: 1;
+}
+
+.talk-topic-btn:active {
+  transform: translateY(-2px);
+}
+
+/* Input Section */
+.talk-input-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 600px;
+  margin-top: 20px;
+}
+
+.talk-input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 14px 20px;
+  border-radius: 26px;
+  font-size: 15px;
+  color: #ffffff;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.talk-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.talk-input:focus {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.talk-speech-btn {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  font-size: 22px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.talk-speech-btn:hover {
+  background: rgba(255, 255, 255, 0.22);
+  transform: translateY(-2px);
+}
+
+.talk-speech-btn.listening {
+  background: rgba(255, 100, 100, 0.3);
+  border-color: rgba(255, 100, 100, 0.5);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(255, 100, 100, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(255, 100, 100, 0);
+  }
+}
+
+.talk-send-btn {
+  background: linear-gradient(135deg, #9b4dff 0%, #d63384 100%);
+  color: #ffffff;
+  border: none;
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  font-size: 22px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 15px rgba(155, 77, 255, 0.4);
+}
+
+.talk-send-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(155, 77, 255, 0.5);
+}
+
+.talk-send-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Conversation Content */
+.talk-conversation-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 900px;
+  z-index: 1;
+  flex: 1;
+  gap: 20px;
+}
+
+.talk-back-topics-btn {
+  align-self: flex-start;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.talk-back-topics-btn:hover {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.55);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.15);
+}
+
+.talk-conversation-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.talk-topic-icon {
+  font-size: 52px;
+  line-height: 1;
+  filter: drop-shadow(0 4px 15px rgba(255, 255, 255, 0.3));
+}
+
+.talk-topic-title {
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  text-shadow: 0 4px 30px rgba(255, 255, 255, 0.4);
+  letter-spacing: -0.5px;
+}
+
+.talk-conversation-area {
+  background: rgba(80, 30, 120, 0.25);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 28px;
+  padding: 25px 30px;
+  min-height: 300px;
+  max-height: 400px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.talk-conversation-area::-webkit-scrollbar {
+  width: 8px;
+}
+
+.talk-conversation-area::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+.talk-conversation-area::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+.talk-messages-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.talk-message {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  max-width: 85%;
+  animation: messageSlideIn 0.3s ease-out;
+}
+
+@keyframes messageSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.maya-talk-message {
+  align-self: flex-start;
+}
+
+.user-talk-message {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.talk-message-avatar,
+.talk-message-avatar-user {
+  font-size: 34px;
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.3));
+  line-height: 1;
+}
+
+.talk-message-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+  flex: 1;
+}
+
+.talk-message-bubble {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  padding: 14px 18px;
+  border-radius: 20px;
+  border-top-left-radius: 6px;
+  font-size: 15px;
+  line-height: 1.5;
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.user-talk-message .talk-message-bubble {
+  background: linear-gradient(135deg, #9b4dff 0%, #d63384 100%);
+  color: #ffffff;
+  border-radius: 20px;
+  border-top-right-radius: 6px;
+  box-shadow: 0 4px 20px rgba(155, 77, 255, 0.4);
+}
+
+.talk-message-text {
+  margin: 0;
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+}
+
+.talk-message-time {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.55);
+  padding: 0 4px;
+  font-weight: 500;
+}
+
+/* Subtopics */
+.talk-subtopics-container {
+  background: rgba(80, 30, 120, 0.25);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 28px;
+  padding: 30px 35px;
+  text-align: center;
+}
+
+.talk-subtopics-title {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 20px 0;
+  font-weight: 500;
+}
+
+.talk-subtopics-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+}
+
+.talk-subtopic-btn {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 14px 24px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  max-width: 100%;
+  text-align: center;
+}
+
+.talk-subtopic-btn:hover {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.45);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.15);
+}
+
+/* Continue Section */
+.talk-continue-section {
+  background: rgba(80, 30, 120, 0.25);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 28px;
+  padding: 25px 30px;
+  text-align: center;
+}
+
+.talk-continue-text {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 18px 0;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .talk-card {
+    max-width: 90%;
+    padding: 40px 30px;
+  }
+  
+  .talk-topic-btn {
+    flex: 1 1 45%;
+    max-width: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .maya-talk-page {
+    padding: 20px 15px;
+  }
+
+  .talk-back-button {
+    margin-left: 5px;
+    padding: 10px 18px;
+    font-size: 13px;
+  }
+
+  .talk-microphone {
+    font-size: 50px;
+  }
+
+  .talk-title {
+    margin-bottom: 10px;
+  }
+
+  .talk-card {
+    padding: 35px 25px;
+    border-radius: 28px;
+  }
+
+  .talk-dress-icon {
+    font-size: 55px;
+  }
+
+  .talk-topic-btn {
+    flex: 1 1 100%;
+    max-width: 320px;
+    padding: 16px 24px;
+    font-size: 16px;
+  }
+
+  .talk-input-section {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .talk-input {
+    min-width: 200px;
+    padding: 13px 17px;
+    font-size: 14px;
+  }
+
+  .talk-speech-btn,
+  .talk-send-btn {
+    width: 42px;
+    height: 42px;
+    font-size: 20px;
+  }
+
+  .talk-conversation-area {
+    padding: 20px 22px;
+    min-height: 250px;
+  }
+
+  .talk-message {
+    max-width: 90%;
+    gap: 10px;
+  }
+
+  .talk-message-avatar,
+  .talk-message-avatar-user {
+    font-size: 30px;
+  }
+
+  .talk-message-bubble {
+    padding: 13px 16px;
+    font-size: 14px;
+  }
+
+  .talk-subtopics-container {
+    padding: 25px 22px;
+  }
+
+  .talk-subtopic-btn {
+    padding: 13px 20px;
+    font-size: 14px;
+  }
+
+  .talk-continue-section {
+    padding: 20px 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .maya-talk-page {
+    padding: 15px 12px;
+  }
+
+  .talk-back-button {
+    padding: 9px 16px;
+    font-size: 12px;
+  }
+
+  .talk-microphone {
+    font-size: 45px;
+  }
+
+  .talk-card {
+    padding: 30px 20px;
+    border-radius: 24px;
+  }
+
+  .talk-dress-icon {
+    font-size: 50px;
+  }
+
+  .talk-topic-buttons {
+    gap: 14px;
+  }
+
+  .talk-topic-btn {
+    padding: 14px 20px;
+    font-size: 15px;
+    border-radius: 18px;
+  }
+
+  .talk-input {
+    padding: 12px 15px;
+    font-size: 14px;
+  }
+
+  .talk-speech-btn,
+  .talk-send-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 19px;
+  }
+
+  .talk-conversation-area {
+    padding: 18px 18px;
+    border-radius: 22px;
+  }
+
+  .talk-message-bubble {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+
+  .talk-subtopics-container {
+    padding: 20px 18px;
+    border-radius: 22px;
+  }
+
+  .talk-subtopics-title {
+    font-size: 16px;
+  }
+
+  .talk-subtopic-btn {
+    padding: 12px 18px;
+    font-size: 13px;
+    border-radius: 16px;
+  }
+
+  .talk-continue-section {
+    padding: 18px 18px;
+    border-radius: 22px;
+  }
+
+  .talk-continue-text {
+    font-size: 15px;
+  }
+}
+
+/* Global Box Sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+}

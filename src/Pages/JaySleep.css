@@ -1,0 +1,935 @@
+/* =========================================
+   JAY SLEEP STORIES
+   ========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+.jay-sleep-page {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+  padding: 32px 40px 50px;
+  color: #f3efff;
+  background:
+    radial-gradient(
+      circle at 50% 10%,
+      rgba(100, 75, 180, 0.28),
+      transparent 30%
+    ),
+    linear-gradient(
+      180deg,
+      #090d27 0%,
+      #15133c 48%,
+      #29205c 100%
+    );
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+/* =========================================
+   BACK BUTTON
+   ========================================= */
+
+.jay-back-button {
+  position: relative;
+  z-index: 20;
+
+  border: 1px solid rgba(137, 112, 255, 0.7);
+  border-radius: 30px;
+
+  padding: 13px 24px;
+
+  background: rgba(61, 53, 135, 0.8);
+  color: #ffffff;
+
+  font-size: 17px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.jay-back-button:hover {
+  transform: translateY(-2px);
+
+  background: rgba(83, 70, 170, 0.95);
+
+  box-shadow:
+    0 8px 24px rgba(91, 72, 220, 0.35);
+}
+
+.jay-back-button:active {
+  transform: translateY(0);
+}
+
+/* =========================================
+   BACKGROUND STARS
+   ========================================= */
+
+.jay-sleep-stars {
+  position: fixed;
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.55;
+
+  background-image:
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.9) 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.55) 1px,
+      transparent 1.5px
+    );
+
+  background-size:
+    95px 95px,
+    145px 145px;
+
+  background-position:
+    15px 25px,
+    50px 70px;
+
+  z-index: 0;
+}
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+.jay-sleep-header {
+  position: relative;
+  z-index: 2;
+
+  text-align: center;
+
+  max-width: 1000px;
+
+  margin:
+    5px auto 65px;
+}
+
+.jay-moon {
+  font-size: 68px;
+  line-height: 1;
+
+  margin-bottom: -8px;
+
+  filter:
+    drop-shadow(
+      0 0 18px rgba(255, 210, 80, 0.5)
+    );
+}
+
+.jay-sleep-header h1 {
+  margin: 0;
+
+  color: #cbb8ff;
+
+  font-size: clamp(42px, 5vw, 68px);
+
+  font-weight: 800;
+
+  line-height: 1.1;
+
+  letter-spacing: -1.5px;
+
+  text-shadow:
+    0 5px 22px rgba(122, 94, 230, 0.35);
+}
+
+.jay-sleep-header p {
+  margin:
+    12px auto 0;
+
+  max-width: 760px;
+
+  color: #c8c5ec;
+
+  font-size: clamp(18px, 2vw, 23px);
+
+  line-height: 1.55;
+}
+
+/* =========================================
+   STORY GRID
+   ========================================= */
+
+.jay-story-grid {
+  position: relative;
+  z-index: 2;
+
+  width: min(1250px, 100%);
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 28px;
+}
+
+/* =========================================
+   STORY CARD
+   ========================================= */
+
+.jay-story-card {
+  min-height: 370px;
+
+  padding:
+    28px
+    24px
+    30px;
+
+  border-radius: 24px;
+
+  border: 1px solid
+    rgba(145, 126, 224, 0.42);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(47, 43, 88, 0.96),
+      rgba(29, 28, 66, 0.98)
+    );
+
+  box-shadow:
+    0 15px 45px
+    rgba(0, 0, 0, 0.24);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.jay-story-card:hover {
+  transform: translateY(-7px);
+
+  border-color:
+    rgba(165, 145, 255, 0.75);
+
+  box-shadow:
+    0 22px 55px
+    rgba(88, 67, 180, 0.28);
+}
+
+.jay-story-icon {
+  width: 90px;
+  height: 90px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 58px;
+
+  margin-bottom: 14px;
+}
+
+.jay-story-card h2 {
+  width: 100%;
+
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 24px;
+
+  line-height: 1.25;
+
+  font-weight: 800;
+
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.jay-story-duration {
+  margin-top: 18px;
+
+  color: #ffd34e;
+
+  font-size: 17px;
+
+  font-weight: 700;
+}
+
+.jay-story-category {
+  margin-top: 18px;
+
+  color: #aaa5c8;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+/* =========================================
+   START BUTTON
+   ========================================= */
+
+.jay-start-button {
+  margin-top: auto;
+
+  min-width: 155px;
+
+  padding:
+    13px
+    25px;
+
+  border: 1px solid
+    rgba(164, 140, 255, 0.8);
+
+  border-radius: 30px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #7752d6,
+      #496bd4
+    );
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 22px
+    rgba(86, 67, 195, 0.35);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
+
+.jay-start-button:hover {
+  transform: translateY(-2px);
+
+  filter: brightness(1.08);
+
+  box-shadow:
+    0 12px 28px
+    rgba(86, 67, 195, 0.5);
+}
+
+.jay-start-button:active {
+  transform: translateY(0);
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+.jay-sleep-footer {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 18px;
+
+  margin:
+    65px auto 0;
+
+  color: #c8c3ed;
+}
+
+.jay-sleep-footer span {
+  width: 55px;
+  height: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #7655d5
+    );
+}
+
+.jay-sleep-footer span:last-child {
+  background:
+    linear-gradient(
+      90deg,
+      #7655d5,
+      transparent
+    );
+}
+
+.jay-sleep-footer p {
+  margin: 0;
+
+  font-size: 17px;
+}
+
+/* =========================================
+   STORY READER
+   ========================================= */
+
+.jay-reader {
+  position: relative;
+  z-index: 5;
+
+  width: min(1080px, 100%);
+
+  margin:
+    0 auto;
+
+  padding:
+    38px
+    48px
+    42px;
+
+  border-radius: 28px;
+
+  border: 1px solid
+    rgba(133, 111, 231, 0.65);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(25, 30, 57, 0.98),
+      rgba(29, 27, 68, 0.98)
+    );
+
+  box-shadow:
+    0 30px 80px
+    rgba(0, 0, 0, 0.42);
+}
+
+.jay-close-reader {
+  position: absolute;
+
+  top: 18px;
+  right: 20px;
+
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+
+  border: 1px solid
+    rgba(163, 148, 238, 0.75);
+
+  background:
+    rgba(20, 23, 48, 0.8);
+
+  color: white;
+
+  font-size: 32px;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.jay-close-reader:hover {
+  background:
+    rgba(70, 61, 135, 0.9);
+}
+
+.jay-reader-icon {
+  text-align: center;
+
+  font-size: 58px;
+
+  line-height: 1;
+
+  margin-bottom: 8px;
+}
+
+.jay-reader h2 {
+  margin:
+    0 auto 8px;
+
+  max-width: 850px;
+
+  text-align: center;
+
+  color: #cdbbff;
+
+  font-size:
+    clamp(32px, 4vw, 52px);
+
+  line-height: 1.15;
+
+  font-weight: 800;
+}
+
+.jay-reader-category {
+  text-align: center;
+
+  color: #b8b4dc;
+
+  font-size: 17px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.8px;
+}
+
+/* =========================================
+   PROGRESS
+   ========================================= */
+
+.jay-progress-area {
+  margin-top: 35px;
+}
+
+.jay-progress-bar {
+  width: 100%;
+  height: 10px;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  border: 1px solid
+    rgba(151, 130, 232, 0.65);
+
+  background:
+    rgba(76, 72, 111, 0.55);
+}
+
+.jay-progress-fill {
+  height: 100%;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      90deg,
+      #4dd8ff,
+      #9b62ff,
+      #e758b5
+    );
+
+  transition:
+    width 0.5s linear;
+}
+
+.jay-time-row {
+  display: flex;
+
+  justify-content: space-between;
+
+  margin-top: 10px;
+
+  color: #ddd9f7;
+
+  font-size: 16px;
+
+  font-weight: 700;
+}
+
+/* =========================================
+   STORY TEXT
+   ========================================= */
+
+.jay-story-text {
+  width: 100%;
+
+  max-height: 470px;
+
+  overflow-y: auto;
+
+  margin-top: 25px;
+
+  padding:
+    25px
+    30px;
+
+  border-radius: 20px;
+
+  border: 1px solid
+    rgba(111, 103, 177, 0.55);
+
+  background:
+    rgba(9, 14, 36, 0.72);
+
+  /*
+   * CRITICAL:
+   * Normal block layout prevents the text
+   * from becoming narrow columns.
+   */
+  display: block;
+
+  text-align: left;
+
+  scrollbar-width: thin;
+  scrollbar-color:
+    #755fe5
+    #161938;
+}
+
+.jay-story-text::-webkit-scrollbar {
+  width: 9px;
+}
+
+.jay-story-text::-webkit-scrollbar-track {
+  background: #151834;
+
+  border-radius: 10px;
+}
+
+.jay-story-text::-webkit-scrollbar-thumb {
+  background: #7059dc;
+
+  border-radius: 10px;
+}
+
+.jay-story-text p {
+  display: block;
+
+  width: 100%;
+
+  margin:
+    0 0 24px;
+
+  color: #e2e0f2;
+
+  font-size: 20px;
+
+  line-height: 1.8;
+
+  letter-spacing: 0;
+
+  white-space: normal;
+
+  word-break: normal;
+
+  overflow-wrap: break-word;
+}
+
+.jay-story-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* Paragraph Jay is currently reading */
+
+.jay-speaking-paragraph {
+  color: #ffffff !important;
+
+  text-shadow:
+    0 0 14px
+    rgba(161, 127, 255, 0.3);
+
+  transition:
+    color 0.3s ease;
+}
+
+/* =========================================
+   CONTROLS
+   ========================================= */
+
+.jay-controls {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 14px;
+
+  margin-top: 28px;
+}
+
+.jay-control-button {
+  min-width: 145px;
+
+  padding:
+    13px
+    22px;
+
+  border-radius: 30px;
+
+  border: 1px solid
+    rgba(145, 125, 236, 0.8);
+
+  background:
+    rgba(45, 42, 91, 0.95);
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.jay-control-button:hover {
+  transform: translateY(-2px);
+
+  background:
+    rgba(77, 67, 143, 0.95);
+
+  box-shadow:
+    0 8px 20px
+    rgba(72, 55, 164, 0.28);
+}
+
+.jay-control-button.primary {
+  background:
+    linear-gradient(
+      135deg,
+      #7752d6,
+      #4f70d9
+    );
+}
+
+/* =========================================
+   VOICE STATUS
+   ========================================= */
+
+.jay-speaking-status {
+  min-height: 28px;
+
+  margin-top: 22px;
+
+  text-align: center;
+
+  color: #c7c3e8;
+
+  font-size: 16px;
+
+  font-weight: 700;
+}
+
+.jay-sound-icon {
+  margin-right: 8px;
+
+  font-size: 18px;
+}
+
+.jay-voice-info {
+  margin-top: 7px;
+
+  text-align: center;
+
+  color: #8884ae;
+
+  font-size: 12px;
+}
+
+/* =========================================
+   READER BACK
+   ========================================= */
+
+.jay-reader-back {
+  display: block;
+
+  margin:
+    24px auto 0;
+
+  padding:
+    11px
+    22px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #bfb7ef;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.jay-reader-back:hover {
+  color: #ffffff;
+
+  text-decoration: underline;
+}
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 950px) {
+  .jay-sleep-page {
+    padding:
+      25px
+      22px
+      40px;
+  }
+
+  .jay-story-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .jay-reader {
+    padding:
+      35px
+      30px
+      35px;
+  }
+}
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 650px) {
+  .jay-sleep-page {
+    padding:
+      20px
+      14px
+      35px;
+  }
+
+  .jay-back-button {
+    font-size: 14px;
+
+    padding:
+      11px
+      18px;
+  }
+
+  .jay-sleep-header {
+    margin-bottom: 38px;
+  }
+
+  .jay-moon {
+    font-size: 48px;
+  }
+
+  .jay-sleep-header h1 {
+    font-size: 38px;
+
+    letter-spacing: -0.8px;
+  }
+
+  .jay-sleep-header p {
+    font-size: 16px;
+  }
+
+  .jay-story-grid {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+  .jay-story-card {
+    min-height: 350px;
+
+    padding:
+      25px
+      20px
+      28px;
+  }
+
+  .jay-story-card h2 {
+    font-size: 22px;
+  }
+
+  .jay-reader {
+    padding:
+      30px
+      18px
+      28px;
+
+    border-radius: 22px;
+  }
+
+  .jay-close-reader {
+    top: 12px;
+    right: 12px;
+
+    width: 42px;
+    height: 42px;
+
+    font-size: 28px;
+  }
+
+  .jay-reader-icon {
+    font-size: 48px;
+  }
+
+  .jay-reader h2 {
+    font-size: 31px;
+
+    padding:
+      0 35px;
+  }
+
+  .jay-story-text {
+    max-height: 420px;
+
+    padding:
+      20px
+      18px;
+  }
+
+  .jay-story-text p {
+    font-size: 17px;
+
+    line-height: 1.75;
+
+    margin-bottom: 21px;
+  }
+
+  .jay-controls {
+    flex-direction: column;
+
+    width: 100%;
+  }
+
+  .jay-control-button {
+    width: 100%;
+
+    max-width: 280px;
+  }
+
+  .jay-sleep-footer {
+    margin-top: 40px;
+  }
+}

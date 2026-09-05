@@ -1,0 +1,1240 @@
+/* MayaPlay.css – Colorful Maya-themed design */
+
+/* -----------------------------
+   Page background & base
+   ----------------------------- */
+.maya-play-page {
+  box-sizing: border-box;
+  min-height: 100vh;
+  padding: 1.5rem 1rem 3rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #2e1065; /* deep purple text */
+  background: linear-gradient(135deg, #e9d5ff 0%, #fbcfe8 45%, #bfdbfe 100%);
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Soft decorative glow blobs (purely visual) */
+.maya-play-page::before,
+.maya-play-page::after {
+  content: "";
+  position: absolute;
+  width: 40vw;
+  height: 40vw;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.maya-play-page::before {
+  background: radial-gradient(circle, #f472b6, transparent 70%);
+  top: -10%;
+  left: -10%;
+}
+
+.maya-play-page::after {
+  background: radial-gradient(circle, #a78bfa, transparent 70%);
+  bottom: -10%;
+  right: -10%;
+}
+
+/* Ensure content stays above decorative blobs */
+.maya-play-page > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* -----------------------------
+   Top bar
+   ----------------------------- */
+.maya-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.btn-back-maya {
+  background: linear-gradient(135deg, #f3e8ff, #fce7f3);
+  border: 1px solid #d8b4fe;
+  color: #5b21b6;
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.12s ease, background 0.12s ease, box-shadow 0.12s ease;
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.12);
+}
+
+.btn-back-maya:hover {
+  background: linear-gradient(135deg, #f5f3ff, #ffe4e6);
+  box-shadow: 0 6px 18px rgba(124, 58, 237, 0.18);
+  transform: translateY(-1px);
+}
+
+.btn-back-maya:active {
+  transform: translateY(0);
+}
+
+.maya-title-small {
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: #4c1d95;
+  font-size: 1.05rem;
+  text-shadow: 0 2px 10px rgba(139, 92, 246, 0.25);
+}
+
+/* -----------------------------
+   Header
+   ----------------------------- */
+.maya-play-header {
+  text-align: center;
+  max-width: 900px;
+  margin: 0.2rem auto 0;
+  width: 100%;
+}
+
+/* UPDATED HEADING CSS ONLY */
+.maya-play-header h1 {
+  margin: 0.5rem 0 0.3rem;
+  font-size: clamp(1.4rem, 4vw, 2.4rem); /* ~22–38px depending on screen */
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  color: #312e81;
+  background: linear-gradient(90deg, #7c3aed, #db2777, #2563eb);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 2px 10px rgba(124, 58, 237, 0.25));
+  white-space: nowrap;
+  padding: 0 0.5rem;
+}
+
+/* Allow wrapping on smaller screens so it never overflows */
+@media (max-width: 768px) {
+  .maya-play-header h1 {
+    white-space: normal;
+    font-size: clamp(1.25rem, 5vw, 1.8rem);
+  }
+}
+/* END UPDATED HEADING */
+
+.maya-subtitle {
+  margin: 0;
+  color: #4c1d95;
+  font-size: 1rem;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+/* -----------------------------
+   Mood navigation
+   ----------------------------- */
+.maya-mood-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  justify-content: center;
+  max-width: 900px;
+  margin: 0.4rem auto 0;
+  width: 100%;
+}
+
+.maya-mood-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid rgba(124, 58, 237, 0.25);
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #4c1d95;
+  font-size: 0.95rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.14s ease, box-shadow 0.14s ease, background 0.14s ease, border-color 0.14s ease;
+  box-shadow: 0 6px 18px rgba(124, 58, 237, 0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+.maya-mood-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(124, 58, 237, 0.22);
+}
+
+.maya-mood-btn:active {
+  transform: translateY(-1px);
+}
+
+/* Mood-specific gradients */
+.maya-mood-btn.theme-joy {
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  border-color: #f59e0b;
+  color: #78350f;
+}
+
+.maya-mood-btn.theme-sadness {
+  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+  border-color: #60a5fa;
+  color: #1e3a8a;
+}
+
+.maya-mood-btn.theme-anger {
+  background: linear-gradient(135deg, #fed7aa, #fdba74);
+  border-color: #fb923c;
+  color: #7c2d12;
+}
+
+.maya-mood-btn.theme-fear {
+  background: linear-gradient(135deg, #e9d5ff, #c4b5fd);
+  border-color: #8b5cf6;
+  color: #4c1d95;
+}
+
+.maya-mood-btn.theme-confused {
+  background: linear-gradient(135deg, #f5d0fe, #e9a7ff);
+  border-color: #d946ef;
+  color: #6b1568;
+}
+
+/* Active (selected) mood: stronger glow + slightly larger */
+.maya-mood-btn.active {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(124, 58, 237, 0.35),
+              0 0 0 3px rgba(255, 255, 255, 0.6) inset;
+  filter: saturate(1.1);
+}
+
+.mood-emoji {
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.mood-label {
+  line-height: 1;
+}
+
+/* -----------------------------
+   Mood info section
+   ----------------------------- */
+.maya-mood-info {
+  text-align: center;
+  max-width: 800px;
+  margin: 0.2rem auto 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(124, 58, 237, 0.25);
+  border-radius: 16px;
+  padding: 0.9rem 1rem;
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.12);
+  backdrop-filter: blur(6px);
+}
+
+.maya-mood-info h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: #4c1d95;
+  text-shadow: 0 2px 10px rgba(139, 92, 246, 0.25);
+}
+
+.maya-mood-info p {
+  margin: 0;
+  color: #5b21b6;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+/* -----------------------------
+   Games grid & cards
+   ----------------------------- */
+.maya-games-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 1000px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.1rem;
+}
+
+.maya-game-card {
+  width: 100%;
+  text-align: left;
+  border-radius: 16px;
+  padding: 1.05rem;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.14s ease, box-shadow 0.14s ease, border-color 0.14s ease;
+  border: 1.5px solid rgba(124, 58, 237, 0.35);
+  color: #4c1d95;
+  background: linear-gradient(135deg, #ffffff, #faf5ff);
+  box-shadow: 0 8px 22px rgba(124, 58, 237, 0.14);
+  overflow: hidden;
+}
+
+/* Joy-specific card tint */
+.theme-joy .maya-game-card {
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  border-color: #f59e0b;
+  color: #78350f;
+}
+
+.maya-game-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(124, 58, 237, 0.22);
+  border-color: #a78bfa;
+}
+
+.maya-game-card:active {
+  transform: translateY(-1px);
+}
+
+.maya-game-card h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.08rem;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+}
+
+.maya-game-card p {
+  margin: 0 0 0.7rem;
+  font-size: 0.88rem;
+  color: #6b21a8;
+  opacity: 0.9;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+/* Play badge / button on card */
+.play-badge {
+  position: absolute;
+  right: 0.75rem;
+  top: 0.75rem;
+  background: linear-gradient(135deg, #a78bfa, #f472b6);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 900;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+  box-shadow: 0 4px 12px rgba(244, 114, 182, 0.35);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.play-badge::before {
+  content: "▶";
+  font-size: 0.65rem;
+}
+
+/* -----------------------------
+   Footer / Tip card
+   ----------------------------- */
+.maya-play-footer {
+  text-align: center;
+  color: #5b21b6;
+  font-size: 0.88rem;
+  margin-top: 0.4rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(124, 58, 237, 0.25);
+  border-radius: 14px;
+  padding: 0.7rem 0.9rem;
+  box-shadow: 0 6px 18px rgba(124, 58, 237, 0.1);
+  backdrop-filter: blur(6px);
+  font-weight: 600;
+}
+
+.maya-play-footer::before {
+  content: "💡 Tip: ";
+  font-weight: 900;
+  color: #7c3aed;
+}
+
+/* -----------------------------
+   Game container & shared UI (inside games)
+   ----------------------------- */
+.game-container {
+  max-width: 900px;
+  margin: 0.5rem auto 1rem;
+  width: 100%;
+  background: linear-gradient(135deg, #ffffff, #faf5ff);
+  border: 1.5px solid rgba(124, 58, 237, 0.35);
+  border-radius: 18px;
+  padding: 1.2rem;
+  box-shadow: 0 12px 34px rgba(124, 58, 237, 0.18);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle inner glow for game container */
+.game-container::before {
+  content: "";
+  position: absolute;
+  inset: -40% -10% auto -10%;
+  height: 120%;
+  background: radial-gradient(circle, rgba(167, 139, 250, 0.18), transparent 60%);
+  pointer-events: none;
+}
+
+.game-header {
+  text-align: center;
+  position: relative;
+}
+
+.game-header h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  color: #4c1d95;
+  text-shadow: 0 2px 10px rgba(139, 92, 246, 0.25);
+}
+
+.game-header p {
+  margin: 0;
+  color: #6b21a8;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.game-stats {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  font-weight: 800;
+  color: #5b21b6;
+  font-size: 0.95rem;
+  flex-wrap: wrap;
+}
+
+.game-area {
+  position: relative;
+  width: 100%;
+  min-height: 260px;
+  border: 1.5px solid rgba(124, 58, 237, 0.35);
+  border-radius: 14px;
+  background: linear-gradient(135deg, #f5f3ff, #ede9fe);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+}
+
+.game-start-screen,
+.game-over-screen {
+  text-align: center;
+  padding: 1rem;
+  position: relative;
+}
+
+.game-start-screen h3,
+.game-over-screen h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #4c1d95;
+}
+
+.game-start-screen p,
+.game-over-screen p {
+  margin: 0 0 0.8rem;
+  color: #6b21a8;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.game-actions {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+/* Primary / secondary buttons inside games */
+.btn-primary {
+  background: linear-gradient(135deg, #a78bfa, #f472b6);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 0.92rem;
+  cursor: pointer;
+  transition: transform 0.12s ease, filter 0.12s ease, box-shadow 0.12s ease;
+  box-shadow: 0 6px 16px rgba(244, 114, 182, 0.35);
+}
+
+.btn-primary:hover {
+  filter: brightness(1.05);
+  box-shadow: 0 8px 20px rgba(244, 114, 182, 0.45);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, #f3e8ff, #fce7f3);
+  color: #5b21b6;
+  border: 1px solid #d8b4fe;
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 0.92rem;
+  cursor: pointer;
+  transition: transform 0.12s ease, background 0.12s ease, box-shadow 0.12s ease;
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.15);
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(135deg, #f5f3ff, #ffe4e6);
+  box-shadow: 0 6px 16px rgba(124, 58, 237, 0.22);
+  transform: translateY(-1px);
+}
+
+.btn-secondary:active {
+  transform: translateY(0);
+}
+
+/* -----------------------------
+   Individual game visuals (keep logic, just prettify)
+   ----------------------------- */
+
+/* Star Catcher */
+.star-catcher-area {
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.star-item {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  border: none;
+  background: radial-gradient(circle at 30% 30%, #fef3c7, #fde68a);
+  border-radius: 50%;
+  font-size: 26px;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.35);
+  border: 1px solid #f59e0b;
+}
+
+.star-item:active {
+  transform: scale(0.92);
+}
+
+/* Memory Flip */
+.memory-area {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.7rem;
+  padding: 0.7rem;
+  min-height: 320px;
+  align-items: center;
+}
+
+.memory-card {
+  aspect-ratio: 1 / 1;
+  border: 2px solid #a78bfa;
+  background: linear-gradient(135deg, #e9d5ff, #f3e8ff);
+  border-radius: 12px;
+  cursor: pointer;
+  position: relative;
+  padding: 0;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.18);
+}
+
+.memory-card:disabled {
+  cursor: default;
+}
+
+.memory-card:not(.flipped):active {
+  transform: scale(0.96);
+}
+
+.memory-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.7rem;
+  font-weight: 900;
+  color: #5b21b6;
+}
+
+.memory-front {
+  position: absolute;
+}
+
+.memory-back {
+  position: absolute;
+  opacity: 0;
+  transform: rotateY(90deg);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.memory-card.flipped .memory-front {
+  opacity: 0;
+  transform: rotateY(-90deg);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.memory-card.flipped .memory-back {
+  opacity: 1;
+  transform: rotateY(0);
+}
+
+/* Balloon Pop */
+.balloon-area {
+  align-items: flex-end;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.balloon-item {
+  position: absolute;
+  width: 46px;
+  height: 56px;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  box-shadow: inset -6px -6px 10px rgba(0, 0, 0, 0.12), 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.08s ease, filter 0.08s ease;
+}
+
+.balloon-item:active {
+  transform: scale(0.92);
+  filter: brightness(1.05);
+}
+
+/* Raindrop Catch */
+.rain-area {
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+
+.drop-item {
+  position: absolute;
+  font-size: 22px;
+  user-select: none;
+}
+
+.sun-drop {
+  filter: drop-shadow(0 2px 4px rgba(245, 158, 11, 0.45));
+}
+
+.storm-drop {
+  filter: drop-shadow(0 2px 4px rgba(59, 130, 246, 0.45));
+}
+
+.basket {
+  position: absolute;
+  bottom: 8px;
+  font-size: 30px;
+  transform: translateX(-50%);
+  user-select: none;
+}
+
+.touch-controls {
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+  pointer-events: none;
+}
+
+.btn-control {
+  pointer-events: auto;
+  background: linear-gradient(135deg, #f3e8ff, #fce7f3);
+  border: 1px solid #d8b4fe;
+  border-radius: 10px;
+  width: 46px;
+  height: 46px;
+  font-size: 18px;
+  font-weight: 900;
+  color: #5b21b6;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.18);
+  transition: transform 0.1s ease, background 0.12s ease;
+}
+
+.btn-control:hover {
+  background: linear-gradient(135deg, #f5f3ff, #ffe4e6);
+  transform: translateY(-1px);
+}
+
+/* Build Rainbow */
+.rainbow-area {
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  min-height: 320px;
+}
+
+.rainbow-slots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+}
+
+.rainbow-slot {
+  min-width: 86px;
+  height: 46px;
+  border-radius: 10px;
+  border: 2px dashed #a78bfa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #6b21a8;
+  background: linear-gradient(135deg, #ffffff, #faf5ff);
+  transition: background 0.2s ease, border-style 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 10px rgba(139, 92, 246, 0.12);
+}
+
+.rainbow-slot.filled {
+  border-style: solid;
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+}
+
+.color-pieces {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+}
+
+.color-piece {
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  padding: 0.45rem 0.75rem;
+  font-weight: 900;
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: transform 0.1s ease, filter 0.12s ease, box-shadow 0.12s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.color-piece:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+/* Light the Stars */
+.stars-area {
+  display: flex;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  min-height: 180px;
+  align-items: center;
+}
+
+.star-node {
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  border: 2.5px solid #f59e0b;
+  background: radial-gradient(circle at 30% 30%, #fef3c7, #fde68a);
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.12s ease, background 0.12s ease, border-color 0.12s ease, box-shadow 0.12s ease;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.35);
+}
+
+.star-node.lit {
+  background: radial-gradient(circle at 30% 30%, #fde68a, #fbbf24);
+  border-color: #d97706;
+  transform: scale(1.06);
+  box-shadow: 0 8px 18px rgba(245, 158, 11, 0.5);
+}
+
+.star-node:active {
+  transform: scale(0.95);
+}
+
+/* Anger Bubbles */
+.bubbles-area {
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.bubble-item {
+  position: absolute;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  background: radial-gradient(circle at 30% 30%, #fca5a5, #ef4444);
+  cursor: pointer;
+  box-shadow: inset -6px -6px 10px rgba(0, 0, 0, 0.15), 0 4px 10px rgba(239, 68, 68, 0.25);
+  transition: transform 0.08s ease, filter 0.08s ease;
+}
+
+.bubble-item:active {
+  transform: scale(0.9);
+  filter: brightness(1.05);
+}
+
+/* Cool Volcano */
+.volcano-area {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.volcano {
+  width: 126px;
+  height: 126px;
+  background: radial-gradient(circle at 50% 40%, #f87171, #7f1d1d);
+  border-radius: 50% 50% 40% 40% / 70% 70% 30% 30%;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(239, 68, 68, 0.45),
+              inset 0 -8px 16px rgba(0, 0, 0, 0.25);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.water-drop {
+  position: absolute;
+  font-size: 26px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  filter: drop-shadow(0 2px 6px rgba(59, 130, 246, 0.35));
+}
+
+/* Smash Targets */
+.targets-area {
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.target-item {
+  position: absolute;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  transition: transform 0.08s ease, filter 0.08s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.target-item:active {
+  transform: scale(0.92);
+  filter: brightness(1.05);
+}
+
+.good-target {
+  background: radial-gradient(circle at 30% 30%, #86efac, #22c55e);
+}
+
+.bad-target {
+  background: radial-gradient(circle at 30% 30%, #fca5a5, #b91c1c);
+}
+
+/* Brave Path */
+.paths-area {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  min-height: 180px;
+  align-items: center;
+}
+
+.path-option {
+  min-width: 120px;
+  height: 74px;
+  border-radius: 14px;
+  border: 2px solid #a78bfa;
+  background: linear-gradient(135deg, #f3e8ff, #ffffff);
+  font-weight: 900;
+  font-size: 0.95rem;
+  color: #5b21b6;
+  cursor: pointer;
+  transition: transform 0.12s ease, border-color 0.12s ease, background 0.12s ease, box-shadow 0.12s ease;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.18);
+}
+
+.path-option:active {
+  transform: scale(0.96);
+}
+
+.path-option.safe {
+  background: linear-gradient(135deg, #d1fae5, #ecfdf5);
+  border-color: #10b981;
+  color: #065f46;
+  box-shadow: 0 6px 14px rgba(16, 185, 129, 0.25);
+}
+
+.path-option.danger {
+  background: linear-gradient(135deg, #fee2e2, #fff1f2);
+  border-color: #ef4444;
+  color: #7f1d1d;
+  box-shadow: 0 6px 14px rgba(239, 68, 68, 0.25);
+}
+
+/* Monster Maze */
+.maze-area {
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0.8rem;
+  min-height: 320px;
+}
+
+.maze-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 3px;
+  width: min(90vw, 360px);
+  aspect-ratio: 1 / 1;
+  background: linear-gradient(135deg, #e9d5ff, #f3e8ff);
+  border-radius: 12px;
+  padding: 6px;
+  border: 2px solid #a78bfa;
+  box-shadow: 0 6px 16px rgba(139, 92, 246, 0.2);
+}
+
+.maze-cell {
+  background: linear-gradient(135deg, #ffffff, #faf5ff);
+  border-radius: 4px;
+  position: relative;
+  border: 1px solid rgba(139, 92, 246, 0.15);
+}
+
+.maze-cell.player {
+  background: linear-gradient(135deg, #bfdbfe, #dbeafe);
+  border-color: #60a5fa;
+}
+
+.maze-cell.player::after {
+  content: "🙂";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.maze-cell.exit {
+  background: linear-gradient(135deg, #d1fae5, #ecfdf5);
+  border-color: #10b981;
+}
+
+.maze-cell.exit::after {
+  content: "🟩";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.maze-cell.obstacle {
+  background: linear-gradient(135deg, #fee2e2, #fff1f2);
+  border-color: #ef4444;
+}
+
+.maze-cell.obstacle::after {
+  content: "👾";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.touch-controls-maze {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.maze-row {
+  display: flex;
+  gap: 0.45rem;
+}
+
+/* Courage Shield */
+.shield-area {
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+
+.falling-object {
+  position: absolute;
+  font-size: 22px;
+  user-select: none;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.2));
+}
+
+.shield {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 34px;
+  user-select: none;
+  cursor: pointer;
+  transition: transform 0.1s ease, filter 0.1s ease;
+  filter: drop-shadow(0 4px 8px rgba(124, 58, 237, 0.25));
+}
+
+.shield.up {
+  transform: translateX(-50%) translateY(-6px);
+  filter: drop-shadow(0 6px 12px rgba(124, 58, 237, 0.35));
+}
+
+.shield-instructions {
+  position: absolute;
+  bottom: 6px;
+  width: 100%;
+  text-align: center;
+  font-size: 0.75rem;
+  color: #6b21a8;
+  font-weight: 700;
+}
+
+/* Quick Sort */
+.sort-area {
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  min-height: 260px;
+}
+
+.current-item {
+  font-size: 1.7rem;
+  font-weight: 900;
+  text-align: center;
+  color: #4c1d95;
+}
+
+.sort-buttons {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-sort {
+  min-width: 130px;
+  padding: 0.65rem 1rem;
+  border: 2px solid #a78bfa;
+  background: linear-gradient(135deg, #f3e8ff, #ffffff);
+  border-radius: 12px;
+  font-weight: 900;
+  font-size: 0.95rem;
+  color: #5b21b6;
+  cursor: pointer;
+  transition: transform 0.1s ease, background 0.12s ease, box-shadow 0.12s ease;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.18);
+}
+
+.btn-sort:hover {
+  background: linear-gradient(135deg, #f5f3ff, #ffffff);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(139, 92, 246, 0.25);
+}
+
+.btn-sort:active {
+  transform: translateY(0);
+}
+
+/* Pattern Detective */
+.pattern-area {
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  min-height: 260px;
+}
+
+.pattern-seq {
+  display: flex;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 1.7rem;
+  font-weight: 900;
+}
+
+.pattern-item {
+  background: linear-gradient(135deg, #f3e8ff, #ffffff);
+  border: 2px solid #a78bfa;
+  border-radius: 10px;
+  padding: 0.4rem 0.6rem;
+  color: #5b21b6;
+  box-shadow: 0 3px 10px rgba(139, 92, 246, 0.15);
+}
+
+.pattern-item.question {
+  background: linear-gradient(135deg, #e9d5ff, #f3e8ff);
+  border-color: #8b5cf6;
+  color: #6b21a8;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.25);
+}
+
+.pattern-options {
+  display: flex;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-pattern {
+  min-width: 74px;
+  padding: 0.55rem 0.75rem;
+  border: 2px solid #a78bfa;
+  background: linear-gradient(135deg, #f3e8ff, #ffffff);
+  border-radius: 12px;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: transform 0.1s ease, background 0.12s ease, box-shadow 0.12s ease;
+  box-shadow: 0 4px 10px rgba(139, 92, 246, 0.18);
+  color: #5b21b6;
+}
+
+.btn-pattern:hover {
+  background: linear-gradient(135deg, #f5f3ff, #ffffff);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(139, 92, 246, 0.25);
+}
+
+.btn-pattern:active {
+  transform: translateY(0);
+}
+
+/* Puzzle Room */
+.puzzle-area {
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  min-height: 260px;
+}
+
+.puzzle-step {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+  width: 100%;
+}
+
+.puzzle-step p {
+  margin: 0;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #4c1d95;
+  font-weight: 700;
+}
+
+.puzzle-input {
+  width: min(80%, 260px);
+  padding: 0.6rem 0.75rem;
+  border: 2px solid #a78bfa;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  outline: none;
+  background: linear-gradient(135deg, #ffffff, #faf5ff);
+  color: #4c1d95;
+  font-weight: 700;
+  transition: border-color 0.12s ease, box-shadow 0.12s ease;
+  box-shadow: 0 3px 10px rgba(139, 92, 246, 0.12);
+}
+
+.puzzle-input:focus {
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.18);
+}
+
+.puzzle-error {
+  color: #dc2626;
+  font-size: 0.85rem;
+  text-align: center;
+  margin-top: -0.4rem;
+  font-weight: 700;
+}
+
+/* -----------------------------
+   Responsive
+   ----------------------------- */
+@media (max-width: 640px) {
+  .maya-play-header h1 {
+    /* heading already handled in its own media query above */
+  }
+
+  .game-header h2 {
+    font-size: 1.25rem;
+  }
+
+  .memory-area {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .maze-grid {
+    width: 90vw;
+  }
+
+  .maya-mood-btn {
+    padding: 0.55rem 0.9rem;
+    font-size: 0.9rem;
+  }
+}
